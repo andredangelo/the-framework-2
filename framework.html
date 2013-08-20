@@ -1,0 +1,2845 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Framework</title>
+
+<!-- Rel´s & Estilos -->
+
+    <link rel="stylesheet" href="css/estilos.css" media="screen"/>
+    <link rel="stylesheet" href="css/framework.css" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Rosario:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+
+<!-- /Rel´s & Estilos-->
+
+<!-- Mobile viewport optimization -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+<!-- /Mobile viewport optimization (Idiot´s guide) -->
+   <!-- REFRESH PAGE
+   < M E T A HTTP-EQUIV="Refresh" CO N TENT="3;URL=http://www...">
+   -->
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta http-equiv="content-language" content="pt-BR" />
+
+	<script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    
+	<script type="text/javascript" src="_framework/js/shCore.js"></script>
+	<script type="text/javascript" src="_framework/js/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="_framework/css/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+    
+    
+</head>
+  
+
+
+<body>
+
+<div id='theload-bg'>
+    <img src="img/framework/loader2.gif" width="32" height="32">
+</div>
+
+<div id="base-all">
+    <div id="menu-left">
+    	<div id="menu-inside" class="pad20">
+        	<h1>The Framework</h1>
+            
+            <div class="menuAccordion">
+            	
+            	<span class="iPlugin">
+                    <h2>Plugins</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#plugin-banner" rel="" id="anchor1" class="anchorLink">The Banner</a></li>
+                            <li><a href="#plugin-box" rel="" id="anchor1" class="anchorLink">The Box</a></li>
+                            <li><a href="#plugin-load" rel="" id="anchor1" class="anchorLink">The Load</a></li>
+                        </ul>     
+                    </div>
+                </span>
+                
+                
+                
+                
+                <span class="iHtml">
+                    <h2>Html</h2>
+                    <div>
+                        <ul>
+                            <li class="iTable">
+                              <a href="#table" rel="" id="anchor1" class="anchorLink title">Tables</a>
+                                <ul>
+                                    <li><a href="#table-ordenada" rel="" id="anchor1" class="anchorLink">Ordenada</a></li>
+                                    <li><a href="#table-comum" rel="" id="anchor1" class="anchorLink">Comum</a></li>
+                                    <li><a href="#table-responsive" rel="" id="anchor1" class="anchorLink">Responsive</a></li>
+                                </ul>
+                            </li>
+                            
+                            
+                            <li class="iForm">
+                              <a href="#forms"  rel="" id="anchor1" class="anchorLink title">Forms</a>
+                                <ul>
+                                    <li><a href="#forms-horizontal" rel="" id="anchor1" class="anchorLink">Horizontal x Vertical</a></li>
+                                    
+                                        
+                                    <li><a href="#forms-validation" rel="" id="anchor1" class="anchorLink">Forms with Validation</a></li>
+                                    <li><a href="#forms-html5" rel="" id="anchor1" class="anchorLink">HTML5</a></li>
+                                    
+                                </ul>
+            
+                            </li>
+                            
+                            
+                            <li class="iMenu">
+                              <a href="#menu"  rel="" id="anchor1" class="anchorLink title">Menus</a>
+                                <ul>
+                                    <li><a href="#menu-comum" rel="" id="anchor1" class="anchorLink">Comum</a></li>
+                                    <li><a href="#menu-submenu" rel="" id="anchor1" class="anchorLink">Sub Menu</a></li>
+                                    <li><a href="#menu-tab" rel="" id="anchor1" class="anchorLink">Tabs</a></li>
+                                    <li><a href="#menu-side" rel="" id="anchor1" class="anchorLink">Side Menu</a></li>
+                                    <li><a href="#menu-anchor" rel="" id="anchor1" class="anchorLink">Anchor Menu</a></li>
+                                    <li><a href="#menu-accordion" rel="" id="anchor1" class="anchorLink">Accordion Menu</a></li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    
+                    </div>
+                </span>
+                
+            	<span class="iLayout">
+                    <h2>Layout</h2>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="#layout" rel="" id="anchor1" class="anchorLink">Default classes</a>
+                                <ul>
+                                    <li><a href="#layout-margin" rel="" id="anchor1" class="anchorLink">Margin/Padding/Width/Height</a></li>
+                                    <li><a href="#layout-comum" rel="" id="anchor1" class="anchorLink">Comum</a></li>
+                                </ul>
+                            </li>
+                        </ul>     
+                    </div>
+                </span>
+                
+                
+                
+            	<span class="iTemplate">
+                    <h2>Templates</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#layout" rel="" id="anchor1" class="anchorLink">Blank Template</a></li>
+                            <li><a href="#layout" rel="" id="anchor1" class="anchorLink">Banner 3 Collums</a></li>
+                        </ul>     
+                    </div>
+                </span>
+                
+                
+                
+                
+                
+            	<span>
+                    <h2>Generators</h2>
+                    <div>
+                        <ul>
+                            <li><a href="#generators-border-radius" rel="" id="anchor1" class="anchorLink">Border Radius</a></li>
+                            <li><a href="#generators-gradient" rel="" id="anchor1" class="anchorLink">Gradient</a></li>
+                            <li><a href="#generators-box" rel="" id="anchor1" class="anchorLink">Box Shadow</a></li>
+                        </ul>     
+                    </div>
+                </span>
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="base" class="base-framework">
+    
+    
+    
+        	
+           <div id="top">
+           <button id="btn-menu-left" class="btn" onClick="javascript:menuLeft();">Menu</button>
+          </div>
+          
+          
+
+          
+          
+          
+          
+<!-- Plugins ------------------------------------------------------------------>
+          <div class="clr"></div>
+          
+          
+              <a id="plugin" name="plugin"></a>
+                <div class="exampleAd"><div class="wrapperAd">
+                    <h1>Plugins</h1>
+                    
+                      <div class="clr"></div>
+                            <a id="plugin-banner" name="plugin-banner"></a>
+                            <h3 class="iPlugin">The Banner</h3>
+                            <ul>
+                                <li>Call <strong>$('#the-banner-content').thebanner({effect:"fade"});</strong></li>
+                                <li>Create the sctructure.</li>
+                                <li>Utilize "data-link" to links and "data-target" to self or _blank windows</li>
+                                <li>data-link (if have a link), data-thumb(if have a thumb), data-target (target link), data-title (caption)<br>
+                                  <br>
+                                </li>
+                            </ul>
+                  
+            
+                           <div id="the-banner-content" style="height:200px; width:auto; ">
+                                <ul>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900;">
+                                    1
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#06C;;">
+                                    2
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#3C9; ">
+                                    3
+                                    </li>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60; ">
+                                    4
+                                    </li>
+                                </ul>
+                           </div>
+                           
+                           
+                           
+                      <br/><br/>
+            <table class="table table-ordenada thetable" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+               
+                  <tr>
+                    <td>speed</td>
+                    <td>Number</td>
+                    <td>800(miliseconds)</td>
+                    <td>Set the speed of banner transition.</td>
+                  </tr>
+               
+                   <tr>
+                    <td>timer</td>
+                    <td>Number</td>
+                    <td>4000(miliseconds)</td>
+                    <td>Set the pause time beetween banners. (autoAnimate needs to be true)</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>effect</td>
+                    <td>"slider", "fade", "default"</td>
+                    <td>default (with touch Behavior)</td>
+                    <td>Set the pause time beetween banners. (autoAnimate needs to be true)</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>thumb</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Set if the banner has thumbnails. If is true, add data-thumb in "li" tag</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>clickAndStop</td>
+                    <td>Boolean</td>
+                    <td>true</td>
+                    <td>Set if the click will stops the animation/transitions.</td>
+                  </tr>
+        
+                   <tr>
+                    <td>autoAnimate</td>
+                    <td>Boolean</td>
+                    <td>true</td>
+                    <td>Set if the click will stops the animation/transitions.</td>
+                  </tr>
+        
+                   <tr>
+                    <td>bannerWidth</td>
+                    <td>Number(pixels)</td>
+                    <td>100%</td>
+                    <td>Set the banner width.</td>
+                  </tr>
+        
+                   <tr>
+                    <td>bannerHeight</td>
+                    <td>Number(pixels)</td>
+                    <td>100%</td>
+                    <td>Set the banner height.</td>
+                  </tr>
+        
+                  
+              </tbody>
+              
+            </table>
+                                 
+                                
+                            
+                            <h5>Exemplo:</h5>            
+                            <pre class="brush: js; hei300">  
+                            // Call JS Function
+                             $('#the-banner-content').thebanner({effect:"fade"});    
+                                
+                                
+                               <div id="the-banner-content" style="height:200px;">
+                                    <ul>
+                                        <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900;">
+                                        1
+                                        </li>
+                                        <li data-link="http://www.google.com" style="background-color:#06C;;">
+                                        2
+                                        </li>
+                                        <li data-link="http://www.google.com" style="background-color:#3C9; ">
+                                        3
+                                        </li>
+                                        <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60; ">
+                                        4
+                                        </li>
+                                    </ul>
+                               </div>
+                            </pre>
+             
+             
+             
+                      <div class="clr"></div>
+                            <a id="plugin-banner" name="plugin-banner"></a>
+                            <h3 class="iPlugin">The Banner</h3>&nbsp;<h3>Slide</h3>
+                            <ul>
+                                <li>Call <strong>$('#the-banner-content').thebanner({effect:"fade"});</strong></li>
+                                <li>Create the sctructure.</li>
+                                <li>Utilize "data-link" to links and "data-target" to self or _blank windows<br>
+                                  <br>
+                                </li>
+                            </ul>
+                  
+                           <div id="the-banner-content2" style="height:200px;">
+                                <ul>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900; width:200px;">
+                                    1
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                                    2
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                                    3
+                                    </li>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                                    4
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                                    2
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                                    3
+                                    </li>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                                    4
+                                    </li>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#000;  width:200px;">
+                                    4
+                                    </li>
+                                </ul>
+                           </div>
+                            <h5>Example:</h5>     
+                            
+                            
+                                   
+                            <pre class="brush: js; hei300">  
+                            // Call JS Function
+                             $('#the-banner-content2').thebanner({slides:true, slideMargin:40, autoAnimate:false});    
+                                
+                                
+                           <div id="the-banner-content2" style="height:200px;">
+                                <ul>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900; width:200px;">
+                                    1
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                                    2
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                                    3
+                                    </li>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                                    4
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                                    2
+                                    </li>
+                                    <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                                    3
+                                    </li>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                                    4
+                                    </li>
+                                    <li data-link="http://www.google.com" data-target="_blank" style="background-color:#000;  width:200px;">
+                                    4
+                                    </li>
+                                </ul>
+                           </div>
+                                
+                                
+                            </pre>
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+             
+             
+                      <div class="clr"></div>
+                            <a id="plugin-banner" name="plugin-banner"></a>
+                            <h3 class="iPlugin">The Banner</h3>&nbsp;<h3>Thumb</h3>
+                            <ul>
+                                <li>Call <strong>$('#the-banner-content').thebanner({effect:"fade", thumb:true});</strong></li>
+                                <li>Create the sctructure.</li>
+                                <li>Add data-thumb<br>
+                                  <br>
+                                </li>
+                            </ul>
+                  
+            
+                           <div id="the-banner-content3" style="height:300px;">
+                                <ul>
+                                    <li data-title="Título da Notícia 1" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"  data-target="_blank" style="background-color:#900; width:200px;">
+                                    1
+                                    </li>
+                                    <li data-title="Título da Notícia 2" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"   style="background-color:#06C;  width:200px;">
+                                    2
+                                    </li>
+                                    <li data-title="Título da Notícia 3" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"  style="background-color:#3C9;  width:200px;">
+                                    3
+                                    </li>
+                                    <li data-title="Título da Notícia 4" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"  data-target="_blank" style="background-color:#C60;  width:200px;">
+                                    4
+                                    </li>
+                                </ul>
+                           </div>
+                            <h5>Exemplo:</h5>            
+                            <pre class="brush: js; hei300">  
+                            // Call JS Function
+                            $('#the-banner-content3').thebanner({autoAnimate:false, thumb:true, effect:"fade"});
+                                
+                           <div id="the-banner-content3" style="height:300px;">
+                                <ul>
+                                    <li data-title="Título da Notícia 1" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"  data-target="_blank" style="background-color:#900; width:200px;">
+                                    1
+                                    </li>
+                                    <li data-title="Título da Notícia 2" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"   style="background-color:#06C;  width:200px;">
+                                    2
+                                    </li>
+                                    <li data-title="Título da Notícia 3" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"  style="background-color:#3C9;  width:200px;">
+                                    3
+                                    </li>
+                                    <li data-title="Título da Notícia 4" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"  data-target="_blank" style="background-color:#C60;  width:200px;">
+                                    4
+                                    </li>
+                                </ul>
+                           </div>
+                   
+                                
+                            </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+             
+             
+             
+             
+                      <div class="clr"></div>
+                  <a id="plugin-box" name="plugin-box"></a>
+                            <h3 class="iPlugin">The Box</h3>
+                 			
+                             <h3>Single Image</h3>
+                            <ul>
+                                <li>Call <strong>"$('.thebox').thebox();</strong></li>
+                                <li>Add in tag a: href="<strong>image-you-want.jpg</strong>" class="<strong>thebox</strong>"</li>
+                            </ul>
+                            
+<table class="table table-ordenada" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+               
+                  <tr>
+                    <td>speed</td>
+                    <td>Number</td>
+                    <td>500(miliseconds)</td>
+                    <td>Set the speed of image/slide transition.</td>
+                  </tr>
+               
+                   <tr>
+                    <td>timer</td>
+                    <td>Number</td>
+                    <td>400(miliseconds)</td>
+                    <td>Inicial time animation</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>showButtons</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Show or not, the buttons left and right</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>bgOpacity</td>
+                    <td>Number</td>
+                    <td>0.6</td>
+                    <td>Opacity of  BG</td>
+                  </tr>
+        
+                   <tr>
+                    <td>zoom100pct</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Set if the image can be resized/initial width/height 100% (proporcional)</td>
+                  </tr>
+        
+                  
+              </tbody>
+              
+            </table>                            
+                            
+                            <p>&nbsp;</p>
+                            <p><a href="img/fallback/ie.png" class="thebox"><img src="img/fallback/ie.png" width="128" height="127"></a>
+                              
+                              
+                              
+                            </p>
+<h5>Exemplo:</h5>            
+                            <pre class="brush: js; hei70">  
+                            	// Call Function
+                                $('.thebox').thebox();
+                                
+                                <a href="img/fallback/ie.png" class="thebox"><img src="img/fallback/ie.png" width="128" height="127"></a>
+
+                            </pre>
+          	   	
+                             <h3 class="iPlugin">The Box</h3>
+                              <h3>Group Images</h3>
+                            <ul>
+                                <li>Call <strong>"$('.thebox').thebox();</strong></li>
+                                <li>Add in tag a: href="<strong>image-you-want.jpg</strong>" class="<strong>thebox</strong>"</li>
+                            </ul>
+                            <a href="http://www.papeldeparede.etc.br/fotos/wp-content/uploads/dream-theater-systematic-chaos.jpg" data-group="name-group" data-title="Title 1" class="thebox">
+                           	 <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            <a href="img/mobile/apple-touch-icon.png"  data-group="name-group" class="thebox">
+                                <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            <!---a href="http://images2.alphacoders.com/306/30610.jpg" data-title="Title 2" data-group="name-group" class="thebox">
+                            <img src="img/fallback/ie.png" width="128" height="127">
+                            </a-->
+                            
+                            <a href="img/_bg.jpg"  data-group="name-group" class="thebox">
+                                <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            
+                           
+                            
+                            <h5>Exemplo:</h5>            
+                            <pre class="brush: js; hei70">  
+                            	// Call Function
+                                $('.thebox').thebox();
+                                
+                            <a href="http://www.papeldeparede.etc.br/fotos/wp-content/uploads/dream-theater-systematic-chaos.jpg" data-group="name-group" data-title="Title 1" class="thebox">
+                           	 <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            <a href="img/mobile/apple-touch-icon.png"  data-group="name-group" class="thebox">
+                                <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            
+                            <a href="img/_bg.jpg"  data-group="name-group" class="thebox">
+                                <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            
+
+                            </pre>
+          	   	
+             
+                              <h3 class="iPlugin">The Box</h3>
+                               <h3>Inline</h3>
+                            <ul>
+                                <li>Call <strong>"$('.thebox-inline').thebox({type:inline});</strong></li>
+                            </ul>
+                            <a href="inlineContent" data-title="Title 1" class="thebox-inline">
+                           	 <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            
+                            <div id="inlineContent" style="display:none">
+                            	<h1>Title</h1>
+                                <p>asdasdasd asdasd asasd asasdasdasd asasd</p>
+                            </div>
+                            
+                           
+                            
+                            <h5>Exemplo:</h5>            
+                            <pre class="brush: js; hei200">  
+                            	
+                                // Call Function
+                                $('.thebox-inline').thebox({type:inline});
+                                
+                                <a href="inlineContent" data-title="Title 1" class="thebox-inline">
+                                 <img src="img/fallback/ie.png" width="128" height="127">
+                                </a>
+                                
+                                <div id="inlineContent" style="display:none">
+                                    <h1>Title</h1>
+                                    <p>asdasdasd asdasd asasd asasdasdasd asasd</p>
+                                </div>
+
+                            </pre>
+          	   	
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                      <div class="clr"></div>
+                            <a id="plugin-load" name="plugin-load"></a>
+                            <h3 class="iPlugin">The Load</h3>
+                            <ul>
+                                <li>Create the div "theload-bg";</li>
+                                <li>Put Loader img inside;</li>
+                                <li>< img src="img/framework/loader2.gif" width="32" height="32" >.</li>
+                            </ul>
+                  
+                            <h5>Example:</h5>     
+                            
+                            <pre class="brush: js; hei100">  
+                            // Call JS Function
+                			$(document).theload();
+                            
+                            // Create div after body tag
+                            <div id='theload-bg'>
+                                <img src="img/framework/loader2.gif" width="32" height="32">
+                            </div>
+                
+                			</pre>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+             
+            </div>
+<!-- end Plugins ------------------------------------------------------------------>
+            
+          
+          
+          
+          
+          
+            
+    <!-- !Table ------------------------------------------------------------------>
+		<div id="iComponent">
+            <div class="clr"></div>
+             <a id="table" name="table"></a>
+                <div class="exampleAd"><div class="wrapperAd">
+                    
+                    <h1>HTML</h1>
+                    <a id="table-ordenada" name="table-ordenada"></a>
+                    <h3 class="iHtml">Table</h3> <h3>Ordered</h3>
+                    <ul>
+                        <li>Carregue o script "js/jquery.tablesorter.min.js"</li>
+                        <li>Adicione as classes "table table-ordenada".</li>
+                    </ul>
+            <table class="table table-ordenada" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <caption>&nbsp;</caption>
+                
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+                   <tr>
+                    <td>André</td>
+                    <td>25</td>
+                    <td>14/11/1987</td>
+                    <td>Teste1</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>Pedro</td>
+                    <td>24</td>
+                    <td>12/10/1988</td>
+                    <td>Teste2</td>
+                  </tr>
+        
+                  
+              </tbody>
+              
+            </table>
+        
+            <h5>Exemplo:</h5>
+            <pre class="brush: js; hei500">  
+        <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+        
+        <script type="text/javascript">
+        
+            $(document).ready(function(e) {
+                $(".table-ordenada").tablesorter();
+            });
+        
+        </script>
+            
+            <table class="table table-ordenada" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <caption>&nbsp;</caption>
+                
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+                   <tr>
+                    <td>André</td>
+                    <td>25</td>
+                    <td>14/11/1987</td>
+                    <td>Teste1</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>Pedro</td>
+                    <td>24</td>
+                    <td>12/10/1988</td>
+                    <td>Teste2</td>
+                  </tr>
+        
+                  
+              </tbody>
+              
+            </table>
+            </pre>
+        
+
+
+
+
+
+               
+    <!-- end Tabelas Ordenadas -->
+    <!-- Tabelas Comum -->
+                <div class="clr"></div>
+                <a id="table-comum" name="table-comum"></a>
+                    <h3 class="iHtml">Tables</h3>
+                    <ul>
+                        <li>Adicione a class "table" apenas.</li>
+                    </ul>
+                      <table class="table" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            
+                            
+                            <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Idade</th>
+                                <th>Data</th>
+                                <th>Teste</th>
+                              </tr>
+                            </thead>
+                            
+                            <tfoot>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Idade</th>
+                                <th>Data</th>
+                                <th>Teste</th>
+                              </tr>
+                            </tfoot>
+                          
+                           <tbody>
+                               <tr>
+                                <td>André</td>
+                                <td>25</td>
+                                <td>14/11/1987</td>
+                                <td>Teste1</td>
+                              </tr>
+                              
+                               <tr>
+                                <td>Pedro</td>
+                                <td>24</td>
+                                <td>12/10/1988</td>
+                                <td>Teste2</td>
+                              </tr>
+                              
+                               <tr>
+                                <td>João</td>
+                                <td>23</td>
+                                <td>12/12/1989</td>
+                                <td>Teste3</td>
+                              </tr>
+                              
+                               <tr>
+                                <td>Henrique</td>
+                                <td>22</td>
+                                <td>14/11/1990</td>
+                                <td>Teste4</td>
+                              </tr>
+                              
+                          </tbody>
+                          
+                  </table>
+                    
+                            <h5>Exemplo:</h5>
+    
+                    <pre class="brush: js; hei500">  
+                    
+                        <table class="table" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            
+                            <caption>Tabela sem ordenação</caption>
+                            
+                            <thead>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Idade</th>
+                                <th>Data</th>
+                                <th>Teste</th>
+                              </tr>
+                            </thead>
+                            
+                            <tfoot>
+                              <tr>
+                                <th>Nome</th>
+                                <th>Idade</th>
+                                <th>Data</th>
+                                <th>Teste</th>
+                              </tr>
+                            </tfoot>
+                          
+                           <tbody>
+                               <tr>
+                                <td>André</td>
+                                <td>25</td>
+                                <td>14/11/1987</td>
+                                <td>Teste1</td>
+                              </tr>
+                              
+                               <tr>
+                                <td>Pedro</td>
+                                <td>24</td>
+                                <td>12/10/1988</td>
+                                <td>Teste2</td>
+                              </tr>
+                              
+                               <tr>
+                                <td>João</td>
+                                <td>23</td>
+                                <td>12/12/1989</td>
+                                <td>Teste3</td>
+                              </tr>
+                              
+                               <tr>
+                                <td>Henrique</td>
+                                <td>22</td>
+                                <td>14/11/1990</td>
+                                <td>Teste4</td>
+                              </tr>
+                              
+                          </tbody>
+                          
+                        </table>
+                    
+                    </pre>
+                    
+   <!-- Responsive Tables -->
+                <div class="clr"></div>
+                    <a id="table-responsive" name="table-ordenada"></a>
+                    <h3 class="iHtml">Table</h3> <h3>Responsive</h3>
+                    <ul>
+                        <li>Call thetable function;</li>
+                        <li>Add the same class.</li>
+                    </ul>
+            <table class="table table-ordenada" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <caption>&nbsp;</caption>
+                
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+                   <tr>
+                    <td>André</td>
+                    <td>25</td>
+                    <td>14/11/1987</td>
+                    <td>Teste1</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>Pedro</td>
+                    <td>24</td>
+                    <td>12/10/1988</td>
+                    <td>Teste2</td>
+                  </tr>
+        
+                  
+              </tbody>
+              
+            </table>
+        
+            <h5>Exemplo:</h5>
+            <pre class="brush: js; hei500">  
+        <script type="text/javascript">
+        
+            $(document).ready(function(e) {
+                $(".table").thetable();
+            });
+        
+        </script>
+            
+            <table class="table table-ordenada" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <caption>&nbsp;</caption>
+                
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data</th>
+                    <th>Teste</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+                   <tr>
+                    <td>André</td>
+                    <td>25</td>
+                    <td>14/11/1987</td>
+                    <td>Teste1</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>Pedro</td>
+                    <td>24</td>
+                    <td>12/10/1988</td>
+                    <td>Teste2</td>
+                  </tr>
+        
+                  
+              </tbody>
+              
+            </table>
+            </pre>
+        
+  <!-- end: Responsible Tables -->              
+                    
+                    
+                 </div>   
+                </div>
+    <!-- end Table ------------------------------------------------------------------>
+                
+             
+             
+             
+             
+            
+            
+    
+            
+         
+    <!-- !Forms ------------------------------------------------------------------>
+              <div class="clr"></div>
+              <a id="forms" name="forms"></a>
+                <div class="exampleAd">
+                <div class="wrapperAd">
+                    <h1>Components - Forms</h1>
+                    <a id="forms-horizontal" name="forms"></a>
+              
+              
+               <!-- Form Horizontal x Vertizal -->       
+                    <h3 class="iHtml">Forms</h3> <h3>Horizontal or Vertical</h3>
+                    <ul>
+                        <li>Adicione o class "form" para que os campos fiquem embaixo dos títulos.</li>
+                        <li>Adicione o class "form-horizontal" para que os campos fiquem ao lado dos títulos.</li>
+                    </ul>
+                    <form class="form form-horizontal">
+                        
+                      <fieldset>
+                            
+                            <legend>Formulário Horizontal</legend>
+                            
+                            <label>Nome com AutoFocus</label>
+                            <input name="Nome" type="text" required autofocus>
+                            
+                            <label>Nome validado</label>
+                            <input name="" placeholder="Nome Sobrenome" type="text" required>
+                      </fieldset>
+                    </form>
+                            
+                    <form class="form">
+                        
+                      <fieldset>
+                            
+                            <legend>Formulário Vertical</legend>
+                            
+                            <label>Nome com AutoFocus</label>
+                            <input name="Nome" type="text" required autofocus>
+                            
+                            <label>Nome validado</label>
+                            <input name="" placeholder="Nome Sobrenome" type="text" required>
+                      </fieldset>
+                    </form>
+                            
+                        
+                            
+                     <h5>Exemplo:</h5>            
+                    <pre class="brush: js; hei400">  
+                        <form class="form form-horizontal">
+                          <fieldset>
+                                
+                                <legend>Formulário Horizontal</legend>
+                                
+                                <label>Nome com AutoFocus</label>
+                                <input name="Nome" type="text" required autofocus>
+                                
+                                <label>Nome validado</label>
+                                <input name="" placeholder="Nome Sobrenome" type="text" required>
+                           </fieldset>
+                        </form>
+                                
+                        <form class="form">
+                            
+                          <fieldset>
+                                
+                                <legend>Formulário Vertical</legend>
+                                
+                                <label>Nome com AutoFocus</label>
+                                <input name="Nome" type="text" required autofocus>
+                                
+                                <label>Nome validado</label>
+                                <input name="" placeholder="Nome Sobrenome" type="text" required>
+                           </fieldset>
+                        </form>
+                    </pre>
+               <!-- end: Form Horizontal x Vertizal -->       
+                     
+                     
+                     
+                     
+                     
+                     
+                
+              <!-- Form with Validation Cross Browser -->       
+              <div class="clr"></div>
+                        <a id="forms-validation" name="forms-html5"></a>
+                        <h3 class="iHtml">Forms</h3> <h3> with validation and masks</h3>
+                        <ul>
+                            <li>Call <strong>jquery.validate.js and maskedinput.js;</strong></li>
+                            <li>Set inputs validation like an example;</li>
+                            <li>Default: <strong>.maskTel, .maskDate, .cep, .cpf, cnpj;</strong></li>
+                        </ul>
+                        
+                        <div class="base-framework-form">
+                        <form id="nomeForm" class="form form-horizontal">
+                            
+                          <fieldset>
+                                
+                                <legend>Nome do formulário</legend>
+                                
+                                <label>Nome</label>
+                                <input name="nome" id="nome" type="text">
+                                                                
+                                <label>E-mail</label>
+                                <input name="email" id="email" type="text">
+                                
+                                <label>Data</label>
+                                <input name="date" id="date" class="maskDate" type="text">
+                            
+                                <label>Telefone</label>
+                                <input class="maskTel" name="Nome" type="text">
+                                                              
+                                <label>CPF</label>
+                                <input class="cpf" name="Nome" type="text">
+                                                              
+                                <label>CNPJ</label>
+                                <input class="cnpj" name="Nome" type="text">
+                                                              
+                                <label>Senha</label>     
+                                <input id="senha" name="senha" type="password">           
+                                    
+                                <label>Confirmação de Senha</label>     
+                                <input id="senha2" name="senha2" type="password">           
+                                    
+                                <label>CEP</label>    
+                                <input class="cep" name="CEP"  id="CEP" />                
+                                            
+                                <label>Radio</label>
+                                 <span class="radio">     
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label> 
+                                      <span class="clear"></span>  
+                                </span>
+                                            
+                                <label>Checkbox</label>
+                                 <span class="radio"> 
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1">
+                                          <span>Opção</span>
+                                      </label>
+                                      <span class="clear"></span>  
+                            </span>   
+                                 
+                                <label>Select:</label>
+                                <select name="">
+                                  <option value="valor">Valor</option>
+                                  <option value="valor2">Valor2</option>
+                                </select>             
+                                 
+                                
+                                <label>Textarea:</label>
+                                <textarea name="" cols="" rows="">  </textarea>
+                              
+                                <label></label>
+                            
+                                <button class="btn" type="submit">Enviar</button>       
+                                         
+                          </fieldset>
+                                
+                        </form>                
+                       </div> 
+                        
+                        <h5>Exemplo:</h5>            
+                        <pre class="brush: js; hei500">  
+                        // Call Masked Input and Validate Function
+						<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+                        <script type="text/javascript" src="js/jquery.validate.js"></script>
+                        
+                        // 
+                        
+                        $(document).ready(function(){
+                            $('#nomeForm').validate({
+                                rules:{
+                                    nome:{
+                                        required: true,
+                                        minlength: 3
+                                    },
+                                    email: {
+                                        required: true,
+                                        email: true
+                                    },
+                                    date: {
+                                        required: true
+                                    },
+                                    senha: {
+                                        required: true
+                                    },
+                                    senha2:{
+                                        required: true,
+                                        equalTo: "#senha"
+                                    },
+                                    CheckboxGroup1: "required"
+                                },
+                                messages:{
+                                    nome:{
+                                        required: "O campo nome é obrigatorio.",
+                                        minlength: "O campo nome deve conter no mínimo 3 caracteres."
+                                    },
+                                    email: {
+                                        required: "O campo email é obrigatorio.",
+                                        email: "O campo email deve conter um email válido."
+                                    },
+                                    senha: {
+                                        required: "O campo senha é obrigatorio."
+                                    },
+                                    conf_senha:{
+                                        required: "O campo confirmação de senha é obrigatorio.",
+                                        equalTo: "O campo confirmação de senha deve ser identico ao campo senha."
+                                    },
+                                    CheckboxGroup1: "*"
+                                }
+                     
+                            });
+                        });		
+                
+                        
+                        
+                        <form id="nomeForm" class="form form-horizontal">
+                            
+                          <fieldset>
+                                
+                                <legend>Nome do formulário</legend>
+                                
+                                <label>Nome</label>
+                                <input name="nome" id="nome" type="text">
+                                                                
+                                <label>E-mail</label>
+                                <input name="email" id="email" type="text">
+                                
+                                <label>Data</label>
+                                <input name="date" id="date" class="maskDate" type="text">
+                            
+                                <label>Telefone</label>
+                                <input class="maskTel" name="Nome" type="text">
+                                                              
+                                <label>CPF</label>
+                                <input class="cpf" name="Nome" type="text">
+                                                              
+                                <label>CNPJ</label>
+                                <input class="cnpj" name="Nome" type="text">
+                                                              
+                                <label>Senha</label>     
+                                <input id="senha" name="senha" type="password">           
+                                    
+                                <label>Confirmação de Senha</label>     
+                                <input id="senha2" name="senha2" type="password">           
+                                    
+                                <label>CEP</label>    
+                                <input class="cep" name="CEP"  id="CEP" />                
+                                            
+                                <label>Radio</label>
+                                 <span class="radio">     
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label> 
+                                      <span class="clear"></span>  
+                                </span>
+                                            
+                                <label>Checkbox</label>
+                                 <span class="radio"> 
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1">
+                                          <span>Opção</span>
+                                      </label>
+                                      <span class="clear"></span>  
+                                  </span>   
+                                 
+                                <label>Select:</label>
+                                <select name="">
+                                  <option value="valor">Valor</option>
+                                  <option value="valor2">Valor2</option>
+                                </select>             
+                                 
+                                
+                                <label>Textarea:</label>
+                                <textarea name="" cols="" rows="">  </textarea>
+                              
+                                <label></label>
+                            
+                                <button class="btn" type="submit">Enviar</button>       
+                                         
+                             </fieldset>
+                                
+                        </form>                
+                        
+                        
+                        
+                        
+                        </pre>
+              <!-- end Form with Validation Cross Browser -->       
+                     
+                     
+                     
+                     
+                     
+              <!-- Form HTML5 -->       
+                  <div class="clr"></div>
+                  <a id="forms-html5" name="forms-html5"></a>
+                    <h3 class="iHtml">Forms</h3> <h3>HTML5 (not Cross-Browser)</h3>
+                    <ul>
+                        <li>Em desenvolvimento</li>
+                    </ul>
+                    <form class="form form-horizontal">
+                            
+                          <fieldset>
+                                
+                                <legend>Nome do formulário</legend>
+                                
+                                <label>Nome com AutoFocus</label>
+                                <input name="Nome" type="text" required autofocus>
+                                
+                                <label>Nome validado</label>
+                                <input name="" placeholder="Nome Sobrenome" type="text" required>
+                                
+                                <label>Texto validado</label>
+                                <input name="" placeholder="Nome Sobrenome" type="text" pattern="[A-Z]{3}[0-9]{4}" title="3 Letras Maiúsculas e 4 números.">
+                                
+                                <label>E-mail</label>
+                                <input type="email" name="" id="email">
+                                
+                                <label>E-mail</label>
+                                <input type="email" name="" oninput="checkEmailIgual(this)">
+                                
+                                <label>Data</label>
+                                <input type="date" name="data"> 
+                                <!--input type="month" name="bdaymonth"-->
+                            
+                                <label>Número</label>
+                                <input type="number" name="quantity" min="1" max="105"  pattern="[0-9]">
+                                     
+                                <label>Senha</label>     
+                                 <input type="password" autocomplete="off">           
+                                    
+                                    
+                                <label for="CEP">CEP:</label>    
+                                <input name="CEP" id="CEP" required pattern="\d{5}-?\d{3}" />                
+                                            
+                                <label>Radio</label>
+                                 <span class="radio">     
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label> 
+                                      <span class="clear"></span>  
+                                </span>
+                                            
+                                <label>Checkbox</label>
+                                 <span class="radio"> 
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      <span class="clear"></span>  
+                            </span>   
+                                 
+                                <label>Select:</label>
+                                <select name="">
+                                  <option value="valor">Valor</option>
+                                  <option value="valor2">Valor2</option>
+                                
+                                </select>             
+                                 
+                                 <!-- textarea 
+                                <label>Textarea:</label>
+                                <textarea name="" cols="" rows=""></textarea>
+                                   -->
+                                   
+                                <label>Cor:</label>   
+                                <input type="color" name="favcolor">   
+                                
+                                <label>Medida:</label>
+                                <meter value="2" min="0" max="10">2 out of 10</meter>
+                                <meter value="0.6">60%</meter>
+                                
+                                <label>Range:</label>
+                                <input type="range" name="points" min="1" max="10">
+                                  
+                                 
+                                 
+                                 <!-- Com jQuery -->
+                                <label>Telefone</label>
+                                <input class="maskTel" name="Nome" type="text" required autofocus>
+                         
+                                <button class="btn" type="submit">Enviar</button>       
+                                        
+                                         
+                      </fieldset>
+                                
+                  </form>
+                    
+                    
+                    <h5>Exemplo:</h5>            
+                <pre class="brush: js; hei500">  
+                 
+                 <form class="form form-horizontal">
+                            
+                          <fieldset>
+                                
+                                <legend>Nome do formulário</legend>
+                                
+                                <label>Nome com AutoFocus</label>
+                                <input name="Nome" type="text" required autofocus>
+                                
+                                <label>Nome validado</label>
+                                <input name="" placeholder="Nome Sobrenome" type="text" required>
+                                
+                                <label>Texto validado</label>
+                                <input name="" placeholder="Nome Sobrenome" type="text" pattern="[A-Z]{3}[0-9]{4}" title="3 Letras Maiúsculas e 4 números.">
+                                
+                                <label>E-mail</label>
+                                <input type="email" name="" id="email">
+                                
+                                <label>E-mail</label>
+                                <input type="email" name="" oninput="checkEmailIgual(this)">
+                                
+                                <label>Data</label>
+                                <input type="date" name="data"> 
+                                <!--input type="month" name="bdaymonth"-->
+                            
+                                <label>Número</label>
+                                <input type="number" name="quantity" min="1" max="105"  pattern="[0-9]">
+                                     
+                                <label>Senha</label>     
+                                 <input type="password" autocomplete="off">           
+                                    
+                                    
+                                <label for="CEP">CEP:</label>    
+                                <input name="CEP" id="CEP" required pattern="\d{5}-?\d{3}" />                
+                                            
+                                <label>Radio</label>
+                                 <span class="radio">     
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label>            
+                                
+                                      <label>
+                                          <input type="radio" name="RadioGroup1" value="opção" id="">
+                                          <span>Opção</span>
+                                      </label> 
+                                      <span class="clear"></span>  
+                                </span>
+                                            
+                                <label>Checkbox</label>
+                                 <span class="radio"> 
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      
+                                      <label>
+                                          <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                                          <span>Opção</span>
+                                      </label>
+                                      <span class="clear"></span>  
+                                  </span>   
+                                 
+                                <label>Select:</label>
+                                <select name="">
+                                  <option value="valor">Valor</option>
+                                  <option value="valor2">Valor2</option>
+                                
+                                </select>             
+                                 
+                                <label>Cor:</label>   
+                                <input type="color" name="favcolor">   
+                                
+                                <label>Medida:</label>
+                                <meter value="2" min="0" max="10">2 out of 10</meter>
+                                <meter value="0.6">60%</meter>
+                                
+                                <label>Range:</label>
+                                <input type="range" name="points" min="1" max="10">
+                                  
+                                 
+                                 
+                                 <!-- Com jQuery -->
+                                <label>Telefone</label>
+                                <input class="maskTel" name="Nome" type="text" required autofocus>
+                         
+                                <button class="btn" type="submit">Enviar</button>       
+                                        
+                                         
+                                </fieldset>
+                                
+                        </form>
+                 
+                </pre>
+              <!-- end: Form HTML5 -->       
+                     
+                     
+                     
+                 </div>   
+                </div>
+    <!-- end Forms ------------------------------------------------------------------>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+<!-- !Menu ------------------------------------------------------------------>
+          <div class="clr"></div>
+          
+          
+              <a id="menu" name="menu"></a>
+                <div class="exampleAd"><div class="wrapperAd">
+                    <h1>Components - Menu</h1>
+                    
+                      <div class="clr"></div>
+                      <a id="menu-comum" name="menu-comum"></a>
+                    <h3 class="iHtml">Menu</h3>
+                    <ul>
+                        <li>Adicione a class "menu" na tag nav.</li>
+                    </ul>
+                    
+                    <nav class="menu">
+                    	<ul>
+                        	<li>
+                            	<a href="#menu-comum" class="active">Link</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-comum">Link</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-comum">Link</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-comum">Link</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <h5>Exemplo:</h5>            
+               <pre class="brush: js; hei300">  
+                     
+                     
+                     <nav class="menu">
+                    	<ul>
+                        	<li>
+                            	<a href="#menu-comum" class="active">Link</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-comum">Link</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-comum">Link</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-comum">Link</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </pre>
+                
+                
+            
+             <!-- Menu + Submenu -->       
+                <div class="clr"></div>
+                    <a id="menu-submenu" name="menu-submenu"></a>
+                    <h3 class="iHtml">Menu</h3> <h3>+ Sub Menu</h3>
+                    <ul>
+                        <li>Adicione a class <strong>"menu"</strong> na tag nav;</li>
+                        <li>Adicione a class <strong>"menu-sub level{n+1}"</strong> na li que tiver um sub-menu;</li>
+                        <li>Chame a função <strong>menuSub({qtde maxima de leveis de menu});</strong> - (native call in framework.js)</li>
+                    </ul>
+                    
+                    <nav class="menu">
+                    	<ul>
+                        	<li>
+                            	<a href="#menu-comum" class="active">Menu</a>
+                            </li>
+                        	
+                            
+                            <li class="menu-sub level1">
+                            	<a href="#menu-comum">Submenu</a>
+                                <ul class="menu menu-submenu">
+                                   
+                                    <li>
+                                        <a href="#menu-comum">SubmenuComum</a>
+                                    </li>
+                                    
+                                    
+                                    <li class="menu-sub level2">
+                                        <a href="#menu-comum">Submenulvl2</a>
+                                        <ul class="menu menu-submenu">
+                                            <li>
+                                                <a href="#menu-comum">Submenu</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu-comum">Submenu</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu-comum">Submenu</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="menu-sub level2">
+                                        <a href="#menu-comum">Submenulvl2e3</a>
+                                        <ul class="menu menu-submenu ">
+                                            <li>
+                                                <a href="#menu-comum">Submenu2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu-comum">Submenu2</a>
+                                            </li>
+                                            
+                                            
+                                            
+                                            <li class="menu-sub level3">
+                                                   <a href="#menu-comum">Submenulvl3</a>
+                                                    <ul class="menu menu-submenu">
+                                                        <li>
+                                                            <a href="#menu-comum">Submenu3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menu-comum">Submenu3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menu-comum">Submenu3</a>
+                                                        </li>
+                                                    </ul>
+                                            </li>
+                                            
+                                            
+                                            
+                                        </ul>
+                                        
+                                    </li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                </ul>
+                            </li>
+                            
+                            
+                            
+                            <li class="menu-sub level1">
+                                <a href="#menu-comum">Submenulvl</a>
+                                <ul class="menu menu-submenu">
+                                    <li>
+                                        <a href="#menu-comum">Submenu</a>
+                                    </li>
+                                    <li>
+                                        <a href="#menu-comum">Submenu</a>
+                                    </li>
+                                    <li>
+                                        <a href="#menu-comum">Submenu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                                    
+                            
+                            
+                            
+                            
+                        </ul>
+                    </nav>
+                    
+                    <h5>Exemplo:</h5>            
+                <pre class="brush: js; hei300">  
+                         
+                      <script type="text/javascript">
+                        
+                            $(document).ready(function(e) {
+                                menuSub();
+                                // Determine o número máximo de leveis de submenu;
+                                // menuSub(4);
+                                // padrão = 3.
+                            });
+                        
+                        </script>    
+                        
+                                       
+                        <nav class="menu">
+                            <ul>
+                                <li>
+                                    <a href="#menu-comum" class="active">Menu</a>
+                                </li>
+                                
+                                
+                                <li class="menu-sub level1">
+                                    <a href="#menu-comum">Submenu</a>
+                                    <ul class="menu menu-submenu">
+                                       
+                                        <li>
+                                            <a href="#menu-comum">SubmenuComum</a>
+                                        </li>
+                                        
+                                        
+                                        <li class="menu-sub level2">
+                                            <a href="#menu-comum">Submenulvl2</a>
+                                            <ul class="menu menu-submenu">
+                                                <li>
+                                                    <a href="#menu-comum">Submenu</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#menu-comum">Submenu</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#menu-comum">Submenu</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <li class="menu-sub level2">
+                                            <a href="#menu-comum">Submenulvl2e3</a>
+                                            <ul class="menu menu-submenu ">
+                                                <li>
+                                                    <a href="#menu-comum">Submenu2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#menu-comum">Submenu2</a>
+                                                </li>
+                                                
+                                                
+                                                
+                                                <li class="menu-sub level3">
+                                                       <a href="#menu-comum">Submenulvl3</a>
+                                                        <ul class="menu menu-submenu">
+                                                            <li>
+                                                                <a href="#menu-comum">Submenu3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#menu-comum">Submenu3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#menu-comum">Submenu3</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                                
+                                                
+                                                
+                                            </ul>
+                                            
+                                        </li>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </ul>
+                                </li>
+                                
+                                
+                                
+                                <li class="menu-sub level1">
+                                    <a href="#menu-comum">Submenulvl</a>
+                                    <ul class="menu menu-submenu">
+                                        <li>
+                                            <a href="#menu-comum">Submenu</a>
+                                        </li>
+                                        <li>
+                                            <a href="#menu-comum">Submenu</a>
+                                        </li>
+                                        <li>
+                                            <a href="#menu-comum">Submenu</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                        
+                                
+                                
+                                
+                                
+                            </ul>
+                        </nav>
+                </pre>
+             <!-- end: Menu + Submenu -->       
+                
+                
+                
+                
+                
+                
+                
+                
+                
+             <!-- Tabs -->       
+                 <div class="clr"></div>
+                      <a id="menu-tab" name="menu-tab"></a>
+                    <h3 class="iHtml">Menu</h3> <h3>Tabs</h3>
+                    <ul>
+                        <li>Adicione a class <strong>"menu-tab"</strong> na tag nav.</li>
+                        <li>Criar<strong> ul,li,a</strong> normalmente</li>
+                    </ul>
+                    
+                    <nav class="menu-tab">
+                    	<ul>
+                        	<li>
+                            	<a class="active">Tabname</a>
+                            </li>
+                        	<li>
+                            	<a >Tabname</a>
+                            </li>
+                        	<li>
+                            	<a >Tabname</a>
+                            </li>
+                        	<li>
+                            	<a>Tabname</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    
+                    <ul class="menu-tab-options">
+                    	<li>
+                        	<h2>Option</h2>
+                        	<p>Content</p>
+                        </li>
+                    	<li>
+                        	<h2>Option2</h2>
+                        	<p>Content</p>
+                        </li>
+                    	<li>
+                        	<h2>Option3</h2>
+                        	<p>ContentContent ContentContent ContentContent ContentContent ContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContent ContentContent Content</p>
+                        </li>
+                    	<li>
+                        	<h2>Option4</h2>
+                        	<p>Content</p>
+                        </li>
+                    </ul>
+                                        
+                    
+                    <h5>Exemplo:</h5>            
+               <pre class="brush: js; hei300">  
+                    
+                    
+                    <nav class="menu-tab">
+                    	<ul>
+                        	<li>
+                            	<a href="#menu-tab" class="active">Tabname</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-tab">Tabname</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-tab">Tabname</a>
+                            </li>
+                        	<li>
+                            	<a href="#menu-tab">Tabname</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    
+                    <ul class="menu-tab-options">
+                    	<li>
+                        	<h2>Option</h2>
+                        	<p>Content</p>
+                        </li>
+                    	<li>
+                        	<h2>Option2</h2>
+                        	<p>Content</p>
+                        </li>
+                    	<li>
+                        	<h2>Option3</h2>
+                        	<p>ContentContent ContentContent ContentContent ContentContent ContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContent ContentContent Content</p>
+                        </li>
+                    	<li>
+                        	<h2>Option4</h2>
+                        	<p>Content</p>
+                        </li>
+                    </ul>
+                    
+                </pre>
+             <!-- end: Tabs -->   
+             
+             
+             
+             
+             <!-- Side Menu -->
+                <div class="clr"></div>
+                        <a id="menu-side" name="menu-side"></a>
+                        <h3 class="iHtml">Menu</h3> <h3>Side</h3>
+                        <ul>
+                            <li>Create a div in <strong>< body >(outer #base)</strong> with id <strong>"menu-left"</strong>;</li>
+                            <li>Call <strong>menuLeft();</strong> function (toogleed);</li>
+                        </ul>
+                        <h5>Exemplo:</h5>            
+                        <pre class="brush: js; hei200">  
+                        
+                        
+                        // Javascript
+                        menuLeft();
+                        
+
+                        // menu-left code:
+                            <div id="menu-left">
+    							<div class="pad20">
+                                	Content
+                           		</div>
+                           </div>
+
+                        
+                        </pre>
+             <!-- end Side Menu -->
+             
+             
+
+
+             <!-- Anchor Menu -->
+                <div class="clr"></div>
+                        <a id="menu-anchor" name="menu-anchor"></a>
+                        <h3 class="iHtml">MenuMenu</h3> <h3>Anchor</h3>
+                        <ul>
+                            <li>Call <strong>js/jquery.anchor.js</strong></li>
+                            <li>Use class "<strong>anchorLink</strong>" and href "<strong>toyourdestination</strong>"</li>
+                        </ul>
+                        <h5>Exemplo:</h5>            
+                        <pre class="brush: js; hei100">  
+                             //Call .js
+                             <script type="text/javascript" src="js/jquery.anchor.js"></script>
+                             
+                             //Use class .anchorLink for links
+                             //In "href", tell wich anchor you need to scroll
+                             <a href="#layout" rel="" id="name" class="anchorLink">Option</a>
+                            
+                        </pre>
+             <!-- end Anchor Menu -->
+             
+             
+             
+             
+             
+             
+
+             <!-- Accordion Menu -->
+                <div class="clr"></div>
+                        <a id="menu-accordion" name="menu-anchor"></a>
+                        <h3 class="iHtml">Menu</h3> <h3>Accordion</h3>
+                        <ul>
+                            <li>Call $("id").theaccordion();</li>
+                            <li>Create HTML like example</li>
+                        </ul>
+                        
+<h5>Parameters:</h5>
+            <table class="table table-ordenada" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+               
+                  <tr>
+                    <td>speed</td>
+                    <td>&quot;fast&quot;, &quot;slow&quot;</td>
+                    <td>&quot;fast&quot;</td>
+                    <td>Set the speed of  transition.</td>
+                  </tr>
+               
+                   <tr>
+                    <td>firstOn</td>
+                    <td>true, false</td>
+                    <td>false</td>
+                    <td>If first item is active in the beggining.</td>
+                  </tr>
+                   <tr>
+                     <td>closeOthers</td>
+                     <td>true, false</td>
+                     <td>true</td>
+                     <td>When click, close others options</td>
+                   </tr>
+        
+                  
+              </tbody>
+              
+            </table>
+                                 
+                                
+                            
+                        
+                        <h5>Exemplo:</h5>            
+                        
+                        <div id="contentAccordion">
+                            <h2>Título</h2>
+                            <div>
+                                <p> texto de descrição </p>
+                            </div>
+                            
+                            <h2>Título2</h2>
+                            <div>
+                                <p> texto de descrição2 </p>
+                            </div>
+                            <h2>Título3</h2>
+                            <div>
+                                <p> texto de descrição3 </p>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        <pre class="brush: js; hei300">  
+                           
+                            // Call $('#contentAccordion').theaccordion({firstOn:true});
+                             
+                            <div id="contentAccordion">
+                                <h2>Título</h2>
+                                <div>
+                                    <p> texto de descrição </p>
+                                </div>
+                                
+                                <h2>Título2</h2>
+                                <div>
+                                    <p> texto de descrição2 </p>
+                                </div>
+                                <h2>Título3</h2>
+                                <div>
+                                    <p> texto de descrição3 </p>
+                                </div>
+                            </div>
+                            
+                        </pre>
+             <!-- end Accordion Menu -->
+             
+             
+
+
+
+             
+             
+                 
+            
+             </div>   
+<!-- end Menu ------------------------------------------------------------------>
+            
+         
+         
+         
+            
+         
+            
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+       
+       
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- !Layout ------------------------------------------------------------------>
+          <div class="clr"></div>
+          
+          
+              <a id="layout" name="layout"></a>
+                <div class="exampleAd"><div class="wrapperAd">
+                    <h1>Layout</h1>
+                    
+                      <div class="clr"></div>
+                      <a id="layout-margin" name="layout-"></a>
+                    <h3 class="iLayout">Default Classes</h3>&nbsp;<h3>Margins & Paddings / Heights and Widths</h3>
+                   
+                    <table class="table table-ordenada" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+                         
+                        <caption> </caption>
+                         
+                        <thead>
+                          <tr>
+                            <th>Style</th>
+                            <th>Classes</th>
+                          </tr>
+                        </thead>
+                         
+                        <tfoot>
+                          <tr>
+                            <th>Style</th>
+                            <th>Classes</th>
+                          </tr>
+                        </tfoot>
+                       
+                       <tbody>
+                           <tr>
+                            <td>Margins</td>
+                            <td>Utilize the prefix "mar" + Number = "mar10".</td>
+                          </tr>
+                           
+                           <tr>
+                            <td>Paddings</td>
+                            <td>Utilize the prefix "pad" + Number = "pad10"</td>
+                          </tr>
+                           
+                           <tr>
+                            <td>Width</td>
+                            <td>Utilize the prefix "wid" + Number = "wid10". To porcentage, utilize "pct" as sufix, ex: "wid10pct"</td>
+                          </tr>
+                           
+                           <tr>
+                            <td>Height</td>
+                            <td>Utilize the prefix "hei" + Number = "hei10". To porcentage, utilize "pct" as sufix, ex: "hei10pct"</td>
+                          </tr>
+                           
+                      </tbody>
+                    </table>     
+                   
+                   
+                    <h5>Exemplo:</h5>            
+                    <pre class="brush: js; hei500">  
+                    
+                        /** Paddings **/
+                        .pad10{padding:10px;}
+                        .pad20{padding:20px;}
+                        .pad30{padding:30px;}
+                        .pad40{padding:40px;}
+                        .pad50{padding:50px;}
+                        .pad60{padding:60px;}
+                        .pad70{padding:70px;}
+                        .pad80{padding:80px;}
+                        .pad90{padding:90px;}
+                        .pad100{padding:100px;}
+                        
+                        /** Margins **/
+                        .mar10{margin:10px;}
+                        .mar20{margin:20px;}
+                        .mar30{margin:30px;}
+                        .mar40{margin:40px;}
+                        .mar50{margin:50px;}
+                        .mar60{margin:60px;}
+                        .mar70{margin:70px;}
+                        .mar80{margin:80px;}
+                        .mar90{margin:90px;}
+                        .mar100{margin:100px;}
+                    
+                        /** Heights **/
+                        .hei10{height:10px;}
+                        .hei20{height:20px;}
+                        .hei30{height:30px;}
+                        .hei40{height:40px;}
+                        .hei50{height:50px;}
+                        .hei60{height:60px;}
+                        .hei70{height:70px;}
+                        .hei80{height:80px;}
+                        .hei90{height:90px;}
+                        .hei100{height:100px;}
+                        .hei200{height:200px;}
+                        .hei300{height:300px;}
+                        .hei400{height:400px; vis}
+                        .hei500{height:500px;}
+                        .hei600{height:600px;}
+                        .hei700{height:700px;}
+                        .hei800{height:800px;}
+                        .hei900{height:900px;}
+                        .hei1000{height:1000px;}
+                        
+                        .hei10pct{height:100pct;}
+                        .hei20pct{height:100pct;}
+                        .hei30pct{height:100pct;}
+                        .hei40pct{height:100pct;}
+                        .hei50pct{height:100pct;}
+                        .hei60pct{height:100pct;}
+                        .hei70pct{height:100pct;}
+                        .hei80pct{height:100pct;}
+                        .hei90pct{height:100pct;}
+                        .hei100pct{height:100pct;}
+                        
+                        /** Widths **/
+                        .wid10{width:10px;}
+                        .wid20{width:20px;}
+                        .wid30{width:30px;}
+                        .wid40{width:40px;}
+                        .wid50{width:50px;}
+                        .wid60{width:60px;}
+                        .wid70{width:70px;}
+                        .wid80{width:80px;}
+                        .wid90{width:90px;}
+                        .wid100{width:100px;}
+                        .wid200{width:200px;}
+                        .wid300{width:300px;}
+                        .wid400{width:400px;}
+                        .wid500{width:500px;}
+                        .wid600{width:600px;}
+                        .wid700{width:700px;}
+                        .wid800{width:800px;}
+                        .wid900{width:900px;}
+                        .wid1000{width:1000px;}
+                        
+                        .wid10pct{width:100pct;}
+                        .wid20pct{width:100pct;}
+                        .wid30pct{width:100pct;}
+                        .wid40pct{width:100pct;}
+                        .wid50pct{width:100pct;}
+                        .wid60pct{width:100pct;}
+                        .wid70pct{width:100pct;}
+                        .wid80pct{width:100pct;}
+                        .wid90pct{width:100pct;}
+                        .wid100pct{width:100pct;}
+                    
+                    
+                    </pre>
+                    
+                    
+                      <div class="clr"></div>
+                      <a id="layout-comum" name="layout-"></a>
+                    <h3 class="iLayout">Default Classes</h3>&nbsp;<h3>Comum</h3>
+                    
+  					  <table class="table table-ordenada" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+         
+        <caption> </caption>
+         
+        <thead>
+          <tr>
+            <th>Style</th>
+            <th>Classes</th>
+          </tr>
+        </thead>
+         
+        <tfoot>
+          <tr>
+            <th>Style</th>
+            <th>Classes</th>
+          </tr>
+        </tfoot>
+       
+       <tbody>
+           <tr>
+            <td>Float</td>
+            <td>.left / .right /.noFloat</td>
+          </tr>
+           
+           <tr>
+            <td>Text Align</td>
+            <td>.txtLeft / .txtRight</td>
+          </tr>
+           
+           <tr>
+            <td>Clear</td>
+            <td>.clr</td>
+          </tr>
+           
+           <tr>
+            <td>Transition</td>
+            <td>.transition</td>
+          </tr>
+           
+           <tr>
+            <td>Wrapper</td>
+            <td>.wrapper</td>
+          </tr>
+           
+           <tr>
+            <td>Cursor Pointer</td>
+            <td>.pointer</td>
+          </tr>
+      </tbody>
+    </table>     
+    
+    
+                   
+                    <h5>Exemplo:</h5>            
+                    <pre class="brush: js; hei500">  
+                    
+                        .transition{
+                            -moz-transition: all .3s linear;
+                            -webkit-transition: all .3s linear;
+                            transition: all .3s linear;
+                        }
+                    
+                    
+                    
+                        .wrapper{
+                            width:990px;
+                            margin:0 auto;
+                            position:relative;
+                            
+                        }
+                        
+                        .clr{clear:both !important;}
+                        
+                        .noFloat{float:none !important;}
+                        
+                        .left{float:left;}
+                        
+                        .right{float:right;}	
+                        
+                        .txtLeft{
+                            text-align:left !important;
+                        }
+                        .txtRight{
+                            text-align:right !important;
+                        }
+                    
+                        .dragging{cursor:url(../img/framework/grabbing.png), move !important;}
+                        
+                        .pointer{cursor:pointer;}
+
+                    </pre>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+          	   </div>
+             
+             
+                
+            </div>
+<!-- end Layout ------------------------------------------------------------------>
+            
+         
+         
+       
+
+
+
+
+       
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+<!-- Generators ------------------------------------------------------------------>
+          <div class="clr"></div>
+          <a id="generators" name="generators"></a>
+            <div class="exampleAd">
+            <div class="wrapperAd">
+                <h1>Generators</h1>
+                
+                <div class="clr"></div>
+                <a id="generators-border-radius" name="generators"></a>
+                <h3>Border-Radius</h3>
+                <a href="http://border-radius.com/" target="_blank"></a>
+                <div id="borderContent">
+                
+                </div>        
+            
+            
+                <div class="clr"></div>
+                <a id="generators-gradient" name="generators"></a>
+                <h3>Gradients CSS3</h3>
+                <a href="http://www.colorzilla.com/gradient-editor/" target="_blank"></a>
+				<div id="gradientContent"></div>            
+            
+            
+                <div class="clr"></div>
+                <a id="generators-box" name="generators"></a>
+                <h3>Box Shadow CSS3</h3>
+                <a href="http://css3gen.com/box-shadow/" target="_blank"></a>
+                <div id="boxContent"></div>          
+            
+             </div>   
+            </div>
+<!-- end Generators ------------------------------------------------------------------>
+            
+         
+         
+         
+         
+
+
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+<!-- Name ------------------------------------------------------------------>
+          <div class="clr"></div>
+          
+          
+              <a id="name" name="name"></a>
+                <div class="exampleAd"><div class="wrapperAd">
+                    <h1>Tables</h1>
+                    
+                      <div class="clr"></div>
+                            <a id="forms-html5" name="forms-html5"></a>
+                            <h3>Tabelas ordenadas</h3>
+                            <ul>
+                                <li>Carregue o script "js/jquery.tablesorter.min.js"</li>
+                                <li>Adicione as classes "table table-ordenada".</li>
+                            </ul>
+                            <h5>Exemplo:</h5>            
+                            <pre class="brush: js; hei300">  
+                            Code
+                            </pre>
+          	   		</div>
+             
+             
+                
+            </div>
+<!-- end Name ------------------------------------------------------------------>
+            
+         
+         
+       
+       
+         
+            
+            
+            
+            
+    
+    </div>
+</div>    
+    
+    
+    
+    
+    
+    
+    
+<!-- Scripts -->
+
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <link href="js/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    
+	<script type="text/javascript" src="js/modernizr.js"></script>
+   
+    <script type="text/javascript" src="js/jquery.anchor.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+    
+	<script type="text/javascript" src="js/framework.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    
+    
+    <script>
+		
+		$(document).ready(function(e) {
+            $("#btn-menu-left").click();
+			$(document).theload();
+			
+			$('#nomeForm').validate({
+				rules:{
+					nome:{
+						required: true,
+						minlength: 3
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					date: {
+						required: true
+					},
+					senha: {
+						required: true
+					},
+					senha2:{
+						required: true,
+						equalTo: "#senha"
+					},
+					CheckboxGroup1: "required"
+				},
+				messages:{
+					nome:{
+						required: "O campo nome é obrigatorio.",
+						minlength: "O campo nome deve conter no mínimo 3 caracteres."
+					},
+					email: {
+						required: "O campo email é obrigatorio.",
+						email: "O campo email deve conter um email válido."
+					},
+					senha: {
+						required: "O campo senha é obrigatorio."
+					},
+					conf_senha:{
+						required: "O campo confirmação de senha é obrigatorio.",
+						equalTo: "O campo confirmação de senha deve ser identico ao campo senha."
+					},
+					CheckboxGroup1: "*"
+				}
+	 
+			});
+        
+		
+			$('#the-banner-content').thebanner({autoAnimate:false});
+			$('#the-banner-content2').thebanner({slides:true, slideMargin:40, autoAnimate:false});
+			$('#the-banner-content3').thebanner({thumb:true, effect:"fade", autoAnimate:false, clickAndStop:false});
+			
+			$('.thebox').thebox({showButtons:true, zoom100pct:true, animate:true});
+			$('.thebox-inline').thebox({type:"inline"});
+			
+			$('#contentAccordion').theaccordion({firstOn:true});
+			$('.menuAccordion').theaccordion({firstOn:true, closeOthers:true});
+			
+			$('.table').thetable();
+			$(".table-ordenada").tablesorter();
+       
+	    });
+		
+		
+
+		
+    </script>
+    
+    
+	<script>
+    
+        $(document).ready(function(e) {
+            
+            $('#menu-left a').click(function(){
+                
+                switch ($(this).attr('href')){
+                
+                    case '#generators-border-radius':
+                            $('#borderContent').html('<iframe class="clr" src="http://border-radius.com/" width="100%" height="600"></iframe>');		
+                    break
+                
+                    case '#generators-gradient':
+                            $('#gradientContent').html('<iframe class="clr" src="http://www.colorzilla.com/gradient-editor/" width="100%" height="600"></iframe>');		
+                    break
+                
+                    case '#generators-box':
+                            $('#boxContent').html('<iframe class="clr" src="http://css3gen.com/box-shadow/" width="100%" height="600"></iframe>');		
+                    break
+                
+                } 
+                
+            
+            });
+			
+	
+            
+        });
+    
+    </script>
+    
+    
+    
+    
+    
+    
+
+</body>
+</html>

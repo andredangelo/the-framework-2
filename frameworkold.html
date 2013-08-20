@@ -1,0 +1,357 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Responsivo</title>
+
+<!-- Rel´s & Estilos -->
+
+    <link rel="stylesheet" href="css/estilos.css" media="screen"/>
+    <link rel="stylesheet" href="css/framework.css" media="screen"/>
+
+<!-- /Rel´s & Estilos-->
+
+<!-- Scripts -->
+
+	<script type="text/javascript" src="js/json2.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.Storage.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+	<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+    
+	<!-- Deveria fazer o Media Queries pegar nas versões antigas do IE 
+	<script type="text/javascript" src="js/respond.src.js"></script>-->
+
+	<script type="text/javascript" src="js/fallback-ie.js"></script>
+    
+        
+        
+    <script type="text/javascript">
+		$(document).ready(function() 
+			{ 
+			
+				function checkEmailIgual(input) {
+				  if (input.value != document.getElementById('email').value) {
+					input.setCustomValidity('E-mail inválido.');
+				  } else {
+					// input is valid -- reset the error message
+					input.setCustomValidity('');
+				  }
+				}
+				
+				
+			  $(".tabelaOrdenada").tablesorter();
+			
+			
+			
+			/* Mascara telefone */
+			// jQuery Masked Input
+				$('.maskTel').mask("(99) 9999-9999?9").ready(function(event) {
+					var target, phone, element;
+					target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+					phone = target.value.replace(/\D/g, '');
+					element = $(target);
+					element.unmask();
+					if(phone.length > 10) {
+						element.mask("(99) 99999-999?9");
+					} else {
+						element.mask("(99) 9999-9999?9");  
+					}
+				});
+				 
+				/*
+				 Quem encontrar problemas com o "target", utilize esta alternativa
+				 Enviado por: Irineu <irineujunior@gmail.com>
+				*/
+				$('.maskTel').focusout(function(){
+					var phone, element;
+					element = $(this);
+					element.unmask();
+					phone = element.val().replace(/\D/g, '');
+					if(phone.length > 10) {
+						element.mask("(99) 99999-999?9");
+					} else {
+						element.mask("(99) 9999-9999?9");
+					}
+				}).trigger('focusout');
+				
+				
+				
+			} 	
+			
+		); 	
+    </script>
+    
+<!-- /Scripts -->
+
+
+<!-- Referência http://www.html5rocks.com/pt/tutorials/forms/html5forms/ --> 
+
+
+</head>
+
+
+
+<body>
+
+<h1 class="topFramework">
+	Framework versão 1.0
+</h1>
+
+<div class="baseFramework">
+
+<h1>Formulários</h1>
+<p>Utilizar o class "formHorizontal" na tag form caso deseje que o formulário fique na horizontal</p>
+	<form class="form form-horizontal">
+    	
+      <fieldset>
+        	
+        	<legend>Nome do formulário</legend>
+            
+            <label>Nome com AutoFocus</label>
+        	<input name="Nome" type="text" required autofocus>
+            
+            <label>Nome validado</label>
+        	<input name="" placeholder="Nome Sobrenome" type="text" required>
+            
+            <label>Texto validado</label>
+        	<input name="" placeholder="Nome Sobrenome" type="text" pattern="[A-Z]{3}[0-9]{4}" title="3 Letras Maiúsculas e 4 números.">
+            
+            <label>E-mail</label>
+        	<input type="email" name="" id="email">
+            
+            <label>E-mail</label>
+        	<input type="email" name="" oninput="checkEmailIgual(this)">
+            
+            <label>Data</label>
+            <input type="date" name="data"> 
+            <!--input type="month" name="bdaymonth"-->
+        
+        	<label>Número</label>
+       		<input type="number" name="quantity" min="1" max="105"  pattern="[0-9]">
+                 
+            <label>Senha</label>     
+             <input type="password" autocomplete="off">           
+                
+                
+         	<label for="CEP">CEP:</label>    
+            <input name="CEP" id="CEP" required pattern="\d{5}-?\d{3}" />                
+                        
+            <label>Radio</label>
+             <span class="radio">     
+                  <label>
+                      <input type="radio" name="RadioGroup1" value="opção" id="">
+                      <span>Opção</span>
+                  </label>
+                  
+                  <label>
+                      <input type="radio" name="RadioGroup1" value="opção" id="">
+                      <span>Opção</span>
+                  </label>            
+            
+                  <label>
+                      <input type="radio" name="RadioGroup1" value="opção" id="">
+                      <span>Opção</span>
+                  </label>            
+            
+                  <label>
+                      <input type="radio" name="RadioGroup1" value="opção" id="">
+                      <span>Opção</span>
+                  </label>            
+            
+                  <label>
+                      <input type="radio" name="RadioGroup1" value="opção" id="">
+                      <span>Opção</span>
+                  </label> 
+                  <span class="clear"></span>  
+            </span>
+                        
+            <label>Checkbox</label>
+             <span class="radio"> 
+                  <label>
+                      <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                      <span>Opção</span>
+                  </label>
+                  
+                  <label>
+                      <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                      <span>Opção</span>
+                  </label>
+                  
+                  <label>
+                      <input type="checkbox" name="CheckboxGroup1" value="" id="">
+                      <span>Opção</span>
+                  </label>
+                  <span class="clear"></span>  
+              </span>   
+             
+            <label>Select:</label>
+			<select name="">
+			  <option value="valor">Valor</option>
+			  <option value="valor2">Valor2</option>
+            
+            </select>             
+             
+        <label>Textarea:</label>
+        <textarea name="" cols="" rows=""></textarea>
+           
+        <label>Cor:</label>   
+        <input type="color" name="favcolor">   
+        
+        <label>Medida:</label>
+        <meter value="2" min="0" max="10">2 out of 10</meter>
+        <meter value="0.6">60%</meter>
+        
+        <label>Range:</label>
+        <input type="range" name="points" min="1" max="10">
+          
+         
+         
+         <!-- Com jQuery -->
+        <label>Telefone</label>
+        <input class="maskTel" name="Nome" type="text" required autofocus>
+ 
+          
+          
+          
+               
+   	    <button type="submit">Enviar</button>       
+                
+                 
+        </fieldset>
+        
+         
+        
+    </form>
+
+</div>
+
+
+<div class="baseFramework">
+
+<h1>Tabelas</h1>
+<br/>
+<br/>
+
+    <table class="tabelaOrdenada" summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+        
+        <caption>Tabela Ordenada</caption>
+        
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Data</th>
+            <th>Teste</th>
+          </tr>
+        </thead>
+        
+        <tfoot>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Data</th>
+            <th>Teste</th>
+          </tr>
+        </tfoot>
+      
+       <tbody>
+           <tr>
+            <td>André</td>
+            <td>25</td>
+            <td>14/11/1987</td>
+            <td>Teste1</td>
+          </tr>
+          
+           <tr>
+            <td>Pedro</td>
+            <td>24</td>
+            <td>12/10/1988</td>
+            <td>Teste2</td>
+          </tr>
+          
+           <tr>
+            <td>João</td>
+            <td>23</td>
+            <td>12/12/1989</td>
+            <td>Teste3</td>
+          </tr>
+          
+           <tr>
+            <td>Henrique</td>
+            <td>22</td>
+            <td>14/11/1990</td>
+            <td>Teste4</td>
+          </tr>
+          
+      </tbody>
+      
+    </table>
+<br/>
+<br/>
+
+    <div class="table-container">
+    <table summary="Assunto da Tabela" width="100%" border="0" cellspacing="0" cellpadding="0">
+        
+        <caption>Tabela sem ordenação</caption>
+        
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Data</th>
+            <th>Teste</th>
+          </tr>
+        </thead>
+        
+        <tfoot>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Data</th>
+            <th>Teste</th>
+          </tr>
+        </tfoot>
+      
+       <tbody>
+           <tr>
+            <td>André</td>
+            <td>25</td>
+            <td>14/11/1987</td>
+            <td>Teste1</td>
+          </tr>
+          
+           <tr>
+            <td>Pedro</td>
+            <td>24</td>
+            <td>12/10/1988</td>
+            <td>Teste2</td>
+          </tr>
+          
+           <tr>
+            <td>João</td>
+            <td>23</td>
+            <td>12/12/1989</td>
+            <td>Teste3</td>
+          </tr>
+          
+           <tr>
+            <td>Henrique</td>
+            <td>22</td>
+            <td>14/11/1990</td>
+            <td>Teste4</td>
+          </tr>
+          
+      </tbody>
+      
+    </table>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
