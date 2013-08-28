@@ -17,13 +17,14 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: normal;
 }
 
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; width: 100%; height: 100%;}
 
 
 body{
 	background-color:#fff;
 	margin:0px;
 	padding:0px;
+	width: 100%; height: 100%;
 }
 
 *{
@@ -95,7 +96,7 @@ li{list-style:none; margin:0px; padding:0px;}
 	.hei100{height:100px;}
 	.hei200{height:200px;}
 	.hei300{height:300px;}
-	.hei400{height:400px; vis}
+	.hei400{height:400px;}
 	.hei500{height:500px;}
 	.hei600{height:600px;}
 	.hei700{height:700px;}
@@ -103,16 +104,16 @@ li{list-style:none; margin:0px; padding:0px;}
 	.hei900{height:900px;}
 	.hei1000{height:1000px;}
 	
-	.hei10pct{height:100pct;}
-	.hei20pct{height:100pct;}
-	.hei30pct{height:100pct;}
-	.hei40pct{height:100pct;}
-	.hei50pct{height:100pct;}
-	.hei60pct{height:100pct;}
-	.hei70pct{height:100pct;}
-	.hei80pct{height:100pct;}
-	.hei90pct{height:100pct;}
-	.hei100pct{height:100pct;}
+	.hei10pct{height:10%;}
+	.hei20pct{height:20%;}
+	.hei30pct{height:30%;}
+	.hei40pct{height:40%;}
+	.hei50pct{height:50%;}
+	.hei60pct{height:60%;}
+	.hei70pct{height:70%;}
+	.hei80pct{height:80%;}
+	.hei90pct{height:90%;}
+	.hei100pct{height:100%;}
 	
 	/** Widths **/
 	.wid10{width:10px;}
@@ -135,16 +136,16 @@ li{list-style:none; margin:0px; padding:0px;}
 	.wid900{width:900px;}
 	.wid1000{width:1000px;}
 	
-	.wid10pct{width:100pct;}
-	.wid20pct{width:100pct;}
-	.wid30pct{width:100pct;}
-	.wid40pct{width:100pct;}
-	.wid50pct{width:100pct;}
-	.wid60pct{width:100pct;}
-	.wid70pct{width:100pct;}
-	.wid80pct{width:100pct;}
-	.wid90pct{width:100pct;}
-	.wid100pct{width:100pct;}
+	.wid10pct{width:10%;}
+	.wid20pct{width:20%;}
+	.wid30pct{width:30%;}
+	.wid40pct{width:40%;}
+	.wid50pct{width:50%;}
+	.wid60pct{width:60%;}
+	.wid70pct{width:70%;}
+	.wid80pct{width:80%;}
+	.wid90pct{width:90%;}
+	.wid100pct{width:100%;}
 	
 
 
@@ -205,7 +206,7 @@ li{list-style:none; margin:0px; padding:0px;}
 		width:990px;
 		margin:0 auto;
 		position:relative;
-		
+		height:100px;
 	}
 	
 	.clr{clear:both !important;}
