@@ -697,7 +697,6 @@
 			this.each(function() { 
 			   var currentElement = $(this);
 			});
-			
 			/* Reset 9999 index **/
 			$('*').each(function(){
 				if($(this).css("z-index") == 9999){
@@ -735,6 +734,7 @@
 					/* Add Content **/
 					$('body').append('<div class="thebox-content"><div class="relative"><div id="thebox-close">X</div></div></div>');
 					$('.thebox-content').stop().animate({opacity: 0}, 0);
+
 				}
 				
 				
@@ -753,6 +753,10 @@
 						
 						case "inline":
 							var div = $("#"+This.attr("href"));
+							var classPop = $("#"+This.attr("href")).attr('class');
+							
+							$('.thebox-content').addClass(classPop);
+
 							$(".thebox-content").append(div.html());
 							$(".thebox-content").css("top", scrollAtual + $(window).height()/2);
 							$(".thebox-content").css("left", "50%");
@@ -1259,6 +1263,8 @@ function menuTabs(){
 function masksForms(){
 	/* Mascara telefone */
 	// jQuery Masked Input
+		$('textarea').html('');
+	
 		$('.maskTel').mask("(99) 9999-9999?9").ready(function(event) {
 			var target, phone, element;
 			target = (event.currentTarget) ? event.currentTarget : event.srcElement;
