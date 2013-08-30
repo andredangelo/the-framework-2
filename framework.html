@@ -1726,42 +1726,10 @@
                       <a id="menu-comum" name="menu-comum"></a>
                     <h3 class="iHtml">Menu</h3>
                     <ul>
-                        <li>Adicione a class "menu" na tag nav.</li>
+                        <li>Add a class in the na tag nav.</li>
+                        <li>Call $('.nameclass').themenu();</li>
                     </ul>
                     
-            <table class="table table-ordenada thetable" width="100%" border="0" cellspacing="0" cellpadding="0">
-                
-                <thead>
-                  <tr>
-                    <th>Option</th>
-                    <th>Values</th>
-                    <th>Default value</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                
-                <tfoot>
-                  <tr>
-                    <th>Option</th>
-                    <th>Values</th>
-                    <th>Default value</th>
-                    <th>Description</th>
-                  </tr>
-                </tfoot>
-              
-               <tbody>
-               
-                  <tr>
-                    <td>speed</td>
-                    <td>Number</td>
-                    <td>800(miliseconds)</td>
-                    <td>Set the speed of banner transition.</td>
-                  </tr>
-
-                  
-              </tbody>
-              
-            </table>
                     
                     <br /><br />
 
@@ -1785,6 +1753,17 @@
                     <h5>Exemplo:</h5>            
                <pre class="brush: js; hei300">  
                      
+            <script type="text/javascript">
+                        
+                           /* 
+						   $(document).ready(function(e) {
+                               $('.menu').themenu({responsive:false});
+                            });
+							
+							*/
+                        
+                        </script>    
+                                             
                      
                      <nav class="menu">
                     	<ul>
@@ -1810,12 +1789,84 @@
              <!-- Menu + Submenu -->       
                 <div class="clr"></div>
                     <a id="menu-submenu" name="menu-submenu"></a>
-                    <h3 class="iHtml">Menu</h3> <h3>+ Sub Menu</h3>
+                    <h3 class="iHtml">Menu</h3> <h3>+ Sub Menu + Responsive</h3>
                     <ul>
-                        <li>Adicione a class <strong>"menu"</strong> na tag nav;</li>
-                        <li>Adicione a class <strong>"menu-sub level{n+1}"</strong> na li que tiver um sub-menu;</li>
-                        <li>Chame a função <strong>menuSub({qtde maxima de leveis de menu});</strong> - (native call in framework.js)</li>
+                        <li>Add some class in <strong>tag nav</strong></li>
+                        <li>Call <strong>$('.nameclass').themenu();</strong></li>
                     </ul>
+                    
+                    
+                    <table class="table table-ordenada thetable" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        
+                        <thead>
+                          <tr>
+                            <th>Option</th>
+                            <th>Values</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        
+                        <tfoot>
+                          <tr>
+                            <th>Option</th>
+                            <th>Values</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                          </tr>
+                        </tfoot>
+                      
+                       <tbody>
+                       
+                          <tr>
+                            <td>minWidth</td>
+                            <td>Number</td>
+                            <td>500</td>
+                            <td>Set the minimum width of menu. Less this number, if the param "responsive" is true, the menu changes to responsive mode.</td>
+                          </tr>
+        
+                          <tr>
+                            <td>time</td>
+                            <td>Number(speed miliseconds)</td>
+                            <td>1000</td>
+                            <td>Set the speed of responsive side menu transition.</td>
+                          </tr>
+        
+                          <tr>
+                            <td>base</td>
+                            <td>String</td>
+                            <td>"#base"</td>
+                            <td>Set the div "base" that contain all other elements</td>
+                          </tr>
+        
+                          <tr>
+                            <td>labelButtonMenu</td>
+                            <td>String</td>
+                            <td>""</td>
+                            <td>Set a label to tde list mini menu.</td>
+                          </tr>
+        
+                          <tr>
+                            <td>htmlMiniBar</td>
+                            <td>String</td>
+                            <td>""</td>
+                            <td>Increase the mini bar with other things, like HTML</td>
+                          </tr>
+        
+                          <tr>
+                            <td>totalLevel</td>
+                            <td>Number</td>
+                            <td>3</td>
+                            <td>Determine the max level to Sub Menus</td>
+                          </tr>
+        
+                          
+                      </tbody>
+                      
+                    </table>
+                    <br/>
+                    <br/>
+                                        
                     
                     <nav class="menu">
                     	<ul>
@@ -1927,12 +1978,12 @@
                          
                       <script type="text/javascript">
                         
-                            $(document).ready(function(e) {
-                               // menuSub();
-                                // Determine o número máximo de leveis de submenu;
-                                // menuSub(4);
-                                // padrão = 3.
+                           /* 
+						   $(document).ready(function(e) {
+                               $('.menu').themenu({responsive:false});
                             });
+							
+							*/
                         
                         </script>    
                         

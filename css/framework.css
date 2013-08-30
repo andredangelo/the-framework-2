@@ -993,7 +993,8 @@ li{list-style:none; margin:0px; padding:0px;}
 		width:25px;
 		height:25px;
 		background:url(../img/framework/menu-mini.png) no-repeat center center;
-		background-color:rgba(0,0,0,0.1);
+		background-color:rgba(0,0,0,0.16);
+		border-bottom:1px solid rgba(0,0,0,0.2);
 	}
 	.the-menu-minibar .btn:hover{
 		background-color:rgba(0,0,0,0.3);

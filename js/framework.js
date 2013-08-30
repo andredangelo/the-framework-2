@@ -19,10 +19,6 @@
 		$(".table-ordenada").tablesorter();
 		
 		
-		/** Component: Menu + Submenu **/
-			//menuSub();
-		
-		
 		/** Component: Tabs **/
 			menuTabs();
 	
