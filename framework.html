@@ -1729,6 +1729,42 @@
                         <li>Adicione a class "menu" na tag nav.</li>
                     </ul>
                     
+            <table class="table table-ordenada thetable" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+               
+                  <tr>
+                    <td>speed</td>
+                    <td>Number</td>
+                    <td>800(miliseconds)</td>
+                    <td>Set the speed of banner transition.</td>
+                  </tr>
+
+                  
+              </tbody>
+              
+            </table>
+                    
+                    <br /><br />
+
                     <nav class="menu">
                     	<ul>
                         	<li>
@@ -1892,7 +1928,7 @@
                       <script type="text/javascript">
                         
                             $(document).ready(function(e) {
-                                menuSub();
+                               // menuSub();
                                 // Determine o número máximo de leveis de submenu;
                                 // menuSub(4);
                                 // padrão = 3.
@@ -2801,7 +2837,7 @@
 			$('.table').thetable();
 			$(".table-ordenada").tablesorter();
 			
-			$('.menu').themenu();
+			$('.menu').themenu({responsive:false});
        
 	    });
 		

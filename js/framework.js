@@ -20,7 +20,7 @@
 		
 		
 		/** Component: Menu + Submenu **/
-			menuSub();
+			//menuSub();
 		
 		
 		/** Component: Tabs **/
@@ -1153,11 +1153,9 @@
 
 
 /** Component: Menu + Submenu **/
-function menuSub(totalLevel){
+/*function menuSub(totalLevel){
 		if(typeof(totalLevel)==='undefined') totalLevel = 3;
 		
-		//alert(totalLevel);
-
 		var n=1;
 		var stMenu = ".level";
 		var stMenu2 = "";
@@ -1168,9 +1166,6 @@ function menuSub(totalLevel){
 			 stMenu2 += stMenu+n+">";
 			$(stMenu+n).mouseover({param1: n, param2: stMenu+n}, fOver);
 			$(stMenu+n).mouseleave({param1: n, param2: stMenu+n}, fOut);
-			
-			//alert(stMenu+n);
-			
 			
 		}
 		
@@ -1188,7 +1183,6 @@ function menuSub(totalLevel){
 			}
 							
 			$(this).find("> .menu-submenu").css("display", "block");
-			//alert(menuAbrir);
 		}
 		
 		function fOut(event){
@@ -1196,7 +1190,7 @@ function menuSub(totalLevel){
 			$(this).find("> .menu-submenu").css("display", "none");
 			
 		}
-}
+}*/
 /** end: Component: Menu + Submenu **/
 
 
@@ -1215,7 +1209,9 @@ function menuSub(totalLevel){
 	   time: 1000,
 	   base: "#base",
 	   responsive: true,
-	   labelMenu: ""
+	   labelButtonMenu: "",
+	   htmlMiniBar: "",
+	   totalLevel: 3
     };
 
     $.fn.themenu = function(options) { 
@@ -1247,21 +1243,21 @@ function menuSub(totalLevel){
 					if(!toogleMenu){
 					
 					}else{
-						This.html("<div class='the-menu-mini'><div class='the-menu-ico btn'>"+ settings.labelMenu +"</div></div>");
+						This.html("<div class='the-menu-minibar'><a class='the-menu-ico btn'>"+ settings.labelButtonMenu +"</a>"+settings.htmlMiniBar+"</div>");
 					}
 					
 					
-					$('.the-menu-mini .the-menu-ico').click(function(){
+					$('.the-menu-minibar .the-menu-ico').click(function(){
 							
 						if(toogleMenu){
 							$(settings.base).stop().animate({marginLeft: $('.the-menu-responsive').width()}, settings.time);
-							$('.the-menu-mini').stop().animate({left: $('.the-menu-responsive').width()}, settings.time);
+							$('.the-menu-minibar').stop().animate({left: $('.the-menu-responsive').width()}, settings.time);
 							$('.the-menu-responsive').stop().animate({left: 0}, settings.time);
 							$('.the-menu-responsive').css("display", "block");
 							toogleMenu = false;
 						}else{
 							$(settings.base).stop().animate({marginLeft: 0}, settings.time);
-							$('.the-menu-mini').stop().animate({left: 0}, settings.time);
+							$('.the-menu-minibar').stop().animate({left: 0}, settings.time);
 							$('.the-menu-responsive').stop().animate({left: -$('.the-menu-responsive').width()}, settings.time);
 							toogleMenu = true;
 						}
@@ -1282,7 +1278,43 @@ function menuSub(totalLevel){
 			}
 		}
 		
-		
+		/** Sub Menu **************/
+			var n=1;
+			var stMenu = ".level";
+			var stMenu2 = "";
+			var topStartMenu = 0;
+			
+			for(n; n <= settings.totalLevel; n++){
+							
+				stMenu2 += stMenu+n+">";
+				$(stMenu+n).mouseover({param1: n, param2: stMenu+n}, fOver);
+				$(stMenu+n).mouseleave({param1: n, param2: stMenu+n}, fOut);
+				
+				//alert(stMenu+n);
+			}
+			
+			function fOver(event){
+				
+				topStartMenu = $(this).height();
+				leftMenu = $(this).width();
+				
+				var menuAbrir = event.data.param2 + " > .menu-submenu";
+				
+				if(event.data.param1 == 1){
+					$(menuAbrir).css("top", topStartMenu);
+				}else{
+					$(menuAbrir).css("left", $(this).width());
+				}
+								
+				$(this).find("> .menu-submenu").css("display", "block");
+			}
+			
+			function fOut(event){
+				
+				$(this).find("> .menu-submenu").css("display", "none");
+				
+			}
+		/** end: Sub Menu **************/
 		
 		
 		
