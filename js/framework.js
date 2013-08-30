@@ -760,8 +760,8 @@
 							$(".thebox-content").append(div.html());
 							$(".thebox-content").css("top", scrollAtual + $(window).height()/2);
 							$(".thebox-content").css("left", "50%");
-							$(".thebox-content").css("margin-left", -$(".thebox-content").width()/2);
-							$(".thebox-content").css("margin-top", -$(".thebox-content").height()/2);
+							$(".thebox-content").css("margin-left", -div.width()/2);
+							$(".thebox-content").css("margin-top", -div.height()/2);
 						break
 						
 						default:
@@ -1106,8 +1106,6 @@
 		
 		var menuWidth = $("#menu-left").width();
 		
-
-		
 		$("#menu-left").css("height",  $(document).height());
 		
 		$(window).resize(function(){
@@ -1200,6 +1198,113 @@ function menuSub(totalLevel){
 		}
 }
 /** end: Component: Menu + Submenu **/
+
+
+
+
+
+
+
+
+
+/*Component: Menu Responsive **/
+(function($) { 
+
+    var defaults = {
+       minWidth: 500,
+	   time: 1000,
+	   base: "#base",
+	   responsive: true,
+	   labelMenu: ""
+    };
+
+    $.fn.themenu = function(options) { 
+
+        var settings = $.extend({}, defaults, options); 
+		var estruturaMenu = $(this).html();
+		var This = $(this);
+		var toogleMenu = true;
+		var isResponsive = true;
+		
+        this.each(function() { 
+           var currentElement = $(this);
+        });
+		
+		
+		if(settings.responsive){
+			createMenu();
+			responsiveMenu();
+			$(window).resize(function(){
+				responsiveMenu();
+			});
+			
+			function responsiveMenu(){
+				
+				$('.the-menu-responsive').height($(window).height());
+				
+				if($(window).width() < settings.minWidth){
+					
+					if(!toogleMenu){
+					
+					}else{
+						This.html("<div class='the-menu-mini'><div class='the-menu-ico btn'>"+ settings.labelMenu +"</div></div>");
+					}
+					
+					
+					$('.the-menu-mini .the-menu-ico').click(function(){
+							
+						if(toogleMenu){
+							$(settings.base).stop().animate({marginLeft: $('.the-menu-responsive').width()}, settings.time);
+							$('.the-menu-mini').stop().animate({left: $('.the-menu-responsive').width()}, settings.time);
+							$('.the-menu-responsive').stop().animate({left: 0}, settings.time);
+							$('.the-menu-responsive').css("display", "block");
+							toogleMenu = false;
+						}else{
+							$(settings.base).stop().animate({marginLeft: 0}, settings.time);
+							$('.the-menu-mini').stop().animate({left: 0}, settings.time);
+							$('.the-menu-responsive').stop().animate({left: -$('.the-menu-responsive').width()}, settings.time);
+							toogleMenu = true;
+						}
+					});
+					
+				}else{
+					This.html(estruturaMenu);
+					$('.the-menu-responsive').css('left', -$('.the-menu-responsive').width());
+					$(settings.base).css('margin-left', 0);
+					toogleMenu = true;
+				}
+				
+			}
+			function createMenu(){
+				$('body').prepend("<div class='the-menu-responsive'></div>");
+				$('.the-menu-responsive').html(estruturaMenu);
+				
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+        return this; 
+    };
+    $.fn.themenu.defaults = defaults; 
+
+})(jQuery); 
+/*Component: Menu Responsive **/
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1309,6 +1414,11 @@ function masksForms(){
 		});
 }
 /** end: Component: Masks **/
+
+
+
+
+
 
 
 
@@ -1505,7 +1615,7 @@ function scrollFixed(id){
     $.fn.thetable.defaults = defaults; 
 
 })(jQuery); 
-/** end: Padrão OOP **/
+/** end: Responsive Table **/
 
 
 
