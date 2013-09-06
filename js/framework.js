@@ -775,7 +775,9 @@
 							/* is a Grop Images *******/
 							if(This.attr("data-group")){
 								
-								key();
+								
+								
+								
 								/* Include controls */
 								$(".thebox-content").append("<div id='thebox-controls'><div id='thebox-control-left' class='thebox-control'><</div><div id='thebox-control-right' class='thebox-control'>></div></div>");
 								
@@ -842,7 +844,7 @@
 								/** Keypress **/
 								function key(){
 									$(document).keydown(function(e){
-										 // alert(e.keyCode);
+										// alert(e.keyCode);
 										  
 										  if(e.keyCode == 37) { // left
 											isRight = false;
@@ -850,10 +852,11 @@
 										  else if(e.keyCode == 39) { // right
 											isRight = true;
 										  }	
-										  nextImage();			
+										  nextImage();	
+										  		
 									});	
 								}
-								
+								key();
 								
 								
 								
