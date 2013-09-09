@@ -2824,12 +2824,35 @@
 	<script type="text/javascript" src="js/framework.js"></script>
 	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
     
-    
+	<script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+   
+
+   
+   
+   
     <script>
 		
 		$(document).ready(function(e) {
             $("#btn-menu-left").click();
 			$(document).theload();
+			
+			
+			var Browser = {
+			  Version: function() {
+				var version = 999; // we assume a sane browser
+				if (navigator.appVersion.indexOf("MSIE") != -1)
+				  // bah, IE again, lets downgrade version number
+				  version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+				return version;
+			  }
+			}
+		
+				
+			if (Browser.Version() < 9) {
+				$(":input[placeholder]").placeholder();
+			}		
+			
+			
 			
 			$('#nomeForm').validate({
 				rules:{

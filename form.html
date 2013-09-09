@@ -1,7 +1,7 @@
 ﻿<!doctype html>
 <html><head>
 <meta charset="utf-8">
-<title>Default Menu</title>
+<title>Form Without Fallback Ie</title>
 
 
 <!-- Rel´s & Estilos -->
@@ -99,7 +99,7 @@
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="js/json2.js"></script>
 	<script type="text/javascript" src="js/jquery.Storage.js"></script>
-	<script type="text/javascript" src="js/fallback-ie.js"></script>
+	<!--script type="text/javascript" src="js/fallback-ie.js"></script-->
     
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <link href="js/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
@@ -128,62 +128,118 @@
     
     
     
-    <!-- Header -->
-    <header id="header">
-        <div class="wrapper">
-            <nav id="menuPrincipal" class="menu">
-                <ul>
-                    <li>
-                        <a href="#menu" class="active">Menu</a>
-                    </li>
-                    <li class="level1">
-                        <a href="#menu">Menu</a>
-                    </li>
-                    <li>
-                        <a href="#menu">Menu</a>
-                    </li>
-                    <li>
-                        <a href="#menu">Menu</a>
+<form class="form form-horizontal">
+            
+         <fieldset>
+                
+               <legend>Nome do formulário</legend>
+                
+               <label>Nome com AutoFocus</label>
+               <input name="Nome" autofocus required type="text">
+                
+               <label>Nome validado</label>
+               <input required type="text" placeholder="Nome Sobrenome">
+                
+               <label>Texto validado</label>
+               <input title="3 Letras Maiúsculas e 4 números." type="text" placeholder="Nome Sobrenome" pattern="[A-Z]{3}[0-9]{4}">
+                
+               <label>E-mail</label>
+               <input id="email" type="email">
+                
+               <label>E-mail</label>
+               <input oninput="checkEmailIgual(this)" type="email">
+                
+               <label>Data</label>
+               <input name="data" type="date"> 
+               <!--input type="month" name="bdaymonth"-->
+            
+               <label>Número</label>
+               <input name="quantity" type="number" min="1" max="105" pattern="[0-9]">
+                     
+               <label>Senha</label>     
+                <input type="password" autocomplete="off">           
+                    
+                    
+               <label for="CEP">CEP:</label>    
+               <input name="CEP" id="CEP" required pattern="\d{5}-?\d{3}">                
+                            
+               <label>Radio</label>
+                <span class="radio">     
+                     <label>
+                         <input name="RadioGroup1" type="radio" value="opção">
+                         <span>Opção</span>
+                     </label>
+                      
+                     <label>
+                         <input name="RadioGroup1" type="radio" value="opção">
+                         <span>Opção</span>
+                     </label>            
+                
+                     <label>
+                         <input name="RadioGroup1" type="radio" value="opção">
+                         <span>Opção</span>
+                     </label>            
+                
+                     <label>
+                         <input name="RadioGroup1" type="radio" value="opção">
+                         <span>Opção</span>
+                     </label>            
+                
+                     <label>
+                         <input name="RadioGroup1" type="radio" value="opção">
+                         <span>Opção</span>
+                     </label> 
+                     <span class="clear"></span>  
+               </span>
+                            
+               <label>Checkbox</label>
+                <span class="radio"> 
+                     <label>
+                         <input name="CheckboxGroup1" type="checkbox" value="">
+                         <span>Opção</span>
+                     </label>
+                      
+                     <label>
+                         <input name="CheckboxGroup1" type="checkbox" value="">
+                         <span>Opção</span>
+                     </label>
+                      
+                     <label>
+                         <input name="CheckboxGroup1" type="checkbox" value="">
+                         <span>Opção</span>
+                     </label>
+                     <span class="clear"></span>  
+                 </span>   
+                 
+               <label>Select:</label>
+               <select>
+                 <option value="valor">Valor</option>
+                 <option value="valor2">Valor2</option>
+                
+               </select>             
+                 
+               <label>Cor:</label>   
+               <input name="favcolor" type="color">   
+                
+               <label>Medida:</label>
+               <meter max="10" min="0" value="2">2 out of 10</meter>
+               <meter value="0.6">60%</meter>
+                
+               <label>Range:</label>
+               <input name="points" type="range" min="1" max="10">
+                  
+                 
+                 
+                <!-- Com jQuery -->
+               <label>Telefone</label>
+               <input name="Nome" class="maskTel" autofocus required type="text">
+         
+               <button class="btn" type="submit">Enviar</button>       
                         
-                    </li>
-                </ul>
-            </nav>      
-            <div class="clr"></div>
-        </div>
-    </header>
-    <!-- end: Header -->
-   
-    
-    
-    
-    
-    
-    
-    <!-- Section -->
-    <section id="content">
-    	
-        <div class="wrapper">
-        	Content
-        </div>
-        
-    </section>
-    <!-- end: Section -->
-    
-    
-    
-    
-    
-    
-    
-    <!-- Footer -->
-    <footer id="footer">
-    	
-        <div class="wrapper">
-        	Footer
-        </div>
-        
-    </footer>
-    <!-- end: Footer -->
+                         
+               </fieldset>
+                
+       </form>
     
     
 
@@ -210,11 +266,15 @@
     
 	<script type="text/javascript" src="js/framework.js"></script>
 	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-    
+	<script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+
     <script>
     	$(document).ready(function(e) {
             $(document).theload();
 			$('.menu').themenu({minWidth:800});
+			
+			$(":input[placeholder]").placeholder();
+			
         });
     </script>
     
