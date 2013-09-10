@@ -1251,15 +1251,21 @@
 					$('.the-menu-minibar .the-menu-ico').click(function(){
 							
 						if(toogleMenu){
+							$(settings.base).css('width', $(settings.base).width());
+							
 							$(settings.base).stop().animate({marginLeft: $('.the-menu-responsive').width()}, settings.time);
-							$('.the-menu-minibar').stop().animate({left: $('.the-menu-responsive').width()}, settings.time);
+							$('.the-menu-minibar').stop().animate({left: $('.the-menu-responsive').width()}, settings.time, function(){
+								$(settings.base).css('width', '100%');
+							});
 							$('.the-menu-responsive').stop().animate({left: 0}, settings.time);
 							$('.the-menu-responsive').css("display", "block");
 							toogleMenu = false;
 						}else{
 							$(settings.base).stop().animate({marginLeft: 0}, settings.time);
 							$('.the-menu-minibar').stop().animate({left: 0}, settings.time);
-							$('.the-menu-responsive').stop().animate({left: -$('.the-menu-responsive').width()}, settings.time);
+							$('.the-menu-responsive').stop().animate({left: -$('.the-menu-responsive').width()}, settings.time, function(){
+								$(settings.base).css('width', '100%');
+							});
 							toogleMenu = true;
 						}
 					});
