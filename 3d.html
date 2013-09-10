@@ -1,0 +1,232 @@
+﻿<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>3d Framework</title>
+
+
+<!-- Rel´s & Estilos -->
+
+    <link rel="stylesheet" href="css/framework.css" media="screen"/>
+    <link rel="stylesheet" href="css/estilos.css" media="screen"/>
+    <link rel="stylesheet" href="css/estilosMobile.css" media="screen">
+
+<!-- /Rel´s & Estilos-->
+
+
+
+
+
+<!-- CONFIGURÁVEL        ----------------------------------------------------------------------------------->
+    
+
+    <!-- Metas Tags Básicas -->
+       
+        <meta name="keywords" content="palavras, chave, do site"/>
+        <meta name="news_keywords" content="palavras, chave, do site">    
+        <meta name="description" content="Descrição do Site.." />
+        <meta name="author" content="Empresa" />
+        <link rel="canonical" href="http://www.site.com.br/experimental/" />
+    
+        <meta name="robots" content="index, follow">
+        <meta name="resource-type" content="document" />
+        <meta name="revisit-after" content="1" />
+        
+    <!-- /Metas Tags Básicas -->
+    
+    
+    <!-- Open Graph Meta Tags -->
+    
+        <meta property="og:title" content="Título do Site"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://www.site.com.br/experimental/" />    
+        <meta property="og:description" content="Aqui virá a descrição do site."/>
+        <meta property="og:image" content="http://desenv.bigsolutions.com.br/experimental/img/mobile/facebook-logo.png"/>
+        <meta property="og:site_name" content="Site do Fulano"/>  
+        
+        <link rel="image_src" href="http://www.site.com.br/img/mobile/facebook-logo.png" />
+        
+    <!-- /Open Graph Meta Tags -->
+    
+    
+    <!-- Ícones / FavIcons  -->
+    
+        <!-- For iPhone 4 with high-resolution Retina display: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/mobile/apple-touch-icon.png">
+        
+        <!-- For first-generation iPad: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/mobile/apple-touch-icon.png">
+        
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="img/mobile/apple-touch-icon-precomposed.png">
+        
+        <!-- For nokia devices: -->
+        <link rel="shortcut icon" href="http://www.site.com.br.img/mobile/apple-touch-icon.png">
+        
+        <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+        <meta http-equiv="cleartype" content="on">
+        
+    <!-- /Ícones FavIcons para Mobiles -->
+
+
+
+
+<!-- CONFIGURÁVEL ------------------------------------------------------------------------------------->
+    
+
+
+
+
+
+
+<!-- Mobile viewport optimization -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+<!-- /Mobile viewport optimization (Idiot´s guide) -->
+   <!-- REFRESH PAGE
+   < M E T A HTTP-EQUIV="Refresh" CO N TENT="3;URL=http://www...">
+   -->
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta http-equiv="content-language" content="pt-BR" />
+
+
+
+
+	<script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/json2.js"></script>
+	<script type="text/javascript" src="js/jquery.Storage.js"></script>
+	<!--script type="text/javascript" src="js/fallback-ie.js"></script-->
+    
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <link href="js/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+
+
+	<style>
+    
+	
+   #box {
+     position: relative;
+     margin: 10px auto;
+     width: 250px;
+     height: 261px;
+     z-index: 1;
+   }
+   #box.face.back {
+     display: none;
+   }
+   @media all and (-webkit-transform-3d) {
+     /* Use the media query to determine if 3D transforms are supported */
+     #box {
+       -webkit-perspective: 1000;
+     }
+     #box #flip-card {
+       width: 100%;
+       height: 100%;
+       -webkit-transform-style: preserve-3d;
+       -webkit-transition: -webkit-transform 1s;
+     }
+     #box:hover #flip-card {
+       -webkit-transform: rotateY(180deg);
+     }
+     #box .face {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       -webkit-backface-visibility: hidden;
+     }
+     #box .face.back {
+       display: block;
+       -webkit-transform: rotateY(180deg);
+       -webkit-box-sizing: border-box;
+       padding: 10px;
+       font-size: 12pt;
+       color: white;
+       text-align: center;
+       background-color: #835A99;
+       -webkit-border-radius: 10px;
+     }
+   }
+
+
+    
+    </style>
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+<body>
+   
+   
+<div id="base">
+	
+    
+<div id="box">
+  <div id="flip-card">
+    <div class="front face">
+      teste1
+    </div>
+    <div class="back face">
+      teste2
+    </div>
+  </div>
+</div>    
+    
+    
+    
+
+http://css3.bradshawenterprises.com/transforms/#cube3d
+https://www.webkit.org/blog/386/3d-transforms/    
+    
+</div>
+
+
+
+
+
+
+<!-- Scripts ------------------------------------------------------------------------------>
+
+	<script type="text/javascript" src="js/modernizr.js"></script>
+   
+    <script type="text/javascript" src="js/jquery.anchor.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+    
+	<script type="text/javascript" src="js/framework.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+	<script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+
+    <script>
+    	$(document).ready(function(e) {
+            $(document).theload();
+			$('.menu').themenu({minWidth:800});
+			
+			$(":input[placeholder]").placeholder();
+			
+        });
+    </script>
+    
+	
+<!-- /Scripts ------------------------------------------------------------------------------>
+
+
+</body>
+</html>
