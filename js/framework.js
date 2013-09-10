@@ -496,11 +496,13 @@
 									thebanner.find(".the-banner").html("");
 									thebanner.find(".the-banner").append(arrList[bannerAtual]);
 									thebanner.find(".the-banner").append(arrList[n]);
-									
+									thebanner.find(".thebanner-mask ul li:nth-child(1)").css("position", "relative");
+									thebanner.find(".thebanner-mask ul li:nth-child(2)").css("position", "absolute");
 									
 									thebanner.find(".thebanner-mask ul li:nth-child(2)").addClass("fadeBanner");
 									thebanner.find(".thebanner-mask ul li:nth-child(2)").stop().animate({opacity:0 }, 0);
 									thebanner.find(".thebanner-mask ul li:nth-child(2)").animate({opacity:1 }, settings.speed, function(){
+										thebanner.find(".thebanner-mask ul li:nth-child(2)").css("position", "relative");
 										thebanner.find(".thebanner-mask ul li:nth-child(1)").remove();
 										callClick();
 										thebanner.find(".the-banner-arrow").unbind("click");
