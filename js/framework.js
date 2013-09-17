@@ -1237,7 +1237,7 @@
 			
 			function responsiveMenu(){
 				
-				$('.the-menu-responsive').height($(window).height());
+				$('.the-menu-responsive').css('minHeight', $(window).height());
 				
 				if($(window).width() < settings.minWidth){
 					
@@ -1275,12 +1275,29 @@
 					$('.the-menu-responsive').css('left', -$('.the-menu-responsive').width());
 					$(settings.base).css('margin-left', 0);
 					toogleMenu = true;
+					$('body').css('overflow-x', '');
+					addOver();
 				}
 				
 			}
+			
+			
 			function createMenu(){
 				$('body').prepend("<div class='the-menu-responsive'></div>");
 				$('.the-menu-responsive').html(estruturaMenu);
+				$('.the-menu-responsive ul').css('display', 'block');
+				$('.the-menu-responsive li').css('display', 'block');
+				
+				$('.the-menu-responsive ul').each(function(){
+					if($(this).hasClass('menu-submenu')){
+						$(this).removeClass('menu-submenu');
+						$(this).addClass('sub-resp');
+					}
+				});
+				
+				$('.the-menu-responsive ul').removeClass('menu');
+				
+				$('body').css('overflow-x', 'hidden');
 				
 			}
 		}
@@ -1291,13 +1308,18 @@
 			var stMenu2 = "";
 			var topStartMenu = 0;
 			
-			for(n; n <= settings.totalLevel; n++){
-							
-				stMenu2 += stMenu+n+">";
-				$(stMenu+n).mouseover({param1: n, param2: stMenu+n}, fOver);
-				$(stMenu+n).mouseleave({param1: n, param2: stMenu+n}, fOut);
+			addOver();
+			function addOver(){
+				n=1;
 				
-				//alert(stMenu+n);
+				for(n; n <= settings.totalLevel; n++){
+								
+					stMenu2 += stMenu+n+">";
+					$(stMenu+n).mouseover({param1: n, param2: stMenu+n}, fOver);
+					$(stMenu+n).mouseleave({param1: n, param2: stMenu+n}, fOut);
+					
+				}
+				
 			}
 			
 			function fOver(event){

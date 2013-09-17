@@ -1003,9 +1003,9 @@ li{list-style:none; margin:0px; padding:0px;}
 
 .the-menu-responsive{
 	width:250px;
-	position:fixed;
+	position:absolute;
 	left:-250px;
-	height:300px;
+	height:auto;
 	color:#CCC;
 	overflow:hidden;
 	display:none;
@@ -1033,6 +1033,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 		padding:13px;
 		font-size:16px;
 		font-weight:bold;
+		color:#fff;
 	}
 	.the-menu-responsive li:first-child{
 		border-top:none;
@@ -1046,6 +1047,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 		-webkit-transition: all .3s linear;
 		transition: all .3s linear;
 	}
+	
+	.the-menu-responsive .sub-resp a{
+		font-size:14px;
+		color:#999;
+		padding-left:20px;
+	}
+	
+	
+	
 	
 /** Tab Menu **/
 	.menu-tab{
