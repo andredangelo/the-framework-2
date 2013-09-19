@@ -270,7 +270,7 @@ li{list-style:none; margin:0px; padding:0px;}
 	width:100%;
 	overflow:hidden;
 	
-	border-top:5px solid #000;
+	border-bottom:5px solid #000;
 	
 	
 	
@@ -289,7 +289,7 @@ li{list-style:none; margin:0px; padding:0px;}
 }
 
 .base-framework .wrapperAd{
-	padding:40px;
+	padding:80px;
 }
 
 .base-framework .exampleAd h3{
@@ -322,7 +322,7 @@ li{list-style:none; margin:0px; padding:0px;}
 
 
 #menu-left{
-	width:220px;
+	width:180px;
 	background-color:#232323;
 	position:fixed;
 	left:-270px;
@@ -335,6 +335,10 @@ li{list-style:none; margin:0px; padding:0px;}
 
 #menu-left h1{
 	font-size:24px;
+	color:#616161;
+}
+#menu-left h1 font{
+	font-size:14px;
 	color:#616161;
 }
 
@@ -365,10 +369,9 @@ li{list-style:none; margin:0px; padding:0px;}
 }
 
 #menu-left a{
-	margin-left:20px;
 	display:inline-block;
 	padding:4px;
-	font-size:11px;
+	font-size:12px;
 	background-color:#efefef;
 	color:#3c6fb5;
 	
@@ -806,7 +809,10 @@ li{list-style:none; margin:0px; padding:0px;}
 		border-bottom-right-radius: 5px;
 	}
 	
-	
+	.table tr td:last-child, .table tr th:last-child{
+		border:none !important;
+	}
+
 	
 	
 		.table.table-ordenada thead tr .header {
