@@ -50,19 +50,11 @@
     
     <!-- Ícones / FavIcons  -->
     
-        <!-- For iPhone 4 with high-resolution Retina display: -->
+    
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/mobile/apple-touch-icon.png">
-        
-        <!-- For first-generation iPad: -->
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/mobile/apple-touch-icon.png">
-        
-        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
         <link rel="apple-touch-icon-precomposed" href="img/mobile/apple-touch-icon-precomposed.png">
-        
-        <!-- For nokia devices: -->
         <link rel="shortcut icon" href="http://www.site.com.br.img/mobile/apple-touch-icon.png">
-        
-        <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
         <meta http-equiv="cleartype" content="on">
         
     <!-- /Ícones FavIcons para Mobiles -->
@@ -103,6 +95,7 @@
     
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <link href="js/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+
 
 
 
@@ -187,6 +180,21 @@
     
 	<script type="text/javascript" src="js/framework.js"></script>
 	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+	<script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+	
+    <script>
+    	$(document).ready(function(e) {
+            $(document).theload();
+			$('.menu').themenu({minWidth:800});
+			
+			if (Browser.Version() < 9) {
+				$(":input[placeholder]").placeholder();
+			}		
+			
+			
+        });
+    </script>
+    
 	
 <!-- /Scripts ------------------------------------------------------------------------------>
 
