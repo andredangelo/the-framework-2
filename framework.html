@@ -26,7 +26,7 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <meta http-equiv="cache-control" content="public" />
     <meta http-equiv="content-language" content="pt-BR" />
-
+    
 	<script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -590,6 +590,19 @@
                     <td>Boolean</td>
                     <td>false</td>
                     <td>Set if the image can be resized/initial width/height 100% (proporcional)</td>
+                  </tr>
+        
+                  
+                   <tr>
+                    <td colspan="">Callbacks</td>
+                  </tr>
+        
+                  
+                   <tr>
+                    <td>afterClose</td>
+                    <td>Function</td>
+                    <td>""</td>
+                    <td>Set a function after close the box.</td>
                   </tr>
         
                   
@@ -2903,7 +2916,7 @@
 			$('#the-banner-content2').thebanner({slides:true, slideMargin:40, autoAnimate:false});
 			$('#the-banner-content3').thebanner({thumb:true, effect:"fade", autoAnimate:false, clickAndStop:false});
 			
-			$('.thebox').thebox({showButtons:true, zoom100pct:true, animate:true});
+			$('.thebox').thebox({showButtons:true, zoom100pct:true, animate:true, afterClose:suafuncao});
 			$('.thebox-inline').thebox({type:"inline"});
 			
 			$('#contentAccordion').theaccordion({firstOn:true});
@@ -2914,18 +2927,25 @@
 			
 			$('.menu').themenu({responsive:false});
        
+			function suafuncao(){
+				alert("pegou");
+			}
+	   
+	   
 	    });
-		
-		
-
 		
     </script>
     
     
 	<script>
-    
+		
+		
         $(document).ready(function(e) {
             
+
+			
+			
+			
             $('#menu-left a').click(function(){
                 
                 switch ($(this).attr('href')){

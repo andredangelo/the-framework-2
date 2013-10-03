@@ -140,6 +140,9 @@
 				
 				/* Resize */
 				
+				$("#base").bind('resized', function(){
+				  resizeTheBanner();
+				});
 				$("#base").bind('resize', function(){
 				  resizeTheBanner();
 				});
@@ -687,7 +690,11 @@
 		   bgOpacity: 0.6,
 		   zoom100pct: false,
 		   speed: 500,
-		   animate: false
+		   animate: false,
+		   
+		   /*** Call Backs ***/
+		   afterClose: function(){}
+		   
 		};
 	
 		$.fn.thebox = function(options) { 
@@ -695,6 +702,9 @@
 			this.each(function() { 
 			   var currentElement = $(this);
 			});
+			
+			
+			
 			/* Reset 9999 index **/
 			$('*').each(function(){
 				if($(this).css("z-index") == 9999){
@@ -702,6 +712,8 @@
 					$(this).css("z-index") == 9900;
 				}
 			});		
+			
+			
 			
 			
 			$(this).click(function(event){
@@ -966,6 +978,8 @@
 						$('.thebox-content').remove();
 														
 					});
+					
+					settings.afterClose();
 	
 				}
 				
