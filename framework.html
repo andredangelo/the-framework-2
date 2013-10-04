@@ -676,9 +676,8 @@
                            	 <img src="img/fallback/ie.png" width="128" height="127">
                             </a>
                             
-                            <div id="inlineContent" style="display:none">
+                            <div id="inlineContent" style="display:none; width:auto; height:auto;">
                             	<h1>Title</h1>
-                                <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
                                 <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
                                 <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
                             </div>
@@ -695,9 +694,41 @@
                                  <img src="img/fallback/ie.png" width="128" height="127">
                                 </a>
                                 
-                                <div id="inlineContent" style="display:none">
+                                <div id="inlineContent" style="display:none; width:400px; height:600px;">
                                     <h1>Title</h1>
                                     <p>asdasdasd asdasd asasd asasdasdasd asasd</p>
+                                </div>
+
+                            </pre>
+          	   	
+                
+                
+                
+                              <h3 class="iPlugin">The Box</h3>
+                               <h3>Iframe</h3>
+                            <ul>
+                                <li>Call <strong>"$('.thebox-inline').thebox({type:inline, iframe:"http://www.google.com.br"});</strong></li>
+                            </ul>
+                            <a href="inlineContentIframe" data-title="Title 1" class="thebox-iframe">
+                           	 <img src="img/fallback/ie.png" width="128" height="127">
+                            </a>
+                            
+                            <div id="inlineContentIframe" style="display:none; width:600px; height:600px;">
+                            </div>
+                            
+                           
+                            
+                            <h5>Exemplo:</h5>            
+                            <pre class="brush: js; hei200">  
+                            	
+                                // Call Function
+                               $('.thebox-inline').thebox({type:inline, iframe:"http://www.google.com.br"});
+                                
+                                <a href="inlineContentIframe" data-title="Title 1" class="thebox-iframe">
+                                 <img src="img/fallback/ie.png" width="128" height="127">
+                                </a>
+                                
+                                <div id="inlineContentIframe" style="display:none">
                                 </div>
 
                             </pre>
@@ -2918,6 +2949,7 @@
 			
 			$('.thebox').thebox({showButtons:true, zoom100pct:true, animate:true});
 			$('.thebox-inline').thebox({type:"inline"});
+			$('.thebox-iframe').thebox({type:"inline", iframe:"http://www.bigsolutions.com.br"});
 			
 			$('#contentAccordion').theaccordion({firstOn:true});
 			$('.menuAccordion').theaccordion({firstOn:true, closeOthers:true});

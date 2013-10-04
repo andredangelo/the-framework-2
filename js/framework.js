@@ -686,6 +686,7 @@
 		var defaults = {
 		   timer : 400,
 		   type: "image",
+		   iframe: "",
 		   showButtons: false,
 		   bgOpacity: 0.6,
 		   zoom100pct: false,
@@ -744,6 +745,7 @@
 					/* Add Content **/
 					$('body').append('<div class="thebox-content"><div class="relative"><div id="thebox-close">X</div></div></div>');
 					$('.thebox-content').stop().animate({opacity: 0}, 0);
+					
 
 				}
 				
@@ -758,6 +760,7 @@
 					var arrBox = new Array();
 					var isRight;
 					var imageAtual = 0;
+					var padding = Number($('.thebox-content').css('padding').replace('px', ''));
 									
 					switch(settings.type){
 						
@@ -765,21 +768,29 @@
 							var div = $("#"+This.attr("href"));
 							var classPop = $("#"+This.attr("href")).attr('class');
 							
+							
 							$('.thebox-content').addClass(classPop);
-
 							$(".thebox-content").append(div.html());
+							if(settings.iframe){
+						    	$(".thebox-content").append("<iframe frameborder='0' src='"+ settings.iframe +"' name='' width='100%' height='100%'></iframe>")
+							}
+							
+							$('.thebox-content').css('width', div.width() + padding * 2);
+							$('.thebox-content').css('height', div.height() + padding * 2);
+							
 							$(".thebox-content").css("top", scrollAtual + $(window).height()/2);
 							$(".thebox-content").css("left", "50%");
-							$(".thebox-content").css("margin-left", -div.width()/2);
-							$(".thebox-content").css("margin-top", -div.height()/2);
+							$(".thebox-content").css("margin-left", -($('.thebox-content').width() + (padding*2)) /2);
+							$(".thebox-content").css("margin-top", -($('.thebox-content').height()+ (padding*2)) /2);
 						break
+						
 						
 						default:
 							$(".thebox-content").addClass("thebox-loader");
-							$(".thebox-content").css("top", scrollAtual + $(window).height()/2);
+							$(".thebox-content").css("top", scrollAtual + $(window).height()  /2);
 							$(".thebox-content").css("left", "50%");
-							$(".thebox-content").css("margin-left", $(".thebox-content").css("width")/2);
-							$(".thebox-content").css("margin-top", $(".thebox-content").css("height")/2);
+							$(".thebox-content").css("margin-left", ($(".thebox-content").width()+ (padding*2)) /2);
+							$(".thebox-content").css("margin-top", ($(".thebox-content").height() + (padding*2)) /2);
 							
 							$(".thebox-content").append("<img src='"  + This.attr("href")+ "' style='display:none;'/>");
 							
@@ -932,8 +943,9 @@
 								$("#thebox-control-right").css("display", "none");
 								$("#thebox-control-left").css("display", "none");
 							
-								$(".thebox-content").css("margin-left", -($(".thebox-content").width()/2 + Number($(".thebox-content").css("padding-left").replace("px", ""))));
-								$(".thebox-content").css("margin-top", -$(".thebox-content").height()/2);
+								$(".thebox-content").css("margin-left", -($(".thebox-content").width() + (padding*2)) /2);
+								$(".thebox-content").css("margin-top", -($(".thebox-content").height() + (padding*2))/2);
+						
 						
 								$(".thebox-content #thebox-control-left").css("left", 10);
 								$(".thebox-content #thebox-control-left").css("top", -($(".thebox-content").height()/2 + $(".thebox-content #thebox-control-left").height()));
