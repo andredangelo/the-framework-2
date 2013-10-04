@@ -686,7 +686,6 @@
 		var defaults = {
 		   timer : 400,
 		   type: "image",
-		   iframe: "",
 		   showButtons: false,
 		   bgOpacity: 0.6,
 		   zoom100pct: false,
@@ -761,22 +760,38 @@
 					var isRight;
 					var imageAtual = 0;
 					var padding = Number($('.thebox-content').css('padding').replace('px', ''));
+					
+					
 									
 					switch(settings.type){
 						
 						case "inline":
 							var div = $("#"+This.attr("href"));
 							var classPop = $("#"+This.attr("href")).attr('class');
+							var iframeWidth;
+							var iframeHeight;
 							
+							if(This.attr('data-iframe-width')){
+								iframeWidth = This.attr('data-iframe-width');
+							}else{
+								iframeWidth = "100%"
+							}
+							
+							if(This.attr('data-iframe-height')){
+								iframeHeight = This.attr('data-iframe-height');
+							}else{
+								iframeHeight = "100%"
+							}
 							
 							$('.thebox-content').addClass(classPop);
 							$(".thebox-content").append(div.html());
-							if(settings.iframe){
-						    	$(".thebox-content").append("<iframe frameborder='0' src='"+ settings.iframe +"' name='' width='100%' height='100%'></iframe>")
-							}
 							
 							$('.thebox-content').css('width', div.width() + padding * 2);
 							$('.thebox-content').css('height', div.height() + padding * 2);
+							
+							if(This.attr('data-iframe')){
+								$(".thebox-content").append("<iframe frameborder='0' src='"+ This.attr('data-iframe') +"' name='' width='" + iframeWidth + "' height='" + iframeHeight + "'></iframe>")
+							}
 							
 							$(".thebox-content").css("top", scrollAtual + $(window).height()/2);
 							$(".thebox-content").css("left", "50%");

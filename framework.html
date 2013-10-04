@@ -594,10 +594,35 @@
         
                   
                    <tr>
-                    <td colspan="4"><strong>Callbacks</strong></td>
+                    <td colspan="4"><strong>Data Attributes</strong></td>
+                  </tr>
+                  
+                   <tr>
+                    <td>data-iframe</td>
+                    <td>String</td>
+                    <td>""</td>
+                    <td>If you need use an iframe, set the url (src) in this option.</td>
+                  </tr>
+        
+                   <tr>
+                    <td>data-iframe-width</td>
+                    <td>Number or Pct</td>
+                    <td>""</td>
+                    <td>Iframe Width</td>
+                  </tr>
+        
+                   <tr>
+                    <td>data-iframe-height</td>
+                    <td>Number or Pct</td>
+                    <td>""</td>
+                    <td>Iframe Height</td>
                   </tr>
         
                   
+                   <tr>
+                    <td colspan="4"><strong>Callbacks</strong></td>
+                  </tr>
+        
                    <tr>
                     <td>afterClose</td>
                     <td>Function</td>
@@ -707,9 +732,9 @@
                               <h3 class="iPlugin">The Box</h3>
                                <h3>Iframe</h3>
                             <ul>
-                                <li>Call <strong>"$('.thebox-inline').thebox({type:inline, iframe:"http://www.google.com.br"});</strong></li>
+                                <li>Use data-iframe attributes.</strong></li>
                             </ul>
-                            <a href="inlineContentIframe" data-title="Title 1" class="thebox-iframe">
+                            <a href="inlineContentIframe" data-title="Title 1" data-iframe="http://www.uol.com.br"  class="thebox-iframe">
                            	 <img src="img/fallback/ie.png" width="128" height="127">
                             </a>
                             
@@ -722,14 +747,14 @@
                             <pre class="brush: js; hei200">  
                             	
                                 // Call Function
-                               $('.thebox-inline').thebox({type:inline, iframe:"http://www.google.com.br"});
+                               $('.thebox-iframe').thebox({type:'inline'});
                                 
-                                <a href="inlineContentIframe" data-title="Title 1" class="thebox-iframe">
+                            <a href="inlineContentIframe"  data-iframe="http://www.uol.com.br"  class="thebox-iframe">
                                  <img src="img/fallback/ie.png" width="128" height="127">
                                 </a>
                                 
-                                <div id="inlineContentIframe" style="display:none">
-                                </div>
+                            <div id="inlineContentIframe" style="display:none; width:600px; height:600px;">
+                            </div>
 
                             </pre>
           	   	
@@ -2949,7 +2974,7 @@
 			
 			$('.thebox').thebox({showButtons:true, zoom100pct:true, animate:true});
 			$('.thebox-inline').thebox({type:"inline"});
-			$('.thebox-iframe').thebox({type:"inline", iframe:"http://www.bigsolutions.com.br"});
+			$('.thebox-iframe').thebox({type:"inline"});
 			
 			$('#contentAccordion').theaccordion({firstOn:true});
 			$('.menuAccordion').theaccordion({firstOn:true, closeOthers:true});
@@ -2959,9 +2984,6 @@
 			
 			$('.menu').themenu({responsive:false});
        
-			function suafuncao(){
-				alert("pegou");
-			}
 	   
 	   
 	    });
