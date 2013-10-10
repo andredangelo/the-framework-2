@@ -1254,6 +1254,7 @@
 	   base: "#base",
 	   responsive: true,
 	   isAnchor:false,
+	   rangeAnchor: 200,
 	   labelButtonMenu: "",
 	   htmlMiniBar: "",
 	   totalLevel: 3
@@ -1266,7 +1267,6 @@
 		var This = $(this);
 		var toogleMenu = true;
 		var isResponsive = true;
-		
 		
         this.each(function() { 
            var currentElement = $(this);
@@ -1282,7 +1282,7 @@
 			$(window).scroll(function(){
 				var n = 0;
 				for(n; n<arrMenu.length; n++){
-					if ($(window).scrollTop() > $(arrMenu[n].attr('href')).offset().top - 200){
+					if ($(window).scrollTop() > $(arrMenu[n].attr('href')).offset().top - settings.rangeAnchor){
 						This.find('a').removeClass("active");
 						This.find('a').eq(n).addClass("active");
 					}			
