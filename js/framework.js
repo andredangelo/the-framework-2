@@ -691,7 +691,7 @@
 		   zoom100pct: false,
 		   speed: 500,
 		   animate: false,
-		   base: "body",
+		   
 		   /*** Call Backs ***/
 		   afterClose: function(){}
 		   
@@ -734,7 +734,7 @@
 				
 				function init(){
 					/* Add BG **/
-					$(settings.base).append('<div class="thebox-bg"></div>');
+					$('body').append('<div class="thebox-bg"></div>');
 					$('.thebox-bg').stop().animate({opacity: 0}, 0);
 					$('.thebox-bg').css("height", $(document).height());
 					$('.thebox-bg').css("width", $(document).width());
@@ -742,7 +742,7 @@
 					
 					
 					/* Add Content **/
-					$(settings.base).append('<div class="thebox-content"><div class="relative"><div id="thebox-close">X</div></div></div>');
+					$('body').append('<div class="thebox-content"><div class="relative"><div id="thebox-close">X</div></div></div>');
 					$('.thebox-content').stop().animate({opacity: 0}, 0);
 					
 
@@ -783,18 +783,15 @@
 								iframeHeight = "100%"
 							}
 							
+							$('.thebox-content').addClass(classPop);
+							$(".thebox-content").append(div.html());
+							
 							$('.thebox-content').css('width', div.width() + padding * 2);
 							$('.thebox-content').css('height', div.height() + padding * 2);
 							
 							if(This.attr('data-iframe')){
 								$(".thebox-content").append("<iframe frameborder='0' src='"+ This.attr('data-iframe') +"' name='' width='" + iframeWidth + "' height='" + iframeHeight + "'></iframe>")
 							}
-							
-       				      $('.thebox-content').addClass(classPop);
-                          $(div).appendTo(".thebox-content");
-						  $(div).css("display", "block");
-							
-							
 							
 							$(".thebox-content").css("top", scrollAtual + $(window).height()/2);
 							$(".thebox-content").css("left", "50%");
@@ -908,6 +905,8 @@
 							/* end: Is a Group Images *******/
 	
 							
+
+
 							
 							/* Resize */
 								$(window).resize(function(){
@@ -1010,12 +1009,6 @@
 					});
 					
 					settings.afterClose();
-					
-					 if(settings.type == "inline"){
-						 $("#" + This.attr("href")).appendTo(settings.base);
-						  $("#" + This.attr("href")).css("display", "none")
-					 }
-					
 	
 				}
 				
@@ -1260,6 +1253,7 @@
 	   time: 1000,
 	   base: "#base",
 	   responsive: true,
+	   isAnchor:false,
 	   labelButtonMenu: "",
 	   htmlMiniBar: "",
 	   totalLevel: 3
@@ -1273,9 +1267,29 @@
 		var toogleMenu = true;
 		var isResponsive = true;
 		
+		
         this.each(function() { 
            var currentElement = $(this);
         });
+		
+		if(settings.isAnchor){
+				
+			var arrMenu = new Array();
+			This.find('a').each(function(index){
+				arrMenu.push($(this));
+			});
+			
+			$(window).scroll(function(){
+				var n = 0;
+				for(n; n<arrMenu.length; n++){
+					if ($(window).scrollTop() > $(arrMenu[n].attr('href')).offset().top - 200){
+						This.find('a').removeClass("active");
+						This.find('a').eq(n).addClass("active");
+					}			
+				}
+			 });
+			 
+		}
 		
 		
 		if(settings.responsive){
