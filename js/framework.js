@@ -783,6 +783,7 @@
 	
 							if (This.attr('data-iframe-height')) {
 								iframeHeight = This.attr('data-iframe-height');
+
 							} else {
 								iframeHeight = "100%"
 							}
@@ -795,7 +796,7 @@
 							$('.thebox-content').css('height', div.height() + padding * 2);
 	
 							if (This.attr('data-iframe')) {
-								$(".thebox-content").append("<iframe frameborder='0' src='" + This.attr('data-iframe') + "' name='' width='" + iframeWidth + "' height='" + iframeHeight + "'></iframe>")
+								$(div).append("<iframe id='thebox-iframe' frameborder='0' src='" + This.attr('data-iframe') + "' name='' width='" + iframeWidth + "' height='" + iframeHeight + "'></iframe>")
 							}
 	
 							//$('.thebox-content').addClass(classPop);
@@ -1026,7 +1027,12 @@
 						$("#" + This.attr("href")).appendTo(parentDiv);
 						$("#" + This.attr("href")).css("display", "none");
 						$("#" + This.attr("href")).css("width", $("#" + This.attr("href")).attr("data-width"));
-					}
+					
+                        if (This.attr('data-iframe')) {
+								$('#thebox-iframe').remove();
+						}
+                    
+                    }
 	
 	
 				}
