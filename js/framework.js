@@ -703,6 +703,7 @@
 			   var currentElement = $(this);
 			});
 			
+			var parentDiv;
 			
 			
 			/* Reset 9999 index **/
@@ -766,38 +767,48 @@
 					switch(settings.type){
 						
 						case "inline":
-							var div = $("#"+This.attr("href"));
-							var classPop = $("#"+This.attr("href")).attr('class');
+							var div = $("#" + This.attr("href"));
+							//var classPop = $("#" + This.attr("href")).attr('class');
+							parentDiv = div.parent();
+							
 							var iframeWidth;
 							var iframeHeight;
 							
-							if(This.attr('data-iframe-width')){
+							// iFrame
+							if (This.attr('data-iframe-width')) {
 								iframeWidth = This.attr('data-iframe-width');
-							}else{
+							} else {
 								iframeWidth = "100%"
 							}
-							
-							if(This.attr('data-iframe-height')){
+	
+							if (This.attr('data-iframe-height')) {
 								iframeHeight = This.attr('data-iframe-height');
-							}else{
+							} else {
 								iframeHeight = "100%"
 							}
 							
-							$('.thebox-content').addClass(classPop);
-							$(".thebox-content").append(div.html());
-							
-							$('.thebox-content').css('width', div.width() + padding * 2);
-							$('.thebox-content').css('height', div.height() + padding * 2);
-							
-							if(This.attr('data-iframe')){
-								$(".thebox-content").append("<iframe frameborder='0' src='"+ This.attr('data-iframe') +"' name='' width='" + iframeWidth + "' height='" + iframeHeight + "'></iframe>")
+							if(div.attr("data-width")){
+								$('.thebox-content').css('width', div.attr("data-width"));
+							}else{
+								$('.thebox-content').css('width', div.width() + padding * 2);
 							}
-							
-							$(".thebox-content").css("top", scrollAtual + $(window).height()/2);
+							$('.thebox-content').css('height', div.height() + padding * 2);
+	
+							if (This.attr('data-iframe')) {
+								$(".thebox-content").append("<iframe frameborder='0' src='" + This.attr('data-iframe') + "' name='' width='" + iframeWidth + "' height='" + iframeHeight + "'></iframe>")
+							}
+	
+							//$('.thebox-content').addClass(classPop);
+							$(div).appendTo(".thebox-content > .relative");
+							$(div).css("display", "block");
+							$(div).css("width", "100%");
+	
+	
+							$(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
 							$(".thebox-content").css("left", "50%");
-							$(".thebox-content").css("margin-left", -($('.thebox-content').width() + (padding*2)) /2);
-							$(".thebox-content").css("margin-top", -($('.thebox-content').height()+ (padding*2)) /2);
-						break
+							$(".thebox-content").css("margin-left", -($('.thebox-content').width() + (padding * 2)) / 2);
+							$(".thebox-content").css("margin-top", -($('.thebox-content').height() + (padding * 2)) / 2);
+                        break						
 						
 						
 						default:
@@ -997,18 +1008,26 @@
 				
 				
 				
-				function remove(){
+
+				function remove() {
 					$(".thebox-content").unbind('click');
-					
-					$('.thebox-bg').stop().animate({opacity: 0}, settings.timer);
-					$('.thebox-content').stop().animate({opacity: 0}, settings.timer, function(){
-					
+	
+					$('.thebox-bg').stop().animate({ opacity: 0 }, settings.timer);
+					$('.thebox-content').stop().animate({ opacity: 0 }, settings.timer, function () {
+	
 						$('.thebox-bg').remove();
 						$('.thebox-content').remove();
-														
+	
 					});
-					
+	
 					settings.afterClose();
+	
+					if (settings.type == "inline") {
+						$("#" + This.attr("href")).appendTo(parentDiv);
+						$("#" + This.attr("href")).css("display", "none");
+						$("#" + This.attr("href")).css("width", $("#" + This.attr("href")).attr("data-width"));
+					}
+	
 	
 				}
 				
