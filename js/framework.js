@@ -166,6 +166,8 @@
 				/* Organize Banners */
 				thebanner.find(" .thebanner-mask ul li").each(function(index, element) {
 					
+					var borda = 0;
+					
 					if(settings.slides == 0){
 					
 					}
@@ -186,7 +188,7 @@
 					
 					
 					
-					widthBanner = $(this).width() + (settings.slideMargin*2);
+					widthBanner = $(this).outerWidth() + (settings.slideMargin * 2);
 					widthTotalBanners += widthBanner;
 					
 					if(!settings.slides){
