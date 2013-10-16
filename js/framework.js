@@ -693,6 +693,7 @@
 		   zoom100pct: false,
 		   speed: 500,
 		   animate: false,
+		   base: "body",
 		   
 		   /*** Call Backs ***/
 		   afterClose: function(){}
@@ -737,7 +738,7 @@
 				
 				function init(){
 					/* Add BG **/
-					$('body').append('<div class="thebox-bg"></div>');
+					$(settings.base).append('<div class="thebox-bg"></div>');
 					$('.thebox-bg').stop().animate({opacity: 0}, 0);
 					$('.thebox-bg').css("height", $(document).height());
 					$('.thebox-bg').css("width", $(document).width());
@@ -745,8 +746,9 @@
 					
 					
 					/* Add Content **/
-					$('body').append('<div class="thebox-content"><div class="relative"><div id="thebox-close">X</div></div></div>');
-					$('.thebox-content').stop().animate({opacity: 0}, 0);
+					$(settings.base).append('<div class="thebox-content"><div class="relative"><div id="thebox-close">X</div></div></div>');
+               		$('.thebox-content').stop().animate({ opacity: 0 }, 0);
+
 					
 
 				}
