@@ -768,7 +768,8 @@ li{list-style:none; margin:0px; padding:0px;}
 	background-color:#666;
 	color:#fff;
 	width:100%;
-	z-index: 9000;
+	z-index: 9999;
+	display:none;
 }	
 
 	.the-menu-minibar .btn{
@@ -785,12 +786,13 @@ li{list-style:none; margin:0px; padding:0px;}
 
 .the-menu-responsive{
 	width:250px;
-	position:absolute;
+	position:fixed;
 	left:-250px;
 	top:0px;
-	height:auto;
+	height:100%;
 	color:#CCC;
-	overflow:hidden;
+	overflow-x:hidden;
+	overflow-y:auto;
 	display:none;
 	
 background: rgb(76,76,76); /* Old browsers */
