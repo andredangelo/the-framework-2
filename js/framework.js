@@ -795,10 +795,17 @@ $(document).ready(function (e) {
                         }
 
                         if (div.attr("data-width")) {
-                            $('.thebox-content').css('width', div.attr("data-width"));
+							
+							$('.thebox-content').css('width', div.attr("data-width"));
                         } else {
                             $('.thebox-content').css('width', div.width() + padding * 2);
                         }
+						
+						if($('.thebox-content').outerWidth() > $(window).width()){
+							$('.thebox-content').css('width', $(window).width() - padding*4);
+						}
+						
+						
                         $('.thebox-content').css('height', div.height() + padding * 2);
 
                         if (This.attr('data-iframe')) {
