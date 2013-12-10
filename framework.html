@@ -13,6 +13,10 @@
 
 <!-- /Rel´s & Estilos-->
 
+
+
+
+
 <!-- Mobile viewport optimization -->
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
@@ -20,9 +24,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
 <!-- /Mobile viewport optimization (Idiot´s guide) -->
-   <!-- REFRESH PAGE
-   < M E T A HTTP-EQUIV="Refresh" CO N TENT="3;URL=http://www...">
-   -->
+
     <meta http-equiv="imagetoolbar" content="no" />
     <meta http-equiv="cache-control" content="public" />
     <meta http-equiv="content-language" content="pt-BR" />
@@ -217,8 +219,8 @@
                                 </li>
                             </ul>
                   
-            
-                           <div id="the-banner-content" style="height:200px; width:auto; ">
+            			<div style=" height:300px;">
+                           <div id="the-banner-content" style="height:100%;" >
                                 <ul>
                                     <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900;">
                                     1
@@ -234,7 +236,7 @@
                                     </li>
                                 </ul>
                            </div>
-                           
+                       </div>    
                            
                            
                       <br/><br/>
@@ -463,6 +465,11 @@
             
                            <div id="the-banner-content3" style="height:300px;">
                                 <ul>
+                                	<li style="background-color:#900;" data-thumb="img/fallback/ie.png">
+                                    	<a href="img/fallback/ie.png" class="thebox">
+                                        <img src="img/fallback/ie.png" width="128" height="127"></a>
+                                    </li>
+                                
                                     <li data-title="Título da Notícia 1" data-link="http://www.google.com" data-thumb="img/fallback/ie.png"  data-target="_blank" style="background-color:#900; width:200px;">
                                     1
                                     </li>
@@ -748,7 +755,7 @@
                             <ul>
                                 <li>Use data-iframe attributes.</strong></li>
                             </ul>
-                            <a href="inlineContentIframe" data-title="Title 1" data-iframe="http://www.uol.com.br"  class="thebox-iframe">
+                            <a href="inlineContentIframe" data-title="Title 1" data-width="200" data-iframe="http://www.uol.com.br"  class="thebox-iframe">
                            	 <img src="img/fallback/ie.png" width="128" height="127">
                             </a>
                             
@@ -2997,9 +3004,10 @@
 		
 			$('#the-banner-content').thebanner({autoAnimate:false});
 			$('#the-banner-content2').thebanner({slides:true, slideMargin:40, autoAnimate:false});
-			$('#the-banner-content3').thebanner({thumb:true, effect:"fade", autoAnimate:false, clickAndStop:false});
+			$('#the-banner-content3').thebanner({thumb:true, autoAnimate:false, clickAndStop:false});
 			
 			$('.thebox').thebox({showButtons:true, zoom100pct:true, animate:true});
+			
 			$('.thebox-inline').thebox({type:"inline"});
 			$('.thebox-iframe').thebox({type:"inline"});
 			

@@ -31,12 +31,39 @@ $(document).ready(function (e) {
     //scrollFixed();
 
 
+	/** Browser **/
+	browser();
+
 });
 
 
 
 
 /* Components *****************************************************************/
+
+/** Component: Browser **/
+function browser(){
+	if ($.browser.msie) {
+		if(parseInt($.browser.version) == 8){
+			 $("body").addClass("ie8");
+		} else if(parseInt($.browser.version) == 7){
+			 $("body").addClass("ie7");
+		} else if(parseInt($.browser.version) == 6){
+			 $("body").addClass("ie6");
+		} else if(parseInt($.browser.version) == 9){
+			 $("body").addClass("ie9");
+		} else if(parseInt($.browser.version) == 10){
+			 $("body").addClass("ie10");
+		} 
+	}
+}
+/** end: Component: Browser **/
+
+
+
+
+
+
 
 
 
@@ -202,6 +229,10 @@ $(document).ready(function (e) {
                         $(thebanner).find(".the-banner-controls ul").append("<li><a data-index=" + index + "></a></li>");
                     }
                 }
+				
+				
+				
+				
 
 
 
@@ -515,6 +546,7 @@ $(document).ready(function (e) {
                             });
                             thebanner.find(".thebanner-mask ul li:nth-child(2)").html("");
                             thebanner.find(".thebanner-mask ul li:nth-child(2)").append(arrListHtml[n]);
+							
                             //thebanner.find(" .thebanner-mask ul li:nth-child(2)").append($(arrList[n]).html());
                             //thebanner.find(" .thebanner-mask ul li:nth-child(2)").append("<h3>"+ thebanner.find(" .thebanner-mask ul li:nth-child(2)").attr("data-title") +"</h3>");
 
@@ -719,9 +751,9 @@ $(document).ready(function (e) {
         });
 
 
+		//$(this).on( "click", function(event) {
 
-
-        $(this).click(function (event) {
+       $(this).click(function (event) {
             var scrollAtual = $(window).scrollTop();
             var hrefAtual = $(this).attr("href");
             var This = $(this);
@@ -780,6 +812,7 @@ $(document).ready(function (e) {
                         var iframeWidth;
                         var iframeHeight;
 
+						
                         // iFrame
                         if (This.attr('data-iframe-width')) {
                             iframeWidth = This.attr('data-iframe-width');
@@ -1523,7 +1556,7 @@ function menuTabs() {
 
 
     /* Click Tab Open Content */
-    $(".menu-tab li a").click(function () {
+    $(".menu-tab li > a").click(function () {
         $(atual).css("display", "none");
         $(tabAtual).removeClass("active");
 
