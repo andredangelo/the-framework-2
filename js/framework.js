@@ -31,8 +31,8 @@ $(document).ready(function (e) {
     //scrollFixed();
 
 
-	/** Browser **/
-	browser();
+    /** Browser **/
+    browser();
 
 });
 
@@ -42,20 +42,20 @@ $(document).ready(function (e) {
 /* Components *****************************************************************/
 
 /** Component: Browser **/
-function browser(){
-	if ($.browser.msie) {
-		if(parseInt($.browser.version) == 8){
-			 $("body").addClass("ie8");
-		} else if(parseInt($.browser.version) == 7){
-			 $("body").addClass("ie7");
-		} else if(parseInt($.browser.version) == 6){
-			 $("body").addClass("ie6");
-		} else if(parseInt($.browser.version) == 9){
-			 $("body").addClass("ie9");
-		} else if(parseInt($.browser.version) == 10){
-			 $("body").addClass("ie10");
-		} 
-	}
+function browser() {
+    if ($.browser.msie) {
+        if (parseInt($.browser.version) == 8) {
+            $("body").addClass("ie8");
+        } else if (parseInt($.browser.version) == 7) {
+            $("body").addClass("ie7");
+        } else if (parseInt($.browser.version) == 6) {
+            $("body").addClass("ie6");
+        } else if (parseInt($.browser.version) == 9) {
+            $("body").addClass("ie9");
+        } else if (parseInt($.browser.version) == 10) {
+            $("body").addClass("ie10");
+        }
+    }
 }
 /** end: Component: Browser **/
 
@@ -229,10 +229,10 @@ function browser(){
                         $(thebanner).find(".the-banner-controls ul").append("<li><a data-index=" + index + "></a></li>");
                     }
                 }
-				
-				
-				
-				
+
+
+
+
 
 
 
@@ -506,8 +506,22 @@ function browser(){
 
             } else {
                 switch (settings.effect) {
-                    // Together Effect 
+                    // Together Effect  
                     case "slider":
+                        thebanner.find(" .thebanner-mask ul li").click(linkBanner);
+                        thebanner.find(".the-banner").stop().animate({ marginLeft: 0 }, 0);
+                        thebanner.find(".the-banner").html("");
+                        thebanner.find(".the-banner").append(arrList[bannerAtual]);
+                        thebanner.find(".the-banner").append(arrList[n]);
+                        thebanner.find(" .thebanner-mask ul li").css("width", widthBanner);
+                        thebanner.find(".the-banner").stop().animate({ marginLeft: -widthBanner }, settings.speed, function () {
+                            $(".the-banner-arrow").click(clickArrow);
+                        });
+                        break
+
+
+
+                    case "discover":
                         thebanner.find(" .thebanner-mask ul li").click(linkBanner);
                         thebanner.find(".the-banner").stop().animate({ marginLeft: 0 }, 0);
                         thebanner.find(".the-banner").html("");
@@ -546,7 +560,7 @@ function browser(){
                             });
                             thebanner.find(".thebanner-mask ul li:nth-child(2)").html("");
                             thebanner.find(".thebanner-mask ul li:nth-child(2)").append(arrListHtml[n]);
-							
+
                             //thebanner.find(" .thebanner-mask ul li:nth-child(2)").append($(arrList[n]).html());
                             //thebanner.find(" .thebanner-mask ul li:nth-child(2)").append("<h3>"+ thebanner.find(" .thebanner-mask ul li:nth-child(2)").attr("data-title") +"</h3>");
 
@@ -751,9 +765,9 @@ function browser(){
         });
 
 
-		//$(this).on( "click", function(event) {
+        //$(this).on( "click", function(event) {
 
-       $(this).click(function (event) {
+        $(this).click(function (event) {
             var scrollAtual = $(window).scrollTop();
             var hrefAtual = $(this).attr("href");
             var This = $(this);
@@ -812,7 +826,7 @@ function browser(){
                         var iframeWidth;
                         var iframeHeight;
 
-						
+
                         // iFrame
                         if (This.attr('data-iframe-width')) {
                             iframeWidth = This.attr('data-iframe-width');
@@ -826,20 +840,34 @@ function browser(){
                         } else {
                             iframeHeight = "100%"
                         }
+						
 
                         if (div.attr("data-width")) {
-							
-							$('.thebox-content').css('width', div.attr("data-width"));
+                            $('.thebox-content').css('width', div.attr("data-width"));
                         } else {
-                            $('.thebox-content').css('width', div.width() + padding * 2);
+                            $('.thebox-content').css('width', div.outerWidth());
+							
+                        }
+
+
+                        if (div.attr("data-height")) {
+                            
+                            $('.thebox-content').css('height', div.attr("data-height"));
+                        } else {
+                            $('.thebox-content').css('height', div.outerHeight());
                         }
 						
-						if($('.thebox-content').outerWidth() > $(window).width()){
-							$('.thebox-content').css('width', $(window).width() - padding*4);
-						}
-						
-						
-                        $('.thebox-content').css('height', div.height() + padding * 2);
+						alert(div.find("div").outerHeight());
+
+
+                         
+
+                        if ($('.thebox-content').outerWidth() > $(window).width()) {
+                            $('.thebox-content').css('width', $(window).width() - padding * 4);
+                        }
+
+
+                       
 
                         if (This.attr('data-iframe')) {
                             $(div).append("<iframe id='thebox-iframe' frameborder='0' src='" + This.attr('data-iframe') + "' name='' width='" + iframeWidth + "' height='" + iframeHeight + "'></iframe>")
@@ -848,7 +876,7 @@ function browser(){
                         //$('.thebox-content').addClass(classPop);
                         $(div).appendTo(".thebox-content > .relative");
                         $(div).css("display", "block");
-                        $(div).css("width", "100%");
+                        //$(div).css("width", "100%");
 
 
                         $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
@@ -878,6 +906,7 @@ function browser(){
 
                             /* Include controls */
                             $(".thebox-content").append("<div id='thebox-controls'><div id='thebox-control-left' class='thebox-control'><</div><div id='thebox-control-right' class='thebox-control'>></div></div>");
+
 
 
 
@@ -995,7 +1024,7 @@ function browser(){
 
                         $(".thebox-content img").load(function () {
 
-                            
+
                             $(".thebox-content img").css("display", "block");
                             $(".thebox-content img").animate({ opacity: 1 }, settings.speed);
 
@@ -1012,7 +1041,7 @@ function browser(){
                                 }
                             }
 
-                            
+
 
                             $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
                             $(".thebox-content").removeClass("thebox-loader");
@@ -1030,15 +1059,15 @@ function browser(){
 
                             $(this).css("visibility", "visible");
 
-                             $(".thebox-content").css("margin-left", -($(".thebox-content img").outerWidth()) / 2);
-                             $(".thebox-content").css("margin-top", -($(".thebox-content img").outerHeight()) / 2);
+                            $(".thebox-content").css("margin-left", -($(".thebox-content img").outerWidth()) / 2);
+                            $(".thebox-content").css("margin-top", -($(".thebox-content img").outerHeight()) / 2);
 
-                             $(".thebox-content").css("margin-left", -($(".thebox-content").outerWidth()) / 2);
-                             $(".thebox-content").css("margin-top", -($(".thebox-content").outerHeight()) / 2);
+                            $(".thebox-content").css("margin-left", -($(".thebox-content").outerWidth()) / 2);
+                            $(".thebox-content").css("margin-top", -($(".thebox-content").outerHeight()) / 2);
 
 
-                            
-                            
+
+
                         });
                 }
             }
@@ -1081,7 +1110,7 @@ function browser(){
                 if (settings.type == "inline") {
                     $("#" + This.attr("href")).appendTo(parentDiv);
                     $("#" + This.attr("href")).css("display", "none");
-                    $("#" + This.attr("href")).css("width", $("#" + This.attr("href")).attr("data-width"));
+                    $("#" + This.attr("href")).css("width", $("#" + This.attr("href")).width());
 
                     if (This.attr('data-iframe')) {
                         $('#thebox-iframe').remove();
@@ -1381,26 +1410,26 @@ $(this).find("> .menu-submenu").css("display", "none");
 
             function responsiveMenu() {
 
-				
-				if(!toogleMenu){
-						$(settings.base).stop().css("margin-left", "0px");
-						$('.the-menu-minibar').stop().css("margin-left", "0px");
-						$('.the-menu-responsive').stop().animate({ left: -$('.the-menu-responsive').width() }, 0, function () {
-							//$(settings.base).css('width', '100%');
-						});
-						toogleMenu = true;
-				}
-				
+
+                if (!toogleMenu) {
+                    $(settings.base).stop().css("margin-left", "0px");
+                    $('.the-menu-minibar').stop().css("margin-left", "0px");
+                    $('.the-menu-responsive').stop().animate({ left: -$('.the-menu-responsive').width() }, 0, function () {
+                        //$(settings.base).css('width', '100%');
+                    });
+                    toogleMenu = true;
+                }
+
                 $('.the-menu-responsive').css('minHeight', $(window).height());
-				
-				
+
+
                 if ($(window).width() < settings.minWidth) {
-					This.css('display', 'none');
-					$('.the-menu-minibar').css('display', 'block');
+                    This.css('display', 'none');
+                    $('.the-menu-minibar').css('display', 'block');
                 } else {
                     $('.the-menu-minibar').css('display', 'none');
-					This.css('display', '');
-					//This.html(estruturaMenu);
+                    This.css('display', '');
+                    //This.html(estruturaMenu);
                     $('.the-menu-responsive').css('left', -$('.the-menu-responsive').width());
                     $(settings.base).css('margin-left', 0);
                     toogleMenu = true;
@@ -1412,11 +1441,11 @@ $(this).find("> .menu-submenu").css("display", "none");
 
 
             function createMenu() {
-                
+
                 $('body').prepend("<div class='the-menu-minibar'><a class='the-menu-ico btn'>" + settings.labelButtonMenu + "</a>" + settings.htmlMiniBar + "</div>");
-				
-				
-				$('body').prepend("<div class='the-menu-responsive'></div>");
+
+
+                $('body').prepend("<div class='the-menu-responsive'></div>");
                 $('.the-menu-responsive').html(estruturaMenu);
                 $('.the-menu-responsive ul').css('display', 'block');
                 $('.the-menu-responsive li').css('display', 'block');
@@ -1432,27 +1461,27 @@ $(this).find("> .menu-submenu").css("display", "none");
 
                 $('body').css('overflow-x', 'hidden');
 
-                    $('.the-menu-minibar .the-menu-ico').click(function () {
-						
-                        if (toogleMenu) {
-                            $(settings.base).css('width', $(settings.base).width());
+                $('.the-menu-minibar .the-menu-ico').click(function () {
 
-                            $(settings.base).stop().animate({ marginLeft: $('.the-menu-responsive').width() }, settings.time);
-                            $('.the-menu-minibar').stop().animate({ left: $('.the-menu-responsive').width() }, settings.time, function () {
-                                $(settings.base).css('width', '100%');
-                            });
-                            $('.the-menu-responsive').stop().animate({ left: 0 }, settings.time);
-                            $('.the-menu-responsive').css("display", "block");
-                            toogleMenu = false;
-                        } else {
-                            $(settings.base).stop().animate({ marginLeft: 0 }, settings.time);
-                            $('.the-menu-minibar').stop().animate({ left: 0 }, settings.time);
-                            $('.the-menu-responsive').stop().animate({ left: -$('.the-menu-responsive').width() }, settings.time, function () {
-                                $(settings.base).css('width', '100%');
-                            });
-                            toogleMenu = true;
-                        }
-                    });
+                    if (toogleMenu) {
+                        $(settings.base).css('width', $(settings.base).width());
+
+                        $(settings.base).stop().animate({ marginLeft: $('.the-menu-responsive').width() }, settings.time);
+                        $('.the-menu-minibar').stop().animate({ left: $('.the-menu-responsive').width() }, settings.time, function () {
+                            $(settings.base).css('width', '100%');
+                        });
+                        $('.the-menu-responsive').stop().animate({ left: 0 }, settings.time);
+                        $('.the-menu-responsive').css("display", "block");
+                        toogleMenu = false;
+                    } else {
+                        $(settings.base).stop().animate({ marginLeft: 0 }, settings.time);
+                        $('.the-menu-minibar').stop().animate({ left: 0 }, settings.time);
+                        $('.the-menu-responsive').stop().animate({ left: -$('.the-menu-responsive').width() }, settings.time, function () {
+                            $(settings.base).css('width', '100%');
+                        });
+                        toogleMenu = true;
+                    }
+                });
 
 
 
