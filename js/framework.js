@@ -857,7 +857,7 @@ function browser() {
                             $('.thebox-content').css('height', div.outerHeight());
                         }
 						
-						alert(div.find("div").outerHeight());
+						//alert(div.find("div").outerHeight());
 
 
                          
@@ -1616,19 +1616,26 @@ function menuTabs() {
 function masksForms() {
     /* Mascara telefone */
     // jQuery Masked Input
-    $('textarea').html('');
+    //$('textarea').html('');
+
+	
 
     $('.maskTel').mask("(99) 9999-9999?9").ready(function (event) {
-        var target, phone, element;
-        target = (event.currentTarget) ? event.currentTarget : event.srcElement;
-        phone = target.value.replace(/\D/g, '');
-        element = $(target);
-        element.unmask();
-        if (phone.length > 10) {
-            element.mask("(99) 99999-999?9");
-        } else {
-            element.mask("(99) 9999-9999?9");
-        }
+		try{
+			var target, phone, element;
+			target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+			phone = target.value.replace(/\D/g, '');
+			element = $(target);
+			element.unmask();
+			
+			if (phone.length > 10) {
+				element.mask("(99) 99999-999?9");
+			} else {
+				element.mask("(99) 9999-9999?9");
+			}
+			}catch(err){
+		
+			}
     });
 
 
@@ -1649,6 +1656,26 @@ function masksForms() {
     $('.cnpj').mask("99.999.999/9999-99");
     $(".maskDate").mask("99/99/9999");
 
+
+	$.mask.definitions['h'] = "[A-Z-a-z]";
+	
+	$('.maskPlaca').mask("hhh-9999");
+
+	//$('.maskNumero').attr("type", "number");
+	
+	$('.maskNumero').on('keypress', function(ev) {
+    var keyCode = window.event ? ev.keyCode : ev.which;
+		//codes for 0-9
+		if (keyCode < 48 || keyCode > 57) {
+			//codes for backspace, delete, enter
+			if (keyCode != 0 && keyCode != 8 && keyCode != 13 && !ev.ctrlKey) {
+				ev.preventDefault();
+			}
+		}
+	});
+
+
+	$('.maskValor').maskMoney({symbol:'R$ ', thousands:'.', decimal:',', symbolStay: true});
 
     $(".maskDate").datepicker({
         dateFormat: 'dd/mm/yy',

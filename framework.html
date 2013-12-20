@@ -14,9 +14,6 @@
 <!-- /Rel´s & Estilos-->
 
 
-
-
-
 <!-- Mobile viewport optimization -->
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
@@ -1310,6 +1307,15 @@
                                                               
                                 <label>CNPJ</label>
                                 <input class="cnpj" name="Nome" type="text">
+                                
+                                <label>Placa</label>
+                                <input class="maskPlaca" name="Nome" type="text">
+                                                              
+                                <label>Número</label>
+                                <input class="maskNumero" name="Nome" type="text" pattern="[0-9]">
+                                                              
+                                <label>Valor</label>
+                                <input class="maskValor" name="Nome" type="text">
                                                               
                                 <label>Senha</label>     
                                 <input id="senha" name="senha" type="password">           
@@ -1391,6 +1397,7 @@
                         <pre class="brush: js; hei500">  
                         // Call Masked Input and Validate Function
 						<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+						<script type="text/javascript" src="js/jquery.maskMoney.js"></script>
                         <script type="text/javascript" src="js/jquery.validate.js"></script>
                         
                         // 
