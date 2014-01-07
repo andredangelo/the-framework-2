@@ -846,6 +846,7 @@ function browser() {
                             $('.thebox-content').css('width', div.attr("data-width"));
                         } else {
                             $('.thebox-content').css('width', div.outerWidth());
+                            
 							
                         }
 
@@ -883,6 +884,34 @@ function browser() {
                         $(".thebox-content").css("left", "50%");
                         $(".thebox-content").css("margin-left", -($('.thebox-content').width() + (padding * 2)) / 2);
                         $(".thebox-content").css("margin-top", -($('.thebox-content').height() + (padding * 2)) / 2);
+                        
+                        
+                        
+                        /* Resize */
+                        $(window).resize(function () {
+                           
+                           var larguraBox = $(".thebox-content").outerWidth();
+                           var larguraTotal = $(window).width();
+                            
+                            
+                           if(larguraBox >= larguraTotal){
+	                           
+	                            $(".thebox-content").css('width', larguraTotal-80);
+                            }else{
+                           	    $(".thebox-content").css('width', larguraTotal-80);
+                            }
+	                            $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
+	                            $(".thebox-content").css("margin-left", -($(".thebox-content").width() / 2 + Number($(".thebox-content").css("padding-left").replace("px", ""))));
+	                            $(".thebox-content").css("margin-top", -$(".thebox-content").height() / 2);
+	                            $(".thebox-bg").css("width", $(window).width());
+                            
+
+                        });
+                        /* end: Resize */
+                        
+                        
+                        
+                        
                         break
 
 
@@ -995,7 +1024,7 @@ function browser() {
 
 
 
-                        /* Resize */
+                        /* Resize  Default*/
                         $(window).resize(function () {
                             $(".thebox-content img").css("width", "");
                             $(".thebox-content img").css("height", "");
@@ -1017,6 +1046,8 @@ function browser() {
                             $(".thebox-content #thebox-control-right").css("top", -($(".thebox-content").height() / 2 + $(".thebox-content #thebox-control-right").height()));
                             $(".thebox-content #thebox-control-right").css("right", 10);
                             $(".thebox-bg").css("width", $(window).width());
+                            
+                            
 
                         });
                         /* end: Resize */
@@ -1111,7 +1142,8 @@ function browser() {
                     $("#" + This.attr("href")).appendTo(parentDiv);
                     $("#" + This.attr("href")).css("display", "none");
                     $("#" + This.attr("href")).css("width", $("#" + This.attr("href")).width());
-
+					$("#" + This.attr("href")).css("width", "");
+					
                     if (This.attr('data-iframe')) {
                         $('#thebox-iframe').remove();
                     }
