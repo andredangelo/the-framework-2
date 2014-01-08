@@ -886,20 +886,31 @@ function browser() {
                         $(".thebox-content").css("margin-top", -($('.thebox-content').height() + (padding * 2)) / 2);
                         
                         
+                        var larguraBox = $(".thebox-content").width();
                         
                         /* Resize */
                         $(window).resize(function () {
                            
-                           var larguraBox = $(".thebox-content").outerWidth();
                            var larguraTotal = $(window).width();
+                           var larguraBox2 = $(".thebox-content").outerWidth();
                             
                             
-                           if(larguraBox >= larguraTotal){
+                            if(larguraBox2 >= larguraTotal-40){
 	                           
 	                            $(".thebox-content").css('width', larguraTotal-80);
+	                            $(".thebox-content").css('height', 'auto');
+
                             }else{
-                           	    $(".thebox-content").css('width', larguraTotal-80);
+	                           
+	                           if($(".thebox-content").width() < larguraBox){
+	                            $(".thebox-content").css('width', larguraTotal-80);
+
+	                           }
+	                           
                             }
+                            
+                            
+                            
 	                            $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
 	                            $(".thebox-content").css("margin-left", -($(".thebox-content").width() / 2 + Number($(".thebox-content").css("padding-left").replace("px", ""))));
 	                            $(".thebox-content").css("margin-top", -$(".thebox-content").height() / 2);
@@ -1143,6 +1154,7 @@ function browser() {
                     $("#" + This.attr("href")).css("display", "none");
                     $("#" + This.attr("href")).css("width", $("#" + This.attr("href")).width());
 					$("#" + This.attr("href")).css("width", "");
+					$("#" + This.attr("href")).css("height", "");
 					
                     if (This.attr('data-iframe')) {
                         $('#thebox-iframe').remove();
