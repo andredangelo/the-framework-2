@@ -23,7 +23,7 @@ $(document).ready(function (e) {
     menuTabs();
 
 
-    /** Component: maskForms **/
+    /** Component: masksForms **/
     masksForms();
 
 
@@ -1700,10 +1700,13 @@ function masksForms() {
     $('.cnpj').mask("99.999.999/9999-99");
     $(".maskDate").mask("99/99/9999");
 
-
+	$.mask.definitions['H'] = "[0-2]";
+	$.mask.definitions['M'] = "[0-5]";
 	$.mask.definitions['h'] = "[A-Z-a-z]";
 	
 	$('.maskPlaca').mask("hhh-9999");
+
+	$('.maskHora').mask("H9:M9");
 
 	//$('.maskNumero').attr("type", "number");
 	
