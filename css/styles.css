@@ -12,23 +12,22 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* !STRUCTURE CONFIGURATION **/::selection {
+/* !STRUCTURE CONFIGURATION **/
+::selection {
   background: #000;
   /* WebKit */
-
   color: #fff;
 }
 ::-moz-selection {
   background: #000;
   /* Firefox */
-
   color: #fff;
 }
 /* !LESS CONFIGURATION*/
 /** Main **/
 /** Titles **/
-/* !MIXINS CONFIGURATION*/
-/* !STRUCTURE CONFIGURATION **/html {
+/* !STRUCTURE CONFIGURATION **/
+html {
   font-size: 62.5%;
 }
 body {
@@ -52,12 +51,10 @@ header {
 ::selection {
   background: #000;
   /* WebKit */
-
   color: #fff;
 }
 ::-moz-selection {
   background: #000;
   /* Firefox */
-
   color: #fff;
 }
