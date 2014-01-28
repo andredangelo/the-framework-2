@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('../../less/the-framework.less');
+@import url(http://fonts.googleapis.com/css?family=Hammersmith+One);
+/* !LESS WEBSITE CONFIGURATION*/
+
+
+	/** Main **/
+	@font-main:'Hammersmith One', sans-serif, Helvetica, Arial, sans-serif;
+	@color-main: #000;
+		
+
+
+	/** Titles **/
+	@font-title: @font-main;
+	@color-title: #6d8596;
+	@letter-spacing-title: -1px;
+	
+	h1, h2,h3,h4,h5{.font-base(@font-title, @color-title, @letter-spacing-title)}
+	h1{.font-size(2.4)}
+	h2{.font-size(2.2);}  
+	h3{.font-size(2.0);}   
+	h4{.font-size(1.8);}  	
+	h5{.font-size(1.6);}  	
+	h5{.font-size(1.4);}  	 
+	
+
+
+	/** Paragraphs **/
+	p{.font-size(1.4)}
+	
+	
+
+	
+	
+
+
+
+/* !STRUCTURE CONFIGURATION **/	
+	
+	
+	html { font-size: 62.5%; } 
+	 
+	body{
+		.font-base;
+		background-color: #fff;
+	}
+	
+	*, *:after, *:before{
+		.font-base;
+	}
+	
+	/** Main Wrapper **/
+	 .wrap{width:990px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !HEADER */
+
+
+	header{
+		width:100%;
+		min-height:60px;
+
+
+		#logo{
+			
+		}
+
+		#nav{
+
+
+			ul li{
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+/* !HOME */
+			
+	
+	.feature {
+		
+		h2{
+			background-color: #e8e8e8;
+			padding: 10px;
+			.box-shadow(inset, 0px, 4px, 4px, rgba(0, 0, 0, 0.1));
+		}
+
+		p{
+			.font-size(1.4);
+		}
+
+		.example{
+			clear: both;;
+			width: 100%;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !FOOTER */
+	
+	footer{
+	
+	}
+		
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+::selection {
+	background: #000; /* WebKit */
+	color:#fff;
+}
+::-moz-selection {
+	background: #000; /* Firefox */
+	color:#fff;
+}
+
+

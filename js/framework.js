@@ -243,6 +243,8 @@ function browser() {
                     $(this).addClass("pointer");
                 }
 
+
+
             });
 
 
@@ -467,6 +469,18 @@ function browser() {
         }
 
         /* end: Arrows */
+
+
+
+        validateOneBanner();
+        /* If has 1 banner, display none in controls */
+        function validateOneBanner(){
+            if(totalNumbersBanners == 1){
+                 $(thebanner).find(".the-banner-controls").css("display", "none");
+                 $(thebanner).find("#the-banner-right").css("display", "none");
+                 $(thebanner).find("#the-banner-left").css("display", "none");
+            }        
+        }
 
 
 
@@ -1448,8 +1462,7 @@ $(this).find("> .menu-submenu").css("display", "none");
 
 
         if (settings.responsive) {
-           
-
+            
             function createMenu() {
 
                 $('body').prepend("<div class='the-menu-minibar'><a class='the-menu-ico btn'>" + settings.labelButtonMenu + "</a>" + settings.htmlMiniBar + "</div>");
@@ -1493,8 +1506,11 @@ $(this).find("> .menu-submenu").css("display", "none");
                     }
                 });
 
-            }
-
+            createMenu();
+            responsiveMenu();
+            $(window).resize(function () {
+                responsiveMenu();
+            });
 
             function responsiveMenu() {
 
@@ -1528,17 +1544,12 @@ $(this).find("> .menu-submenu").css("display", "none");
             }
 
 
-
-            createMenu();
-            responsiveMenu();
-            $(window).resize(function () {
-                responsiveMenu();
-            });
+            
 
 
 
 
-
+            }
         }
 
         /** Sub Menu **************/
