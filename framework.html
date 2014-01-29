@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <title>The Framework v2</title>
 
-<!-- Rel´s & Estilos -->
-
-    <link rel="stylesheet" href="_framework/css/styles.css" media="screen"/>
-    <link rel="stylesheet" href="_framework/css/mobile.css" media="screen">
-
-
-  
+ 
 
  <!-- Code snippet Files --> 
     <script type="text/javascript" src="_framework/js/shCore.js"></script>
     <script type="text/javascript" src="_framework/js/shBrushJScript.js"></script>
     <link type="text/css" rel="stylesheet" href="_framework/css/shCoreDefault.css"/>
     <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+
+<!-- Rel´s & Estilos -->
+
+    <link rel="stylesheet" href="_framework/css/styles.css" media="screen"/>
+    <link rel="stylesheet" href="_framework/css/mobile.css" media="screen">
+
+
 
 
 <!-- Framework Files -->
@@ -42,7 +45,23 @@
 
     <script>
         $(document).ready(function(){
-           $('.menu').themenu();          
+            $('#the-banner-content').thebanner();  
+            $('.the-menu').themenu();      
+
+            $('.open-code').click(function(event){
+                event.preventDefault();
+
+                var code = $(this).parent().find(".none");
+
+                if( code.css("display") == "none"){
+                    code.css("display", "block");
+                }else{
+                    code.css("display", "none");
+                }
+
+                
+            })
+
         })
     </script>
 
@@ -55,10 +74,10 @@
 
 <!-- Header -->
     <header>
-       <nav class="menu">
+        <nav class="the-menu">
             <ul>
-                <li class="menu-sub level1">
-                  <a href="#menu">Componentes</a>
+                <li class="menu-sub level1 components">
+                  <a href="#menu">Components</a>
                   <ul class="menu menu-submenu">
                       <li>
                           <a href="#menu">The Banner</a>
@@ -73,7 +92,7 @@
                 </li>
 
 
-                <li class="menu-sub level1">
+                <li class="menu-sub level1 html">
                   <a href="#menu">HTML</a>
                   <ul class="menu menu-submenu">
                       <li>
@@ -88,16 +107,34 @@
                   </ul>
                 </li>
 
+
+                <li class="menu-sub level1 layout">
+                  <a href="#menu">Layout</a>
+                  <ul class="menu menu-submenu">
+                      <li>
+                          <a href="#menu">The Banner</a>
+                      </li>
+                      <li>
+                          <a href="#menu">The Box</a>
+                      </li>
+                      <li>
+                          <a href="#menu">The Load</a>
+                      </li>
+                  </ul>
+                </li>
+
+
+
             </ul>
         </nav>
-
     </header>
 
 
 
 
-
-
+    <section id="banner">
+        <h1>The Framework</h1>
+    </section>
 
 
 
@@ -107,136 +144,341 @@
 <!-- Menu -->
 <a id="anc-menu" name="anc-menu"></a>
 
-    <section class="feature">
+    <section id="components">
 
-        <h2>Menu</h2>
-        <p>Simple menu</p>
+    <!-- The Banner -->
+      <div class="feature">
+          <h2>Components > The Banner</h2>
+          <p>The complete banner to animations, ads and much more...</p>
 
-        <ul>
-             <li>Create the correct Structure</li>
-             <li>Call jQuery function: $('.nameclass').themenu();</li>
-        </ul> 
+          <ul>
+               <li>Create the correct Structure</li>
+               <li>Call jQuery function: $('#element').the-banner();</li>
+          </ul> 
 
-
-        <div class="example">
-            <h4>Exemplo:</h4>
-                <nav class="menu">
-                      <ul>
-                          <li>
-                              <a href="#menu" class="active">Menu</a>
-                          </li>
-                           
-                           
-                          <li class="menu-sub level1">
-                              <a href="#menu">Submenu</a>
-                              <ul class="menu menu-submenu">
-                                  
-                                  <li>
-                                      <a href="#menu">SubmenuComum</a>
-                                  </li>
-                                   
-                                   
-                                  <li class="menu-sub level2">
-                                      <a href="#menu">Submenulvl2</a>
-                                      <ul class="menu menu-submenu">
-                                          <li>
-                                              <a href="#menu">Submenu</a>
-                                          </li>
-                                          <li>
-                                              <a href="#menu">Submenu</a>
-                                          </li>
-                                          <li>
-                                              <a href="#menu">Submenu</a>
-                                          </li>
-                                      </ul>
-                                  </li>
-                                   
-                                   
-                                   
-                                   
-                                   
-                                  <li class="menu-sub level2">
-                                      <a href="#menu">Submenulvl2e3</a>
-                                      <ul class="menu menu-submenu ">
-                                          <li>
-                                              <a href="#menu">Submenu2</a>
-                                          </li>
-                                          <li>
-                                              <a href="#menu">Submenu2</a>
-                                          </li>
-                                           
-                                           
-                                           
-                                          <li class="menu-sub level3">
-                                                 <a href="#menu">Submenulvl3</a>
-                                                  <ul class="menu menu-submenu">
-                                                      <li>
-                                                          <a href="#menu">Submenu3</a>
-                                                      </li>
-                                                      <li>
-                                                          <a href="#menu">Submenu3</a>
-                                                      </li>
-                                                      <li>
-                                                          <a href="#menu">Submenu3</a>
-                                                      </li>
-                                                  </ul>
-                                          </li>
-                                           
-                                           
-                                           
-                                      </ul>
-                                       
-                                  </li>
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
-                              </ul>
-                          </li>
-                           
-                           
-                           
-                          <li class="menu-sub level1">
-                              <a href="#menu">Submenulvl</a>
-                              <ul class="menu menu-submenu">
-                                  <li>
-                                      <a href="#menu">Submenu</a>
-                                  </li>
-                                  <li>
-                                      <a href="#menu">Submenu</a>
-                                  </li>
-                                  <li>
-                                      <a href="#menu">Submenu</a>
-                                  </li>
-                              </ul>
-                          </li>
-                                   
-                           
-                           
-                           
-                           
-                      </ul>
-                </nav>
-
-
-
+          <h4>Example:</h4>
+          <div class="example">
+                <div id="the-banner-content" style="height:200px;">
+                    <ul>
+                        <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900;">
+                        1
+                        </li>
+                        <li data-link="http://www.google.com" style="background-color:#06C;;">
+                        2
+                        </li>
+                        <li data-link="http://www.google.com" style="background-color:#3C9; ">
+                        3
+                        </li>
+                        <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60; ">
+                        4
+                        </li>
+                    </ul>
+               </div>
                 <br class="clr">
-        </div>
+          </div>
+
+      
+          <h5>HTML Simple Menu</h5>
+          <pre class="brush: js;">
+          
+          </pre>
+
+          <h5>HTML Advanced Menu (Menu + Sub Menu)</h5>
+          <div>
+              <a href="#" class="open-code btn">View Code</a>
+              <span class="none">
+                  <pre class="brush: js;">  
+                      
+                  </pre>
+              </span>
+          </div>
+
+          <h5>Reset default styles</h5>
+          <pre class="brush: js;">
+               teste
+          </pre>  
+
+        </div>    
+
+    </section>
 
 
-        <pre class="brush: js; hei300">  
 
-            teste
 
-        </pre>
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- HTML -->
+
+    <section id="html">
+
+      <div class="feature">
+          <h2>Html > Menu</h2>
+          <p>Simple menu</p>
+
+          <ul>
+               <li>Create the correct Structure</li>
+               <li>Call jQuery function: $('.nameclass').themenu();</li>
+          </ul> 
+
+          <h4>Example:</h4>
+          <div class="example">
+                  <nav class="the-menu">
+                        <ul>
+                            <li>
+                                <a href="#menu" class="active">Menu</a>
+                            </li>
+                             
+                             
+                            <li class="menu-sub level1">
+                                <a href="#menu">Submenu</a>
+                                <ul class="menu menu-submenu">
+                                    
+                                    <li>
+                                        <a href="#menu">SubmenuComum</a>
+                                    </li>
+                                     
+                                     
+                                    <li class="menu-sub level2">
+                                        <a href="#menu">Submenulvl2</a>
+                                        <ul class="menu menu-submenu">
+                                            <li>
+                                                <a href="#menu">Submenu</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu">Submenu</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu">Submenu</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                     
+                                     
+                                     
+                                     
+                                     
+                                    <li class="menu-sub level2">
+                                        <a href="#menu">Submenulvl2e3</a>
+                                        <ul class="menu menu-submenu ">
+                                            <li>
+                                                <a href="#menu">Submenu2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu">Submenu2</a>
+                                            </li>
+                                             
+                                             
+                                             
+                                            <li class="menu-sub level3">
+                                                   <a href="#menu">Submenulvl3</a>
+                                                    <ul class="menu menu-submenu">
+                                                        <li>
+                                                            <a href="#menu">Submenu3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menu">Submenu3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menu">Submenu3</a>
+                                                        </li>
+                                                    </ul>
+                                            </li>
+                                             
+                                             
+                                             
+                                        </ul>
+                                         
+                                    </li>
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                </ul>
+                            </li>
+                             
+                             
+                             
+                            <li class="menu-sub level1">
+                                <a href="#menu">Submenulvl</a>
+                                <ul class="menu menu-submenu">
+                                    <li>
+                                        <a href="#menu">Submenu</a>
+                                    </li>
+                                    <li>
+                                        <a href="#menu">Submenu</a>
+                                    </li>
+                                    <li>
+                                        <a href="#menu">Submenu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                                     
+                             
+                             
+                             
+                             
+                        </ul>
+                  </nav>
+                  <br class="clr">
+          </div>
+
+      
+          <h5>HTML Simple Menu</h5>
+          <pre class="brush: js;">
+               <nav class="the-menu">
+                  <ul>
+                      <li>
+                          <a href="#menu" class="active">Link</a>
+                      </li>
+                      <li>
+                          <a href="#menu">Link</a>
+                      </li>
+                      <li>
+                          <a href="#menu">Link</a>
+                      </li>
+                      <li>
+                          <a href="#menu">Link</a>
+                      </li>
+                  </ul>
+              </nav>
+          </pre>
+
+          <h5>HTML Advanced Menu (Menu + Sub Menu)</h5>
+          <div>
+              <a href="#" class="open-code btn">View Code</a>
+              <span class="none">
+                  <pre class="brush: js;">  
+                          <nav class="the-menu">
+                                <ul>
+                                    <li>
+                                        <a href="#menu" class="active">Menu</a>
+                                    </li>
+                                     
+                                     
+                                    <li class="menu-sub level1">
+                                        <a href="#menu">Submenu</a>
+                                        <ul class="menu menu-submenu">
+                                            
+                                            <li>
+                                                <a href="#menu">SubmenuComum</a>
+                                            </li>
+                                             
+                                             
+                                            <li class="menu-sub level2">
+                                                <a href="#menu">Submenulvl2</a>
+                                                <ul class="menu menu-submenu">
+                                                    <li>
+                                                        <a href="#menu">Submenu</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#menu">Submenu</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#menu">Submenu</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                            <li class="menu-sub level2">
+                                                <a href="#menu">Submenulvl2e3</a>
+                                                <ul class="menu menu-submenu ">
+                                                    <li>
+                                                        <a href="#menu">Submenu2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#menu">Submenu2</a>
+                                                    </li>
+                                                     
+                                                     
+                                                     
+                                                    <li class="menu-sub level3">
+                                                           <a href="#menu">Submenulvl3</a>
+                                                            <ul class="menu menu-submenu">
+                                                                <li>
+                                                                    <a href="#menu">Submenu3</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#menu">Submenu3</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#menu">Submenu3</a>
+                                                                </li>
+                                                            </ul>
+                                                    </li>
+                                                     
+                                                     
+                                                     
+                                                </ul>
+                                                 
+                                            </li>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                        </ul>
+                                    </li>
+                                     
+                                     
+                                     
+                                    <li class="menu-sub level1">
+                                        <a href="#menu">Submenulvl</a>
+                                        <ul class="menu menu-submenu">
+                                            <li>
+                                                <a href="#menu">Submenu</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu">Submenu</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menu">Submenu</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                             
+                                     
+                                     
+                                     
+                                     
+                                </ul>
+                          </nav>
+                  </pre>
+              </span>
+          </div>
+
+          <h5>Reset default styles</h5>
+          <pre class="brush: js;">
+               teste
+          </pre>  
+
+        </div>    
 
     </section>
 
