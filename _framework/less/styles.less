@@ -83,6 +83,7 @@
 		position:fixed;
 		top: 0px;
 		left: 0px;
+		z-index: 600;
 
 		#logo{
 			 
@@ -156,9 +157,9 @@
 
 /* !CONTENTS */
 	
-
-	/* !Banner */	
-		#banner{
+ 
+	/* !Banner */	 
+		#banner{  
 			width: 100%;
 			height: 400px;
 			background:url("../img/bg.jpg") center;
@@ -181,12 +182,19 @@
 
 	/* !Features */	
 		#components{
-			background: #dedede;
-			padding: 40px;
-
 			h2, h3, h4, h5, h6{
 				color:#6548a8;
 			}
+		}
+		#html{
+			h2, h3, h4, h5, h6{
+				color:#2363ab;
+			}
+		}
+
+		.base-features{
+			background: #dedede;
+			padding: 40px;
 		}
 
 		.feature {
@@ -203,7 +211,6 @@
 				.font-size(4.4);
 				letter-spacing: -3px;
 				font-weight: normal;;
-
 			}
 
 			p{

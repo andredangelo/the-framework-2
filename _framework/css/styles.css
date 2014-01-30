@@ -641,7 +641,12 @@ select:focus {
   -ms-user-select: none;
   user-select: none;
 }
-.the-banner .the-banner-controls {
+.the-banner .fadeBanner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.the-banner-controls {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -651,10 +656,10 @@ select:focus {
   -moz-border-radius: 30px;
   border-radius: 30px;
 }
-.the-banner .the-banner-controls ul li {
+.the-banner-controls ul li {
   float: left;
 }
-.the-banner .the-banner-controls ul li a {
+.the-banner-controls ul li a {
   width: 10px;
   height: 10px;
   background-color: #999;
@@ -668,15 +673,10 @@ select:focus {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.the-banner .active {
+.the-banner-controls .active {
   background-color: #FFF;
 }
-.the-banner .fadeBanner {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.the-banner .the-banner-arrow {
+.the-banner-arrow {
   width: 30px;
   height: 30px;
   background: #FFF;
@@ -690,15 +690,15 @@ select:focus {
   background-repeat: no-repeat;
   background-position: center center;
 }
-.the-banner #the-banner-left {
+#the-banner-left {
   left: 5px;
   background-image: url(../img/framework/setaEsq.png);
 }
-.the-banner #the-banner-right {
+#the-banner-right {
   right: 5px;
   background-image: url(../img/framework/setaDir.png);
 }
-.the-banner .thebanner-title {
+.thebanner-title {
   position: absolute;
   top: 0px;
 }
@@ -786,6 +786,7 @@ header {
   position: fixed;
   top: 0px;
   left: 0px;
+  z-index: 600;
 }
 header nav ul li a {
   height: 40px;
@@ -838,16 +839,23 @@ header nav .components .menu-submenu {
   padding: 0px 20px;
 }
 /* !Features */
-#components {
-  background: #dedede;
-  padding: 40px;
-}
 #components h2,
 #components h3,
 #components h4,
 #components h5,
 #components h6 {
   color: #6548a8;
+}
+#html h2,
+#html h3,
+#html h4,
+#html h5,
+#html h6 {
+  color: #2363ab;
+}
+.base-features {
+  background: #dedede;
+  padding: 40px;
 }
 .feature {
   background: #fff;
