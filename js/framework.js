@@ -1489,8 +1489,15 @@ $(this).find("> .menu-submenu").css("display", "none");
 
         if (settings.responsive) {
             
-            function createMenu() {
+            createMenu();
+            responsiveMenu();
+            $(window).resize(function () {
+                responsiveMenu();
+            });
 
+        }
+            
+        function createMenu() {
                 $('body').prepend("<div class='the-menu-minibar'><a class='the-menu-ico btn'>" + settings.labelButtonMenu + "</a>" + settings.htmlMiniBar + "</div>");
 
                 $('body').prepend("<div class='the-menu-responsive'></div>");
@@ -1529,53 +1536,45 @@ $(this).find("> .menu-submenu").css("display", "none");
                         });
                         toogleMenu = true;
                     }
+                });                
+        } 
+            
+
+                      
+    
+
+       function responsiveMenu() {
+
+
+            if (!toogleMenu) {
+                $(settings.base).stop().css("margin-left", "0px");
+                $('.the-menu-minibar').stop().css("margin-left", "0px");
+                $('.the-menu-responsive').stop().animate({ left: -$('.the-menu-responsive').width() }, 0, function () {
+                    //$(settings.base).css('width', '100%');
                 });
-
-            createMenu();
-            responsiveMenu();
-            $(window).resize(function () {
-                responsiveMenu();
-            });
-
-            function responsiveMenu() {
-
-
-                if (!toogleMenu) {
-                    $(settings.base).stop().css("margin-left", "0px");
-                    $('.the-menu-minibar').stop().css("margin-left", "0px");
-                    $('.the-menu-responsive').stop().animate({ left: -$('.the-menu-responsive').width() }, 0, function () {
-                        //$(settings.base).css('width', '100%');
-                    });
-                    toogleMenu = true;
-                }
-
-                $('.the-menu-responsive').css('minHeight', $(window).height());
-
-
-                if ($(window).width() < settings.minWidth) {
-                    This.css('display', 'none');
-                    $('.the-menu-minibar').css('display', 'block');
-                } else {
-                    $('.the-menu-minibar').css('display', 'none');
-                    This.css('display', '');
-                    //This.html(estruturaMenu);
-                    $('.the-menu-responsive').css('left', -$('.the-menu-responsive').width());
-                    $(settings.base).css('margin-left', 0);
-                    toogleMenu = true;
-                    $('body').css('overflow-x', '');
-                    addOver();
-                }
-
+                toogleMenu = true;
             }
 
+            $('.the-menu-responsive').css('minHeight', $(window).height());
 
 
-
-
-
-
+            if ($(window).width() < settings.minWidth) {
+                This.css('display', 'none');
+                $('.the-menu-minibar').css('display', 'block');
+            } else {
+                $('.the-menu-minibar').css('display', 'none');
+                This.css('display', '');
+                //This.html(estruturaMenu);
+                $('.the-menu-responsive').css('left', -$('.the-menu-responsive').width());
+                $(settings.base).css('margin-left', 0);
+                toogleMenu = true;
+                $('body').css('overflow-x', '');
+                addOver();
             }
+
         }
+
+
 
         /** Sub Menu **************/
         var n = 1;
