@@ -45,9 +45,7 @@
 
     <script>
         $(document).ready(function(){
-            $('#the-banner-content').thebanner();  
-            $('.the-menu').themenu();      
-
+            
             $('.open-code').click(function(event){
                 event.preventDefault();
 
@@ -58,9 +56,19 @@
                 }else{
                     code.css("display", "none");
                 }
-
-                
             })
+
+            $('#the-banner-content').thebanner();
+            $('#the-banner-content2').thebanner({slides:true, slideMargin:40, autoAnimate:false});
+            $('#the-banner-content3').thebanner({thumb:true, autoAnimate:false, clickAndStop:false}); 
+
+            $('.the-menu').themenu();
+
+            $('.thebox').thebox();
+            $('.thebox-inline').thebox({type:inline});
+            $('.thebox-iframe').thebox({type:'inline'});
+
+
 
         })
     </script>
@@ -81,10 +89,10 @@
                           <a href="#anc-the-banner" class="anchorLink">The Banner</a>
                       </li>
                       <li>
-                          <a href="#menu">The Box</a>
+                          <a href="#anc-the-box" class="anchorLink">The Box</a>
                       </li>
                       <li>
-                          <a href="#menu">The Load</a>
+                          <a href="#menu" class="anchorLink">The Load</a>
                       </li>
                   </ul>
                 </li>
@@ -94,13 +102,13 @@
                   <a href="#menu">HTML</a>
                   <ul class="menu menu-submenu">
                       <li>
-                          <a href="#menu">Table</a>
+                          <a href="#menu" class="anchorLink">Table</a>
                       </li>
                       <li>
-                          <a href="#menu">Form</a>
+                          <a href="#menu" class="anchorLink">Form</a>
                       </li>
                       <li>
-                          <a href="#menu">Navigation</a>
+                          <a href="#menu" class="anchorLink">Navigation</a>
                       </li>
                   </ul>
                 </li>
@@ -140,65 +148,563 @@
 
 
 <!-- Components -->
-    <a id="anc-the-banner" name="anc-the-banner"></a>
-
-    <section class="base-features" id="components">
 
     <!-- The Banner -->
-      <div class="feature">
-          <h2>Components > The Banner</h2>
-          <p>The complete banner to animations, ads and much more...</p>
+    <a id="anc-the-banner" name="anc-the-banner"></a>
+    <section class="base-features" id="components">
 
-          <ul>
-               <li>Create the correct Structure</li>
-               <li>Call jQuery function: $('#element').the-banner();</li>
-          </ul> 
+        <div class="feature">
+            <h2>Components > The Banner</h2>
+            <p>The complete banner to animations, ads and much more...</p>
 
-          <h4>Example:</h4>
-          <div class="example">
-                <div id="the-banner-content" style="height:200px; width:300px;">
-                    <ul>
-                        <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900;">
-                        1
-                        </li>
-                        <li data-link="http://www.google.com" style="background-color:#06C;;">
-                        2
-                        </li>
-                        <li data-link="http://www.google.com" style="background-color:#3C9; ">
-                        3
-                        </li>
-                        <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60; ">
-                        4
-                        </li>
-                    </ul>
-               </div>
-                <br class="clr">
-          </div>
+            <ul>
+                 <li>Create the correct Structure</li>
+                 <li>Call jQuery function: $('#element').thebanner();</li>
+            </ul> 
 
-      
-          <h5>HTML Simple Menu</h5>
-          <pre class="brush: js;">
+            <h5>Example:</h5>
+            <div class="example">
+                  <div id="the-banner-content" style="height:200px; width:300px;">
+                      <ul>
+                          <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900;">
+                          1
+                          </li>
+                          <li data-link="http://www.google.com" style="background-color:#06C;;">
+                          2
+                          </li>
+                          <li data-link="http://www.google.com" style="background-color:#3C9; ">
+                          3
+                          </li>
+                          <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60; ">
+                          4
+                          </li>
+                      </ul>
+                 </div>
+                  <br class="clr">
+            </div>
+            <pre class="brush: js;">
+                  $('#the-banner-content').thebanner();
+
+                  <div id="the-banner-content" style="height:200px; width:300px;">
+                      <ul>
+                          <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900;">
+                          1
+                          </li>
+                          <li data-link="http://www.google.com" style="background-color:#06C;;">
+                          2
+                          </li>
+                          <li data-link="http://www.google.com" style="background-color:#3C9; ">
+                          3
+                          </li>
+                          <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60; ">
+                          4
+                          </li>
+                      </ul>
+                 </div>
+            </pre>
+
+
+            <h5>Parameters</h5>
+             <table class="table table-ordenada thetable" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <thead>
+                    <tr>
+                      <th>Option</th>
+                      <th>Values</th>
+                      <th>Default value</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  
+                  <tfoot>
+                    <tr>
+                      <th>Option</th>
+                      <th>Values</th>
+                      <th>Default value</th>
+                      <th>Description</th>
+                    </tr>
+                  </tfoot>
+                
+                 <tbody>
+                 
+                    <tr>
+                      <td>speed</td>
+                      <td>Number</td>
+                      <td>800(miliseconds)</td>
+                      <td>Set the speed of banner transition.</td>
+                    </tr>
+                 
+                     <tr>
+                      <td>timer</td>
+                      <td>Number</td>
+                      <td>4000(miliseconds)</td>
+                      <td>Set the pause time beetween banners. (autoAnimate needs to be true)</td>
+                    </tr>
+                    
+                     <tr>
+                      <td>effect</td>
+                      <td>"slider", "fade", "default"</td>
+                      <td>default (with touch Behavior)</td>
+                      <td>Set the pause time beetween banners. (autoAnimate needs to be true)</td>
+                    </tr>
+                    
+                     <tr>
+                      <td>thumb</td>
+                      <td>Boolean</td>
+                      <td>false</td>
+                      <td>Set if the banner has thumbnails. If is true, add data-thumb in "li" tag</td>
+                    </tr>
+                    
+                     <tr>
+                      <td>clickAndStop</td>
+                      <td>Boolean</td>
+                      <td>true</td>
+                      <td>Set if the click will stops the animation/transitions.</td>
+                    </tr>
           
-          </pre>
+                     <tr>
+                      <td>autoAnimate</td>
+                      <td>Boolean</td>
+                      <td>true</td>
+                      <td>Set if the click will stops the animation/transitions.</td>
+                    </tr>
+          
+                     <tr>
+                      <td>bannerWidth</td>
+                      <td>Number(pixels)</td>
+                      <td>100%</td>
+                      <td>Set the banner width.</td>
+                    </tr>
+          
+                     <tr>
+                      <td>bannerHeight</td>
+                      <td>Number(pixels)</td>
+                      <td>100%</td>
+                      <td>Set the banner height.</td>
+                    </tr>
+                 </tbody>
+            </table>
+                  
 
-          <h5>HTML Advanced Menu (Menu + Sub Menu)</h5>
-          <div>
-              <a href="#" class="open-code btn">View Code</a>
-              <span class="none">
-                  <pre class="brush: js;">  
+            <h4>The Banner Thumbnails:</h4>
+            <ul>
+                 <li>Create the correct Structure</li>
+                 <li>Call jQuery function:$('#element').thebanner({autoAnimate:false, thumb:true, effect:"fade"}); </li>
+            </ul> 
+            <h5>Example:</h5>
+                <div id="the-banner-content3" style="height:200px;">
+                      <ul>
+                        <li style="background-color:#900;" data-thumb="img/fallback/ie.png" data-thumb-width="30">
+                            <a href="img/fallback/ie.png" class="thebox">
+                              <img src="img/fallback/ie.png" width="128" height="127"></a>
+                          </li>
                       
-                  </pre>
-              </span>
-          </div>
+                          <li data-title="Título da Notícia 1" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30" data-target="_blank" style="background-color:#900; width:200px;">
+                          1
+                          </li>
+                          <li data-title="Título da Notícia 2" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30"  style="background-color:#06C;  width:200px;">
+                          2
+                          </li>
+                          <li data-title="Título da Notícia 3" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30" style="background-color:#3C9;  width:200px;">
+                          3
+                          </li>
+                          <li data-title="Título da Notícia 4" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30" data-target="_blank" style="background-color:#C60;  width:200px;">
+                          4
+                          </li>
+                      </ul>
+                 </div>
+        
 
-          <h5>Reset default styles</h5>
-          <pre class="brush: js;">
-               teste
-          </pre>  
+              <div class="marTop">
+                  <a href="#" class="open-code btn">View Code</a>
+                  <span class="none">
+                      <pre class="brush: js;">  
+                           $('#the-banner-content3').thebanner({autoAnimate:false, thumb:true, effect:"fade"});
+                          <div id="the-banner-content3" style="height:200px;">
+                                <ul>
+                                  <li style="background-color:#900;" data-thumb="img/fallback/ie.png" data-thumb-width="30">
+                                      <a href="img/fallback/ie.png" class="thebox">
+                                        <img src="img/fallback/ie.png" width="128" height="127"></a>
+                                    </li>
+                                
+                                    <li data-title="Título da Notícia 1" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30" data-target="_blank" style="background-color:#900; width:200px;">
+                                    1
+                                    </li>
+                                    <li data-title="Título da Notícia 2" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30"  style="background-color:#06C;  width:200px;">
+                                    2
+                                    </li>
+                                    <li data-title="Título da Notícia 3" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30" style="background-color:#3C9;  width:200px;">
+                                    3
+                                    </li>
+                                    <li data-title="Título da Notícia 4" data-link="http://www.google.com" data-thumb="img/fallback/ie.png" data-thumb-width="30" data-target="_blank" style="background-color:#C60;  width:200px;">
+                                    4
+                                    </li>
+                                </ul>
+                           </div>
 
-        </div>    
+                      </pre>
+                  </span>
+              </div>
+
+
+
+            <h4>The Banner Carrousel:</h4>
+            <ul>
+                 <li>Create the correct Structure</li>
+                 <li>Call jQuery function: $('#element').thebanner({slides:true, slideMargin:40, autoAnimate:false}); </li>
+            </ul> 
+            <h5>Example:</h5>
+              <div id="the-banner-content2" style="height:200px;">
+                 <ul>
+                     <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900; width:200px;">
+                     1
+                     </li>
+                     <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                     2
+                     </li>
+                     <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                     3
+                     </li>
+                     <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                     4
+                     </li>
+                     <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                     2
+                     </li>
+                     <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                     3
+                     </li>
+                     <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                     4
+                     </li>
+                     <li data-link="http://www.google.com" data-target="_blank" style="background-color:#000;  width:200px;">
+                     4
+                     </li>
+                 </ul>
+              </div>
+        
+
+              <div class="marTop">
+                  <a href="#" class="open-code btn">View Code</a>
+                  <span class="none">
+                      <pre class="brush: js;">  
+                        $('#the-banner-content2').thebanner({slides:true, slideMargin:40, autoAnimate:false});   
+
+
+                        <div id="the-banner-content2" style="height:200px;">
+                           <ul>
+                               <li data-link="http://www.google.com" data-target="_blank" style="background-color:#900; width:200px;">
+                               1
+                               </li>
+                               <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                               2
+                               </li>
+                               <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                               3
+                               </li>
+                               <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                               4
+                               </li>
+                               <li data-link="http://www.google.com" style="background-color:#06C;  width:200px;">
+                               2
+                               </li>
+                               <li data-link="http://www.google.com" style="background-color:#3C9;  width:200px;">
+                               3
+                               </li>
+                               <li data-link="http://www.google.com" data-target="_blank" style="background-color:#C60;  width:200px;">
+                               4
+                               </li>
+                               <li data-link="http://www.google.com" data-target="_blank" style="background-color:#000;  width:200px;">
+                               4
+                               </li>
+                           </ul>
+                        </div>
+                      </pre>
+                  </span>
+              </div>
+
+        </div> 
 
     </section>
+
+
+
+
+    <!-- The Box -->
+    <a id="anc-the-box" name="anc-the-banner"></a>
+    <section class="base-features" id="components">
+
+        <div class="feature">
+            <h2>Components > The Box</h2>
+            <p>The complete banner to animations, ads and much more...</p>
+
+            <ul>
+                 <li>Create the correct Structure</li>
+                 <li>Call jQuery function: $('.thebox').thebox();</li>
+            </ul> 
+
+            <h5>Example:</h5>
+            <div class="example">
+                  <a href="img/fallback/ie.png" class="thebox"><img src="img/fallback/ie.png" width="128" height="127"></a>
+                  <br class="clr">
+            </div>
+            <pre class="brush: js;">
+                  $('.the-menu').themenu();  
+
+                  <a href="img/fallback/ie.png" class="thebox"><img src="img/fallback/ie.png" width="128" height="127"></a>
+            </pre>
+
+
+            <h5>Parameters</h5>
+            <table class="table table-ordenada" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+               
+                  <tr>
+                    <td>speed</td>
+                    <td>Number</td>
+                    <td>500(miliseconds)</td>
+                    <td>Set the speed of image/slide transition.</td>
+                  </tr>
+               
+                   <tr>
+                    <td>timer</td>
+                    <td>Number</td>
+                    <td>400(miliseconds)</td>
+                    <td>Inicial time animation</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>showButtons</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Show or not, the buttons left and right</td>
+                  </tr>
+                  
+                   <tr>
+                    <td>bgOpacity</td>
+                    <td>Number</td>
+                    <td>0.6</td>
+                    <td>Opacity of  BG</td>
+                  </tr>
+        
+                   <tr>
+                    <td>zoom100pct</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Set if the image can be resized/initial width/height 100% (proporcional)</td>
+                  </tr>
+        
+                   <tr>
+                    <td>base</td>
+                    <td>String</td>
+                    <td>"body"</td>
+                    <td>Set the base to insert thebox.</td>
+                  </tr>
+        
+
+                   <tr>
+                    <td colspan="4"><strong>Data Attributes (in element)</strong></td>
+                  </tr>
+
+                   <tr>
+                    <td>data-iframe</td>
+                    <td>String</td>
+                    <td>""</td>
+                    <td>If you need use an iframe, set the url (src) in this option.</td>
+                  </tr>
+        
+                   <tr>
+                    <td>data-iframe-width</td>
+                    <td>Number or Pct</td>
+                    <td>""</td>
+                    <td>Iframe Width</td>
+                  </tr>
+        
+                   <tr>
+                    <td>data-iframe-height</td>
+                    <td>Number or Pct</td>
+                    <td>""</td>
+                    <td>Iframe Height</td>
+                  </tr>
+        
+
+                   <tr>
+                    <td colspan="4"><strong>Data Attributes (in div target *href*)</strong></td>
+                  </tr>
+                  
+                   <tr>
+                    <td>data-width</td>
+                    <td>String</td>
+                    <td>""</td>
+                    <td>Set width of window.</td>
+                  </tr>                  
+                   <tr>
+                    <td>data-height</td>
+                    <td>String</td>
+                    <td>""</td>
+                    <td>Set height of window.</td>
+                  </tr>
+
+
+                  
+                   <tr>
+                    <td colspan="4"><strong>Callbacks</strong></td>
+                  </tr>
+        
+                   <tr>
+                    <td>afterClose</td>
+                    <td>Function</td>
+                    <td>""</td>
+                    <td>Set a function after close the box. ex: {afterClose(functionname()};</td>
+                  </tr>
+        
+                  
+                </tbody>
+              
+            </table>      
+            
+
+            <h4>Group Images</h4>   
+            <h5>Example:</h5>
+            <div class="example">
+                    <a href="http://www.papeldeparede.etc.br/fotos/wp-content/uploads/dream-theater-systematic-chaos.jpg" data-group="name-group" data-title="Title 1" class="thebox">
+                     <img src="img/fallback/ie.png" width="128" height="127">
+                    </a>
+                    <a href="img/mobile/apple-touch-icon.png"  data-group="name-group" class="thebox">
+                        <img src="img/fallback/ie.png" width="128" height="127">
+                    </a>
+                    <a href="img/_bg.jpg"  data-group="name-group" class="thebox">
+                        <img src="img/fallback/ie.png" width="128" height="127">
+                    </a>
+            </div>
+
+            <div class="marTop">
+                  <a href="#" class="open-code btn">View Code</a>
+                  <span class="none">
+                      <pre class="brush: js;">  
+                          $('.thebox').thebox();
+
+                          <a href="http://www.papeldeparede.etc.br/fotos/wp-content/uploads/dream-theater-systematic-chaos.jpg" data-group="name-group" data-title="Title 1" class="thebox">
+                           <img src="img/fallback/ie.png" width="128" height="127">
+                          </a>
+                          <a href="img/mobile/apple-touch-icon.png"  data-group="name-group" class="thebox">
+                              <img src="img/fallback/ie.png" width="128" height="127">
+                          </a>
+                          <a href="img/_bg.jpg"  data-group="name-group" class="thebox">
+                              <img src="img/fallback/ie.png" width="128" height="127">
+                          </a>
+                      </pre>
+                  </span>
+            </div>
+
+
+            
+
+            <h4>Inline content</h4>   
+            <h5>Example:</h5>
+            <div class="example">
+
+                    <a href="inlineContent" data-title="Title 1" class="thebox-inline">
+                     <img src="img/fallback/ie.png" width="128" height="127">
+                    </a>
+                    
+                    <div id="inlineContent" style="display:none; width:auto; height:auto;">
+                      <h1>Title</h1>
+                        <div>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                          </div>
+                   </div>
+            </div>
+
+            <div class="marTop">
+                  <a href="#" class="open-code btn">View Code</a>
+                  <span class="none">
+                      <pre class="brush: js;">  
+                    $('.thebox-inline').thebox({type:inline});
+
+                    <a href="inlineContent" data-title="Title 1" class="thebox-inline">
+                     <img src="img/fallback/ie.png" width="128" height="127">
+                    </a>
+                    
+                    <div id="inlineContent" style="display:none; width:auto; height:auto;">
+                      <h1>Title</h1>
+                        <div>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                            <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
+                          </div>
+         
+                        </div>
+                      </pre>
+                  </span>
+            </div>
+
+
+           <h4>Iframe content</h4>   
+            <h5>Example:</h5>
+            <div class="example">
+                  <a href="inlineContentIframe" data-title="Title 1" data-width="200" data-iframe="http://www.uol.com.br"  class="thebox-iframe">
+                   <img src="img/fallback/ie.png" width="128" height="127">
+                  </a>
+                  
+                  <div id="inlineContentIframe" style="display:none; width:600px; height:600px;">
+                  </div>
+            </div>
+
+            <div class="marTop">
+                  <a href="#" class="open-code btn">View Code</a>
+                  <span class="none">
+                      <pre class="brush: js;">  
+                    $('.thebox-iframe').thebox({type:'inline'});
+
+                     <a href="inlineContentIframe" data-title="Title 1" data-width="200" data-iframe="http://www.uol.com.br"  class="thebox-iframe">
+                     <img src="img/fallback/ie.png" width="128" height="127">
+                    </a>
+                    
+                    <div id="inlineContentIframe" style="display:none; width:600px; height:600px;">
+                    </div>
+                      </pre>
+                  </span>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div> 
+
+    </section>
+
 
 
 
