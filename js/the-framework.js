@@ -892,8 +892,7 @@ function browser() {
                             $('.thebox-content').css('height', div.outerHeight());
                         }
                         
-                        //alert(div.find("div").outerHeight());
-
+                        
 
                          
 
@@ -1173,6 +1172,8 @@ function browser() {
 
 
             function remove() {
+               
+
                 $(".thebox-content").unbind('click');
 
                 $('.thebox-bg').stop().animate({ opacity: 0 }, settings.timer);
@@ -1189,14 +1190,16 @@ function browser() {
                     $("#" + This.attr("href")).appendTo(parentDiv);
                     $("#" + This.attr("href")).css("display", "none");
                     $("#" + This.attr("href")).css("width", $("#" + This.attr("href")).width());
-                    $("#" + This.attr("href")).css("width", "");
-                    $("#" + This.attr("href")).css("height", "");
+                    $("#" + This.attr("href")).css("height", $("#" + This.attr("href")).height());
                     
+
+
                     if (This.attr('data-iframe')) {
                         $('#thebox-iframe').remove();
                     }
 
                 }
+
 
 
             }
@@ -1463,7 +1466,7 @@ $(this).find("> .menu-submenu").css("display", "none");
         });
 
 
-		This.addClass('the-menu');
+
 
 
 
@@ -1481,14 +1484,7 @@ $(this).find("> .menu-submenu").css("display", "none");
                         This.find('a').removeClass("active");
                         This.find('a').eq(n).addClass("active");
                     }
-                    
-                    if($(window).scrollTop() < $(arrMenu[0].attr('href')).offset().top - settings.rangeAnchor){
-	                    This.find('a').removeClass("active");
-	                    
-                    }
-                    
                 }
-                
             });
 
         }
@@ -1523,14 +1519,6 @@ $(this).find("> .menu-submenu").css("display", "none");
 
                 $('body').css('overflow-x', 'hidden');
 
-				if(settings.isAnchor){
-					
-					$('body').find('#scriptAnchor').remove();
-					$('body').append('<script id="scriptAnchor" type="text/javascript" src="js/jquery.anchor.js"></script>');
-					
-				}
-
-
                 $('.the-menu-minibar .the-menu-ico').click(function () {
 
                     if (toogleMenu) {
@@ -1551,13 +1539,7 @@ $(this).find("> .menu-submenu").css("display", "none");
                         });
                         toogleMenu = true;
                     }
-                });     
-                
-                
-                $('.the-menu-responsive').find('a').click(function(){
-	                $('.the-menu-minibar .the-menu-ico').click();
-                });
-                           
+                });                
         } 
             
 
