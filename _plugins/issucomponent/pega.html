@@ -1,0 +1,36 @@
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<!-- // Comment -->
+
+
+<script>
+
+    $.noConflict(); // Comment
+
+    var component = "#the-banner-content";
+    $(document).ready(function(){
+
+       
+        $(component).find("li").each(function(){
+
+            var image = String($(this).find("img").attr("src"));
+            $(this).css("background-image","url(" + image + ")");
+            $(this).remove(".imagem");
+
+        })
+
+    })
+
+</script>
+
+
+ <div id="the-banner-content" style="height:200px; width:300px;">
+     <ul>
+         <li>
+            <img src="http://www.mbsdigital.com.br/blog/wp-content/uploads/2012/03/perda-de-tempo-na-internet.jpg" />
+         </li>
+         <li>
+            <img src="http://www.mbsdigital.com.br/blog/wp-content/uploads/2012/03/perda-de-tempo-na-internet.jpg" />
+         </li>
+     </ul>
+</div>
