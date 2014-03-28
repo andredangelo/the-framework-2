@@ -74,8 +74,8 @@
 
 		// Set Font family and color
 		.font-base(@font: @font-main,  @color:@color-main,  @letter-spacing:0, @weight: normal){
-			font-family: @font-main;
-			color: @color-main;
+			font-family: @font;
+			color: @color;
 			letter-spacing:  @letter-spacing;
 			font-weight: @weight;
 		}
@@ -973,12 +973,14 @@
 			-webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
 			-moz-box-shadow:    0px 2px 5px rgba(50, 50, 50, 0.75);
 			box-shadow:         0px 2px 5px rgba(50, 50, 50, 0.75);	
+			
+			background-image:url(../img/framework/loader.gif);
+			background-repeat:no-repeat;
+			background-position:center center;
 
+			
 
 			.thebox-loader{
-				background-image:url(../img/framework/loader.gif);
-				background-repeat:no-repeat;
-				background-position:center center;
 			}
 
 			.relative{
@@ -1022,7 +1024,7 @@
 				
 				position:absolute;
 				z-index:9999;
-				padding:8px;
+				padding:10px;
 				font-family:Helvetica, Arial, sans-serif;
 				font-weight:bold;
 				font-size:10px;
@@ -1036,6 +1038,9 @@
 				-webkit-border-radius: 50px;
 				-moz-border-radius: 50px;
 				border-radius: 50px;
+				
+				line-height: 0px;
+				text-indent: -3px;
 				
 				-webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
 				-moz-box-shadow:    0px 2px 5px rgba(50, 50, 50, 0.75);
