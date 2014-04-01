@@ -195,20 +195,14 @@ function browser() {
 
                 var borda = 0;
 
-                if (settings.slides == 0) {
-
-                }
-                else {
-
-                }
-
-
                 if ($(this).attr("data-title") && index == 0) {
                     thebanner.find(".thebanner-title").html("<h3>" + $(this).attr("data-title") + "</h3>");
                 }
 
 
                 $(this).attr("data-index", index);
+
+
 
                 arrList.push($(this));
                 arrListHtml.push($(this).html())
@@ -291,14 +285,14 @@ function browser() {
             if (settings.slides) {
                 thebanner.find(".the-banner-controls ul").html("");
                 thebanner.find(".the-banner-controls ul").append("<li><a data-index=0></a></li>");
-                var quandoCabe = 0;
+                var quantoCabe = 0;
                 var loopItens = 1;
 
                 for (n = 0; n < thebanner.find(".thebanner-mask ul li").length; n++) {
 
-                    quandoCabe += (thebanner.find(".thebanner-mask ul li").width() + (settings.slideMargin * 2));
+                    quantoCabe += (thebanner.find(".thebanner-mask ul li").width() + (settings.slideMargin * 2));
 
-                    if (quandoCabe > thebanner.width() * loopItens) {
+                    if (quantoCabe > thebanner.width() * loopItens) {
 
                         thebanner.find(".the-banner-controls ul").append("<li><a data-index=" + n + "></a></li>");
                         loopItens++;
@@ -454,7 +448,6 @@ function browser() {
         }
 
         function clickArrow(event) {
-
             window.clearInterval(intervalListener);
             if (settings.clickAndStop) { } else {
                 intervalListener = self.setInterval(function () { bannerTimer() }, settings.timer);
@@ -464,8 +457,8 @@ function browser() {
 
             if (settings.slides) {
                 var left = Number(thebanner.find(".the-banner").css("left").replace("px", ""));
-
-
+            }else{
+                left = 0;
             }
 
             if (-left > thebanner.find(".the-banner").width() - thebanner.width()) {
@@ -802,13 +795,15 @@ function browser() {
         //$(this).on( "click", function(event) {
 
         $(this).click(function (event) {
+            event.preventDefault();
+
             var scrollAtual = $(window).scrollTop();
             var hrefAtual = $(this).attr("href");
             var This = $(this);
             var paddingContent = 0;
 
 
-            event.preventDefault();
+            
             scrollAtual = $(window).scrollTop();
 
 
@@ -839,7 +834,8 @@ function browser() {
 
 
 
-
+            var inlineWidthDiv;
+            var inlineHeightDiv;
             /* Identify Types **/
             function types() {
 
@@ -909,8 +905,12 @@ function browser() {
 
                         //$('.thebox-content').addClass(classPop);
                         $(div).appendTo(".thebox-content > .relative");
+                        inlineWidthDiv = $(div).width();
+                        inlineHeightDiv = $(div).height();
+
                         $(div).css("display", "block");
-                        //$(div).css("width", "100%");
+                        $(div).css("width", "100%");
+                        $(div).css("height", "100%");
 
 
                         $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
@@ -980,7 +980,7 @@ function browser() {
 
 
                             /* Include controls */
-                            $(".thebox-content").append("<div id='thebox-controls'><div id='thebox-control-left' class='thebox-control'><</div><div id='thebox-control-right' class='thebox-control'>></div></div>");
+                            $(".thebox-content .relative").append("<div id='thebox-controls'><div id='thebox-control-left' class='thebox-control'><</div><div id='thebox-control-right' class='thebox-control'>></div></div>");
 
 
 
@@ -994,6 +994,8 @@ function browser() {
 
 
                             $(".thebox-content").css("cursor", "pointer");
+
+                            /* Mouse move function **/
                             $(".thebox-content").mousemove(function (e) {
                                 if (e.pageX > $(document).width() / 2) {
                                     $("#thebox-control-right").css("display", "block");
@@ -1046,20 +1048,19 @@ function browser() {
                             /** Keypress **/
                             function key() {
                                 $(document).keydown(function (e) {
-                                    // alert(e.keyCode);
+                                    //alert(e.keyCode);
 
                                     if (e.keyCode == 37) { // left
                                         isRight = false;
+                                        nextImage();
                                     }
                                     else if (e.keyCode == 39) { // right
                                         isRight = true;
+                                        nextImage();
                                     }
-                                    nextImage();
-
                                 });
                             }
                             key();
-
 
 
 
@@ -1083,18 +1084,19 @@ function browser() {
                                 $(".thebox-content img").css("height", $(window).height() - 200);
                             }
 
+                            var top = $(".thebox-content").height() / 2;
+                            $(".thebox-content #thebox-controls").css("top", top);
+
                             $(".thebox-content img").css("height", "auto");
                             $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
                             $(".thebox-content").css("margin-left", -($(".thebox-content").width() / 2 + Number($(".thebox-content").css("padding-left").replace("px", ""))));
-                            $(".thebox-content").css("margin-top", -$(".thebox-content").height() / 2);
-                            $(".thebox-content #thebox-control-left").css("left", 10);
-                            $(".thebox-content #thebox-control-left").css("top", -($(".thebox-content").height() / 2 + $(".thebox-content #thebox-control-left").height()));
-                            $(".thebox-content #thebox-control-right").css("top", -($(".thebox-content").height() / 2 + $(".thebox-content #thebox-control-right").height()));
-                            $(".thebox-content #thebox-control-right").css("right", 10);
-                            $(".thebox-bg").css("width", $(window).width());
-                            
+                            $(".thebox-content").css("margin-top", -$(".thebox-content").height() / 2);                         
                             
 
+                            $(".thebox-bg").css("width", $(window).width());
+                       
+
+                            
                         });
                         /* end: Resize */
 
@@ -1129,10 +1131,8 @@ function browser() {
                             $("#thebox-control-right").css("display", "none");
                             $("#thebox-control-left").css("display", "none");
 
-                            $(".thebox-content #thebox-control-left").css("left", 10);
-                            $(".thebox-content #thebox-control-left").css("top", -($(".thebox-content").outerHeight() / 2 + $(".thebox-content #thebox-control-left").height()));
-                            $(".thebox-content #thebox-control-right").css("top", -($(".thebox-content").height() / 2 + $(".thebox-content #thebox-control-right").height()));
-                            $(".thebox-content #thebox-control-right").css("right", 10);
+                            var top = $(".thebox-content").height() / 2;
+                            $(".thebox-content #thebox-controls").css("top", top);
 
                             $(this).css("visibility", "visible");
 
@@ -1141,7 +1141,6 @@ function browser() {
 
                             $(".thebox-content").css("margin-left", -($(".thebox-content").outerWidth()) / 2);
                             $(".thebox-content").css("margin-top", -($(".thebox-content").outerHeight()) / 2);
-
 
 
 
@@ -1189,8 +1188,8 @@ function browser() {
                 if (settings.type == "inline") {
                     $("#" + This.attr("href")).appendTo(parentDiv);
                     $("#" + This.attr("href")).css("display", "none");
-                    $("#" + This.attr("href")).css("width", $("#" + This.attr("href")).width());
-                    $("#" + This.attr("href")).css("height", $("#" + This.attr("href")).height());
+                    $("#" + This.attr("href")).css("width", inlineWidthDiv);
+                    $("#" + This.attr("href")).css("height", inlineHeightDiv);
                     
 
 
