@@ -692,6 +692,43 @@ select:focus {
   top: 0px;
   left: 0px;
 }
+.thebox-mini {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #000000;
+  z-index: 9999;
+  padding: 2px;
+}
+.thebox-mini li {
+  float: left;
+  border: 1px solid rgba(250, 250, 250, 0.3);
+  cursor: pointer;
+  margin: 6px 3px;
+  display: block;
+}
+.thebox-mini li img {
+  height: 50px;
+  width: auto;
+  opacity: 0.7;
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+.thebox-mini li.active {
+  border: 1px solid #fff;
+}
+.thebox-mini li.active img {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  filter: alpha(opacity=70);
+}
+.thebox-loader {
+  background-image: url(../img/framework/loader.gif) !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
 .thebox-content {
   padding: 20px;
   position: absolute;
@@ -705,9 +742,20 @@ select:focus {
   -webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
-  background-image: url(../img/framework/loader.gif);
-  background-repeat: no-repeat;
-  background-position: center center;
+}
+.thebox-content h1 {
+  margin-top: 0px;
+}
+.thebox-content h3 {
+  position: absolute;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  margin: 0px;
+  font-family: Arial, Verdana;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
 }
 .thebox-content .relative {
   position: relative;
@@ -743,28 +791,35 @@ select:focus {
 .thebox-content #thebox-controls {
   position: relative;
 }
+.thebox-content #thebox-controls #thebox-control-left {
+  left: 5px;
+}
+.thebox-content #thebox-controls #thebox-control-right {
+  right: 5px;
+}
 .thebox-content .thebox-control {
   display: none;
   position: absolute;
   z-index: 9999;
   padding: 10px;
   font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
   font-size: 10px;
   background-color: #fff;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  line-height: 15px;
   text-align: center;
-  width: 10px;
-  height: 10px;
   color: #666;
   cursor: pointer;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
-  line-height: 0px;
-  text-indent: -3px;
   -webkit-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.75);
+  font-weight: bold;
+  font-size: 12px;
 }
 .thebox-content .thebox-control:hover {
   background-color: #ccc;
@@ -772,6 +827,27 @@ select:focus {
   -moz-transition: all .3s linear;
   -webkit-transition: all .3s linear;
   transition: all .3s linear;
+}
+/* !The Accordion */
+.the-accordion {
+  border-bottom: 1px solid #ccc;
+}
+.the-accordion h2 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 5px;
+}
+.the-accordion > div {
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 5px;
+}
+.the-accordion > div p {
+  margin-top: 0px;
 }
 /* !END:STRUCTURE CONFIGURATION **/::selection {
   background: #000;

@@ -64,10 +64,11 @@
 
             $('.the-menu').themenu();
 
-            $('.thebox').thebox();
-            $('.thebox-inline').thebox({type:inline});
+            $('.thebox').thebox({mini:true});
+            $('.thebox-inline').thebox({type:'inline'});
             $('.thebox-iframe').thebox({type:'inline'});
 
+            $("#contentAccordion").theaccordion();
 
 
         })
@@ -92,7 +93,7 @@
                           <a href="#anc-the-box" class="anchorLink">The Box</a>
                       </li>
                       <li>
-                          <a href="#menu" class="anchorLink">The Load</a>
+                          <a href="#anc-the-load" class="anchorLink">The Load</a>
                       </li>
                   </ul>
                 </li>
@@ -108,8 +109,17 @@
                           <a href="#menu" class="anchorLink">Form</a>
                       </li>
                       <li>
-                          <a href="#menu" class="anchorLink">Navigation</a>
+                          <a href="#anc-navigation" class="anchorLink">Navigation</a>
+                      </li>                      
+                      <li>
+                          <a href="#anc-tabmenu" class="anchorLink">Tab Menu</a>
+                      </li>                      <li>
+                          <a href="#anc-anchor" class="anchorLink">Anchor Menu</a>
                       </li>
+                      </li>                      <li>
+                          <a href="#anc-accordion" class="anchorLink">Accordion Menu</a>
+                      </li>
+
                   </ul>
                 </li>
 
@@ -427,8 +437,6 @@
     </section>
 
 
-
-
     <!-- The Box -->
     <a id="anc-the-box" name="anc-the-banner"></a>
     <section class="base-features" id="components">
@@ -518,10 +526,24 @@
                     <td>"body"</td>
                     <td>Set the base to insert thebox.</td>
                   </tr>
+                
+                   <tr>
+                    <td>mini</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>See miniatures in the Gallery.</td>
+                  </tr>
         
 
                    <tr>
                     <td colspan="4"><strong>Data Attributes (in element)</strong></td>
+                  </tr>
+
+                   <tr>
+                    <td>data-title</td>
+                    <td>String</td>
+                    <td>""</td>
+                    <td>Add a Title Box (h3)</td>
                   </tr>
 
                    <tr>
@@ -585,13 +607,13 @@
             <h4>Group Images</h4>   
             <h5>Example:</h5>
             <div class="example">
-                    <a href="http://www.papeldeparede.etc.br/fotos/wp-content/uploads/dream-theater-systematic-chaos.jpg" data-group="name-group" data-title="Title 1" class="thebox">
+                    <a href="http://www.papeldeparede.etc.br/fotos/wp-content/uploads/dream-theater-systematic-chaos.jpg" data-group="name-group" data-title="Title 1" class="thebox" data-mini="img/fallback/ie.png" >
                      <img src="img/fallback/ie.png" width="128" height="127">
                     </a>
-                    <a href="img/mobile/apple-touch-icon.png"  data-group="name-group" class="thebox">
+                    <a href="img/mobile/apple-touch-icon.png"  data-group="name-group" class="thebox" data-mini="img/fallback/ie.png">
                         <img src="img/fallback/ie.png" width="128" height="127">
                     </a>
-                    <a href="img/_bg.jpg"  data-group="name-group" class="thebox">
+                    <a href="img/_bg.jpg"  data-group="name-group" data-title="Title 3" class="thebox" data-mini="img/fallback/ie.png">
                         <img src="img/fallback/ie.png" width="128" height="127">
                     </a>
             </div>
@@ -706,6 +728,55 @@
     </section>
 
 
+    <!-- The Load -->
+    <a id="anc-the-load" name="anc-the-load"></a>
+    <section class="base-features" id="components">
+
+        <div class="feature">
+            <h2>Components > The Load</h2>
+            <p>The complete banner to animations, ads and much more...</p>
+
+            <ul>
+                 <li>Create the div "theload-bg"</li>
+                 <li>Put loader img inside</li>
+            </ul> 
+
+            <h5>Example:</h5>
+            <div class="example">
+                  <a href="img/fallback/ie.png" class="thebox"><img src="img/fallback/ie.png" width="128" height="127"></a>
+                  <br class="clr">
+            </div>
+            <pre class="brush: js;">
+                  $('.the-menu').themenu();  
+
+                  <a href="img/fallback/ie.png" class="thebox"><img src="img/fallback/ie.png" width="128" height="127"></a>
+            </pre>
+
+
+            <div class="marTop">
+                  <a href="#" class="open-code btn">View Code</a>
+                  <span class="none">
+                      <pre class="brush: js;">  
+                          // Call JS Function
+                          $(document).theload();
+                           
+                          // Create div after body tag
+                          <div id="theload-bg">
+                              <img src="img/framework/loader2.gif" width="32" height="32" style="position: absolute; left: 50%; top: 442px; display: block;">
+                          </div>
+                      </pre>
+                  </span>
+            </div>
+
+
+
+
+
+
+
+        </div> 
+
+    </section>
 
 
 
@@ -721,12 +792,14 @@
 
 
 
-<!-- HTML -->
 
+
+<!-- HTML > Navigation-->
+     <a id="anc-navigation" name="anc-navigation"></a>
     <section class="base-features" id="html">
 
       <div class="feature">
-          <h2>Html > Menu</h2>
+          <h2>Html > Navigation</h2>
           <p>Simple menu</p>
 
           <ul>
@@ -977,14 +1050,269 @@
               </span>
           </div>
 
-          <h5>Reset default styles</h5>
+        </div>    
+    </section>
+
+
+
+<!-- HTML > Tab Menu-->
+     <a id="anc-tabmenu" name="anc-tabmenu"></a>
+    <section class="base-features" id="html">
+
+      <div class="feature">
+          <h2>Html > Tab Menu</h2>
+          <p>Simple and functional Tabs Menu</p>
+
+          <ul>
+               <li>Create the correct Structure</li>
+               <li>Call jQuery function: $('.nameclass').themenu();</li>
+          </ul> 
+
+          <h4>Example:</h4>
+          <div class="example">
+                  <nav class="menu-tab">
+                      <ul>
+                          <li>
+                              <a href="#menu-tab" class="active" >Tabname</a>
+                          </li>
+                          <li>
+                              <a href="#menu-tab" >Tabname</a>
+                          </li>
+                          <li>
+                              <a href="#menu-tab">Tabname</a>
+                          </li>
+                          <li>
+                              <a href="#menu-tab" >Tabname</a>
+                          </li>
+                      </ul>
+                  </nav>
+                   
+                   
+                  <ul class="menu-tab-options">
+                      <li>
+                          <h4>Option</h4>
+                          <p>Content</p>
+                      </li>
+                      <li>
+                          <h4>Option2</h4>
+                          <p>Content</p>
+                      </li>
+                      <li>
+                          <h4>Option3</h4>
+                          <p>ContentContent ContentContent ContentContent ContentContent ContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContent ContentContent Content</p>
+                      </li>
+                      <li>
+                          <h4>Option4</h4>
+                          <p>Content</p>
+                      </li>
+                  </ul>
+
+                  <br class="clr">
+          </div>
+
+      
           <pre class="brush: js;">
-               teste
-          </pre>  
+                  <nav class="menu-tab">
+                      <ul>
+                          <li>
+                              <a href="#menu-tab" class="active" >Tabname</a>
+                          </li>
+                          <li>
+                              <a href="#menu-tab" >Tabname</a>
+                          </li>
+                          <li>
+                              <a href="#menu-tab">Tabname</a>
+                          </li>
+                          <li>
+                              <a href="#menu-tab" >Tabname</a>
+                          </li>
+                      </ul>
+                  </nav>
+                   
+                   
+                  <ul class="menu-tab-options">
+                      <li>
+                          <h4>Option</h4>
+                          <p>Content</p>
+                      </li>
+                      <li>
+                          <h4>Option2</h4>
+                          <p>Content</p>
+                      </li>
+                      <li>
+                          <h4>Option3</h4>
+                          <p>ContentContent ContentContent ContentContent ContentContent ContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContentContentContentContent ContentContent ContentContentContentContentContentContentContent ContentContent Content</p>
+                      </li>
+                      <li>
+                          <h4>Option4</h4>
+                          <p>Content</p>
+                      </li>
+                  </ul>
+          </pre>
+
+
 
         </div>    
-
     </section>
+
+
+
+
+
+
+<!-- HTML > Anchor Menu-->
+     <a id="anc-anchor" name="anc-anchor"></a>
+    <section class="base-features" id="html">
+
+      <div class="feature">
+          <h2>Html > Anchor Menu</h2>
+          <p>Simple and functional Anchor Menu</p>
+
+          <ul>
+               <li>Call js/jquery.anchor.js</li>
+               <li>Use class "anchorLink" and href "#to-your-destination"</li>
+          </ul> 
+
+          <h4>Example:</h4>
+          <div class="example">
+                
+                {This manly The-Framework Navigation}
+             
+
+                  <br class="clr">
+          </div>
+
+      
+          <pre class="brush: js;">
+                 //Call .js
+                <script type="text/javascript" src="js/jquery.anchor.js"></script>
+                 
+                //Use class .anchorLink for links
+                //In "href", tell wich anchor you need to scroll
+                <a href="#layout" rel="" id="name" class="anchorLink">Option</a>
+          </pre>
+
+
+
+        </div>    
+    </section>
+
+
+
+
+
+<!-- HTML > Accordion Menu-->
+     <a id="anc-accordion" name="anc-accordion"></a>
+    <section class="base-features" id="html">
+
+      <div class="feature">
+          <h2>Html > Accordion Menu</h2>
+          <p>Simple and functional Anchor Menu</p>
+
+          <ul>
+               <li>Call $("id").theaccordion();</li>
+               <li>Create HTML Structure</li>
+          </ul> 
+
+        <h5>Parameters</h5>
+        <table class="table table-ordenada" width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <thead>
+                  <tr>
+                    <th class="header">Option</th>
+                    <th class="header">Values</th>
+                    <th class="header">Default value</th>
+                    <th class="header">Description</th>
+                  </tr>
+                </thead>
+                
+                <tfoot>
+                  <tr>
+                    <th>Option</th>
+                    <th>Values</th>
+                    <th>Default value</th>
+                    <th>Description</th>
+                  </tr>
+                </tfoot>
+              
+               <tbody>
+               
+                  <tr>
+                    <td>speed</td>
+                    <td>"fast", "slow"</td>
+                    <td>"fast"</td>
+                    <td>Set the speed of  transition.</td>
+                  </tr>
+               
+                   <tr>
+                    <td>firstOn</td>
+                    <td>true, false</td>
+                    <td>false</td>
+                    <td>If first item is active in the beggining.</td>
+                  </tr>
+                   <tr>
+                     <td>closeOthers</td>
+                     <td>true, false</td>
+                     <td>true</td>
+                     <td>When click, close others options</td>
+                   </tr>
+        
+                  
+              </tbody>
+              
+            </table>
+            
+
+          <h4>Example:</h4>
+          <div class="example">
+                
+                    <div id="contentAccordion" class="the-accordion">
+                    <h2>Título</h2>
+                    <div>
+                        <p> texto de descrição </p>
+                    </div>
+                     
+                    <h2>Título2</h2>
+                    <div>
+                        <p> texto de descrição2 </p>
+                    </div>
+                    <h2>Título3</h2>
+                    <div>
+                        <p> texto de descrição3 </p>
+                    </div>
+                </div>
+                 
+
+                  <br class="clr">
+          </div>
+
+      
+          <pre class="brush: js;">
+                 // Call $('#contentAccordion').theaccordion({firstOn:true});
+  
+              <div id="contentAccordion" class="the-accordion">
+                  <h2>Título</h2>
+                  <div>
+                      <p> texto de descrição </p>
+                  </div>
+                   
+                  <h2>Título2</h2>
+                  <div>
+                      <p> texto de descrição2 </p>
+                  </div>
+                  <h2>Título3</h2>
+                  <div>
+                      <p> texto de descrição3 </p>
+                  </div>
+              </div>
+          </pre>
+
+
+
+        </div>    
+    </section>
+
+
 
 
 
