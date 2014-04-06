@@ -1668,9 +1668,13 @@ $(this).find("> .menu-submenu").css("display", "none");
             }
 
         }
-
+		
+		var principal;
         function fOver(event) {
 
+            principal = $(this);
+            principal.find('a').addClass('hovered');
+            
             topStartMenu = $(this).height();
             leftMenu = $(this).width();
 
@@ -1683,11 +1687,17 @@ $(this).find("> .menu-submenu").css("display", "none");
             }
 
             $(this).find("> .menu-submenu").css("display", "block");
+            
+            
+            
+            
+            
         }
 
         function fOut(event) {
 
             $(this).find("> .menu-submenu").css("display", "none");
+            principal.find('a').removeClass('hovered');
 
         }
         /** end: Sub Menu **************/
