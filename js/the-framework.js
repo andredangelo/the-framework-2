@@ -191,7 +191,7 @@ function browser() {
 
 
             /* Organize Banners */
-            thebanner.find(" .thebanner-mask ul li").each(function (index, element) {
+            thebanner.find(" .thebanner-mask > ul > li").each(function (index, element) {
 
                 var borda = 0;
 
