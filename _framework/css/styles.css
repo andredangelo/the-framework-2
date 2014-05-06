@@ -736,6 +736,9 @@ select:focus {
   min-width: 30px;
   min-height: 30px;
   background-color: #FFF;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;

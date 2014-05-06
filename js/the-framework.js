@@ -146,21 +146,21 @@ function browser() {
 
             thebanner.find(".thebanner-mask").css("overflow", "hidden");
 
-            thebanner.find(".thebanner-mask ul").css("width", settings.bannerWidth);
-            thebanner.find(".thebanner-mask ul").css("height", settings.bannerHeight);
+            thebanner.find(".thebanner-mask > ul").css("width", settings.bannerWidth);
+            thebanner.find(".thebanner-mask > ul").css("height", settings.bannerHeight);
 
             if (!settings.slides) {
-                thebanner.find(".thebanner-mask ul li").css("height", thebanner.height());
-                thebanner.find(".thebanner-mask ul li").css("width", thebanner.width());
+                thebanner.find(".thebanner-mask > ul > li").css("height", thebanner.height());
+                thebanner.find(".thebanner-mask > ul > li").css("width", thebanner.width());
             } else {
-                thebanner.find(".thebanner-mask ul li").css("height", thebanner.height());
-                thebanner.find(".thebanner-mask ul li").css("margin-right", settings.slideMargin);
-                thebanner.find(".thebanner-mask ul li").css("margin-left", settings.slideMargin);
+                thebanner.find(".thebanner-mask > ul > li").css("height", thebanner.height());
+                thebanner.find(".thebanner-mask > ul > li").css("margin-right", settings.slideMargin);
+                thebanner.find(".thebanner-mask > ul > li").css("margin-left", settings.slideMargin);
             }
 
 
 
-            thebanner.find(".thebanner-mask ul").addClass("the-banner");
+            thebanner.find(".thebanner-mask > ul").addClass("the-banner");
             thebanner.css("visibility", "hidden");
             thebanner.append("<div class='thebanner-title'></div>");
 
@@ -288,9 +288,9 @@ function browser() {
                 var quantoCabe = 0;
                 var loopItens = 1;
 
-                for (n = 0; n < thebanner.find(".thebanner-mask ul li").length; n++) {
+                for (n = 0; n < thebanner.find(".thebanner-mask > ul > li").length; n++) {
 
-                    quantoCabe += (thebanner.find(".thebanner-mask ul li").width() + (settings.slideMargin * 2));
+                    quantoCabe += (thebanner.find(".thebanner-mask > ul > li").width() + (settings.slideMargin * 2));
 
                     if (quantoCabe > thebanner.width() * loopItens) {
 
@@ -307,8 +307,8 @@ function browser() {
 
                 thebanner.css("width", settings.bannerWidth);
 
-                if (thebanner.width() < thebanner.find(".thebanner-mask ul li").width() * 2) {
-                    thebanner.css("width", thebanner.find(".thebanner-mask ul li").width() + settings.slideMargin * 2);
+                if (thebanner.width() < thebanner.find(".thebanner-mask > ul > li").width() * 2) {
+                    thebanner.css("width", thebanner.find(".thebanner-mask > ul > li").width() + settings.slideMargin * 2);
                 }
 
             }
@@ -324,7 +324,7 @@ function browser() {
 
         /* Resize Banner */
         function resizeTheBanner() {
-
+			
 
             if (settings.slides) {
                 montaSlides();
@@ -333,8 +333,8 @@ function browser() {
             } else {
                 widthBanner = thebanner.width();
 
-                thebanner.find(".thebanner-mask ul li").css("height", thebanner.height());
-                thebanner.find(".thebanner-mask ul li").css("width", widthBanner);
+                thebanner.find(".thebanner-mask > ul > li").css("height", thebanner.height());
+                thebanner.find(".thebanner-mask > ul > li").css("width", widthBanner);
                 thebanner.find(".the-banner").css("width", widthBanner * arrList.length);
 
 
@@ -535,12 +535,12 @@ function browser() {
                 switch (settings.effect) {
                     // Together Effect  
                     case "slider":
-                        thebanner.find(" .thebanner-mask ul li").click(linkBanner);
+                        thebanner.find(" .thebanner-mask > ul > li").click(linkBanner);
                         thebanner.find(".the-banner").stop().animate({ marginLeft: 0 }, 0);
                         thebanner.find(".the-banner").html("");
                         thebanner.find(".the-banner").append(arrList[bannerAtual]);
                         thebanner.find(".the-banner").append(arrList[n]);
-                        thebanner.find(" .thebanner-mask ul li").css("width", widthBanner);
+                        thebanner.find(" .thebanner-mask > ul > li").css("width", widthBanner);
                         thebanner.find(".the-banner").stop().animate({ marginLeft: -widthBanner }, settings.speed, function () {
                             $(".the-banner-arrow").click(clickArrow);
                         });
@@ -549,12 +549,12 @@ function browser() {
 
 
                     case "discover":
-                        thebanner.find(" .thebanner-mask ul li").click(linkBanner);
+                        thebanner.find(" .thebanner-mask > ul > li").click(linkBanner);
                         thebanner.find(".the-banner").stop().animate({ marginLeft: 0 }, 0);
                         thebanner.find(".the-banner").html("");
                         thebanner.find(".the-banner").append(arrList[bannerAtual]);
                         thebanner.find(".the-banner").append(arrList[n]);
-                        thebanner.find(" .thebanner-mask ul li").css("width", widthBanner);
+                        thebanner.find(" .thebanner-mask > ul > li").css("width", widthBanner);
                         thebanner.find(".the-banner").stop().animate({ marginLeft: -widthBanner }, settings.speed, function () {
                             $(".the-banner-arrow").click(clickArrow);
                         });
@@ -573,26 +573,26 @@ function browser() {
                             thebanner.find(".the-banner").html("");
                             thebanner.find(".the-banner").append(arrList[bannerAtual]);
                             thebanner.find(".the-banner").append(arrList[n]);
-                            thebanner.find(".thebanner-mask ul li:nth-child(1)").css("position", "relative");
-                            thebanner.find(".thebanner-mask ul li:nth-child(2)").css("position", "absolute");
+                            thebanner.find(".thebanner-mask > ul > li:nth-child(1)").css("position", "relative");
+                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").css("position", "absolute");
 
-                            thebanner.find(".thebanner-mask ul li:nth-child(2)").addClass("fadeBanner");
-                            thebanner.find(".thebanner-mask ul li:nth-child(2)").stop().animate({ opacity: 0 }, 0);
-                            thebanner.find(".thebanner-mask ul li:nth-child(2)").animate({ opacity: 1 }, settings.speed, function () {
-                                thebanner.find(".thebanner-mask ul li:nth-child(2)").css("position", "relative");
-                                thebanner.find(".thebanner-mask ul li:nth-child(1)").remove();
+                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").addClass("fadeBanner");
+                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").stop().animate({ opacity: 0 }, 0);
+                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").animate({ opacity: 1 }, settings.speed, function () {
+                                thebanner.find(".thebanner-mask > ul > li:nth-child(2)").css("position", "relative");
+                                thebanner.find(".thebanner-mask > ul > li:nth-child(1)").remove();
                                 callClick();
                                 thebanner.find(".the-banner-arrow").unbind("click");
                                 thebanner.find(".the-banner-arrow").click(clickArrow);
                             });
-                            thebanner.find(".thebanner-mask ul li:nth-child(2)").html("");
-                            thebanner.find(".thebanner-mask ul li:nth-child(2)").append(arrListHtml[n]);
+                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").html("");
+                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").append(arrListHtml[n]);
 
-                            //thebanner.find(" .thebanner-mask ul li:nth-child(2)").append($(arrList[n]).html());
-                            //thebanner.find(" .thebanner-mask ul li:nth-child(2)").append("<h3>"+ thebanner.find(" .thebanner-mask ul li:nth-child(2)").attr("data-title") +"</h3>");
+                            //thebanner.find(" .thebanner-mask > ul > li:nth-child(2)").append($(arrList[n]).html());
+                            //thebanner.find(" .thebanner-mask > ul > li:nth-child(2)").append("<h3>"+ thebanner.find(" .thebanner-mask > ul > li:nth-child(2)").attr("data-title") +"</h3>");
 
-                            thebanner.find(".thebanner-mask ul li").css("width", widthBanner);
-                            thebanner.find(".thebanner-mask ul li").click(linkBanner);
+                            thebanner.find(".thebanner-mask > ul > li").css("width", widthBanner);
+                            thebanner.find(".thebanner-mask > ul > li").click(linkBanner);
                         }
 
                         break
@@ -638,7 +638,7 @@ function browser() {
         /* Draggable */
         drag();
         function drag() {
-            thebanner.find(" .thebanner-mask ul li").bind('click', linkBanner);
+            thebanner.find(" .thebanner-mask > ul > li").bind('click', linkBanner);
 
             var cursorAtual;
 
@@ -653,17 +653,17 @@ function browser() {
                         window.clearInterval(intervalListener);
                         initialPosition = Number(thebanner.find(".the-banner").position().left);
                         isDrag = true;
-                        thebanner.find(" .thebanner-mask ul li").unbind('click');
-                        thebanner.find(" .thebanner-mask ul li").addClass("dragging");
-                        //thebanner.find(" .thebanner-mask ul li").css("cursor", "url(../img/framework/grabbing.png)");
+                        thebanner.find(" .thebanner-mask > ul > li").unbind('click');
+                        thebanner.find(" .thebanner-mask > ul > li").addClass("dragging");
+                        //thebanner.find(" .thebanner-mask > ul > li").css("cursor", "url(../img/framework/grabbing.png)");
 
 
 
 
                     },
                     stop: function () {
-                        thebanner.find(" .thebanner-mask ul li").removeClass("dragging");
-                        thebanner.find(" .thebanner-mask ul li").css("cursor", cursorAtual);
+                        thebanner.find(" .thebanner-mask > ul > li").removeClass("dragging");
+                        thebanner.find(" .thebanner-mask > ul > li").css("cursor", cursorAtual);
 
                         var range = 0;
                         var dif = widthBanner / 10;
@@ -936,7 +936,6 @@ function browser() {
                            var larguraTotal = $(window).width();
                            var larguraBox2 = $(".thebox-content").outerWidth();
                             
-                            
                             if(larguraBox2 >= larguraTotal-40){
                                
                                 $(".thebox-content").css('width', larguraTotal-80);
@@ -1134,32 +1133,37 @@ function browser() {
 
                         /* Resize  Default*/
                         $(window).resize(function () {
+                           
                             $(".thebox-content img").css("width", "");
                             $(".thebox-content img").css("height", "");
 
-                            if ($(".thebox-content img").width() >= $(window).width() - 200) {
-                                $(".thebox-content img").css("width", $(window).width() - 200);
-                                $(".thebox-content img").css("height", "auto");
-                            }
-                            if ($(".thebox-content img").width() >= $(window).height() - 200) {
-                                $(".thebox-content img").css("height", $(window).height() - 200);
-                            }
+	                        if ($(".thebox-content img").width() >= $(window).width() - 200) {
+	                            $(".thebox-content img").css("width", $(window).width() - 200);
+	                            $(".thebox-content img").css("height", "auto");
+	                        }
+	                        if($(".thebox-content img").height() >= $(window).height() - 200){
+		                       	$(".thebox-content img").css("height", $(window).height() - 200);
+	                            $(".thebox-content img").css("width", "auto"); 
+	                        }
+
 
                             var top = $(".thebox-content").height() / 2;
                             $(".thebox-content #thebox-controls").css("top", top);
 
-                            $(".thebox-content img").css("height", "auto");
                             $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
                             $(".thebox-content").css("margin-left", -($(".thebox-content").width() / 2 + Number($(".thebox-content").css("padding-left").replace("px", ""))));
                             $(".thebox-content").css("margin-top", -$(".thebox-content").height() / 2);                         
                             
 
                             $(".thebox-bg").css("width", $(window).width());
-                       
-
                             
                         });
+                        
+
+                        
                         /* end: Resize */
+
+
 
 
                         $(".thebox-content img").load(function () {
@@ -1202,6 +1206,36 @@ function browser() {
 
                             $(".thebox-content").css("margin-left", -($(".thebox-content").outerWidth()) / 2);
                             $(".thebox-content").css("margin-top", -($(".thebox-content").outerHeight()) / 2);
+							
+							
+							
+							
+							/* RESIZE */
+	
+	                        if ($(".thebox-content img").width() >= $(window).width() - 200) {
+	                        
+	                            $(".thebox-content img").css("width", $(window).width() - 200);
+	                            $(".thebox-content img").css("height", "auto");
+	                            
+	                        }
+	                        if($(".thebox-content img").height() >= $(window).height() - 200){
+		                       	$(".thebox-content img").css("height", $(window).height() - 200);
+	                            $(".thebox-content img").css("width", "auto"); 
+	                        }
+	                        
+	                        
+	                        
+	
+	                        var top = $(".thebox-content").height() / 2;
+	                        $(".thebox-content #thebox-controls").css("top", top);
+	
+
+	                        $(".thebox-content").css("top", scrollAtual + $(window).height() / 2);
+	                        $(".thebox-content").css("margin-left", -($(".thebox-content").width() / 2 + Number($(".thebox-content").css("padding-left").replace("px", ""))));
+	                        $(".thebox-content").css("margin-top", -$(".thebox-content").height() / 2);                         
+	                        
+	
+	                        $(".thebox-bg").css("width", $(window).width());                        
 
 
 
