@@ -823,7 +823,7 @@ function browser() {
 
 
                 /* Add Content **/
-                $(settings.base).append('<div class="thebox-content"><div class="relative"><h3></h3><div id="thebox-close">X</div></div></div>');
+                $(settings.base).append('<div class="thebox-content"><div class="relative"><h3 style="display:none;"></h3><div id="thebox-close">X</div></div></div>');
                 $('.thebox-content').stop().animate({ opacity: 0 }, 0);
 
                 if(settings.mini){
@@ -1172,7 +1172,9 @@ function browser() {
                             $(".thebox-content img").css("display", "block");
                             $(".thebox-content img").animate({ opacity: 1 }, settings.speed);
 
-
+							if(This.attr("data-title")){
+			                    $(".thebox-content h3").css('display', 'block');
+			                }
 
                             if (settings.zoom100pct) {
                                 $(".thebox-content img").css("width", "");
@@ -1653,14 +1655,14 @@ $(this).find("> .menu-submenu").css("display", "none");
        function responsiveMenu() {
 
 
-            if (!toogleMenu) {
+            /*if (!toogleMenu) {
                 $(settings.base).stop().css("margin-left", "0px");
                 $('.the-menu-minibar').stop().css("margin-left", "0px");
                 $('.the-menu-responsive').stop().animate({ left: -$('.the-menu-responsive').width() }, 0, function () {
                     //$(settings.base).css('width', '100%');
                 });
                 toogleMenu = true;
-            }
+            }*/
 
             $('.the-menu-responsive').css('minHeight', $(window).height());
 
