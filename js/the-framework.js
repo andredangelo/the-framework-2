@@ -885,8 +885,6 @@ function browser() {
                             $('.thebox-content').css('width', div.attr("data-width"));
                         } else {
                             $('.thebox-content').css('width', div.outerWidth());
-                            
-                            
                         }
 
 
@@ -894,7 +892,7 @@ function browser() {
                             
                             $('.thebox-content').css('height', div.attr("data-height"));
                         } else {
-                            $('.thebox-content').css('height', div.outerHeight());
+                            $('.thebox-content').css('height', 'auto');
                         }
                         
                         
