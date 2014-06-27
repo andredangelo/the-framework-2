@@ -1569,7 +1569,7 @@ function menuLeft() {
             var diferenca = This.outerWidth() - $(nav).outerWidth();
 
             /* Align base to right */
-            $(settings.base).css("padding-left", This.outerWidth());
+            $(settings.base).css("padding-left", $(nav).outerWidth());
 
             /* Align menu visible */
             This.css("left", -diferenca)
