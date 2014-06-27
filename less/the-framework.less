@@ -123,7 +123,11 @@
 
 	/* !Others **/
 
-
+	.transition{
+		-moz-transition: all .3s linear;
+		-webkit-transition: all .3s linear;
+		transition: all .3s linear;
+	}
 
 	
 /* !END: MIXINS LESS CONFIGURATION*/
@@ -597,12 +601,6 @@
 					background-color: #fff;
 					color:#000;
 				}
-
-
-
-
-
-
 		}
 
 		.table-container{
@@ -676,10 +674,6 @@
 			.menu-sub{
 				position:relative;
 			}
-			
-
-			
-
 		}
 
 	
@@ -766,6 +760,73 @@
 			}
 			
 		}	
+
+
+
+	/* !Side Menu */
+
+		.the-menu-side{
+			
+			.transition;
+			position: fixed;
+			z-index: 999;
+			left:-500px;
+			top:0px;
+			width: 340px;
+			height: 100%;
+			background: #fff;
+			.box-shadow(0px, 2px, 35px, rgba(0,0,0,0.3));
+
+			nav.main{
+
+				width: 90px;
+				height: 100%;
+				background: #fff;
+				float: right;
+				border-left: 1px solid #dbdbdb;
+
+				ul li {
+
+					width: 100%;
+					display: block;
+					text-align: center;
+					border-bottom: 1px solid #dbdbdb;
+
+				> a{
+					.font-size(1.1);
+					padding: 45px 10px 15px 10px;
+					display: block;
+					text-transform: uppercase;
+					font-weight: bold;
+					color: #909090;
+					background-position: center 5px;
+					background-repeat: no-repeat;
+
+					
+					&:hover{
+						background-color: #efefef;
+						background-position: bottom;
+						.box-shadow(inset 0px, 0px, 5px, rgba(0,0,0,0.1));
+						color: #1a90c3;
+						} 
+
+					}
+				}
+			}
+
+			.sub-side{
+				display: none;
+			}
+
+			.options{
+
+				float: left;
+
+			}
+
+		}
+
+
 
 		
 	/* !Tab-Menu */

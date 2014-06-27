@@ -756,6 +756,8 @@ function browser() {
 
 
 
+
+
 /** Component: The Box **/
 (function ($) {
 
@@ -1492,54 +1494,6 @@ function menuLeft() {
 
 
 
-/** Component: Menu + Submenu **/
-/*function menuSub(totalLevel){
-if(typeof(totalLevel)==='undefined') totalLevel = 3;
-        
-var n=1;
-var stMenu = ".level";
-var stMenu2 = "";
-var topStartMenu = 0;
-        
-for(n; n <= totalLevel; n++){
-                        
-stMenu2 += stMenu+n+">";
-$(stMenu+n).mouseover({param1: n, param2: stMenu+n}, fOver);
-$(stMenu+n).mouseleave({param1: n, param2: stMenu+n}, fOut);
-            
-}
-        
-function fOver(event){
-            
-topStartMenu = $(this).height();
-leftMenu = $(this).width();
-            
-var menuAbrir = event.data.param2 + " > .menu-submenu";
-            
-if(event.data.param1 == 1){
-$(menuAbrir).css("top", topStartMenu);
-}else{
-$(menuAbrir).css("left", $(this).width());
-}
-                            
-$(this).find("> .menu-submenu").css("display", "block");
-}
-        
-function fOut(event){
-            
-$(this).find("> .menu-submenu").css("display", "none");
-            
-}
-}*/
-/** end: Component: Menu + Submenu **/
-
-
-
-
-
-
-
-
 
 /*Component: Menu Responsive **/
 (function ($) {
@@ -1568,8 +1522,6 @@ $(this).find("> .menu-submenu").css("display", "none");
         this.each(function () {
             var currentElement = $(this);
         });
-
-
 
 
 
@@ -1603,6 +1555,51 @@ $(this).find("> .menu-submenu").css("display", "none");
             });
 
         }
+
+        /* !Side Menu */
+        if (settings.type == "side") {
+
+            createSideMenu();
+
+        }
+
+        function createSideMenu(){
+
+            var nav = This.find("> nav");
+            var diferenca = This.outerWidth() - $(nav).outerWidth();
+
+            /* Align base to right */
+            $(settings.base).css("padding-left", This.outerWidth());
+
+            /* Align menu visible */
+            This.css("left", -diferenca)
+
+
+
+
+            /*Width options*/
+            This.find(".options").css("width", diferenca);
+
+            This.find(".main > ul > li").each(function(){
+                
+                
+                /* BG Icon */
+                var icon = $(this).attr("data-icon")
+                if(icon){
+                   $(this).find("a").css("background-image", "url(" + icon +  ")");
+                }
+
+
+                if($(this).find()){
+
+                }
+
+
+            });
+
+        }
+
+
             
         function createMenu() {
                 $('body').prepend("<div class='the-menu-minibar'><a class='the-menu-ico btn'>" + settings.labelButtonMenu + "</a>" + settings.htmlMiniBar + "</div>");
@@ -1673,7 +1670,7 @@ $(this).find("> .menu-submenu").css("display", "none");
                 This.css('display', '');
                 //This.html(estruturaMenu);
                 $('.the-menu-responsive').css('left', -$('.the-menu-responsive').width());
-                $(settings.base).css('margin-left', 0);
+                $(settings.base).css('margin-left', '');
                 toogleMenu = true;
                 $('body').css('overflow-x', '');
                 addOver();
@@ -2119,39 +2116,6 @@ function scrollFixed(id) {
 
 })(jQuery);
 /** end: Responsive Table **/
-
-
-
-
-/*
-$(document).ready(function () {
-var arrTable = new Array();
-//var arrTd = new Array('00', '01');
-var classTable = $(".divTableless table").attr("class");
-
-$(".divTableless").each(function () {
-
-arrTable = new Array(); 
-
-$(this).find("table tr > td").each(function (index) {
-arrTable.push($(this).html());
-});
-
-$(this).html("<ul class=" + classTable + ">");
-
-for (n = 0; n < arrTable.length; n++) {
-$(this).append("<li class=itemLoja" + n + ">" + arrTable[n] + "</li>")
-}
-
-$(this).append("</ul>");
-});
-
-
-});
-
-*/
-
-
 
 
 
