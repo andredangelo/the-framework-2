@@ -1664,10 +1664,6 @@ function menuLeft() {
            
                 itemAtual = $(t).attr("data-eq");
             }
-
-
-
-
         }
 
 
