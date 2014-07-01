@@ -1054,34 +1054,68 @@
           </div>
 
       
-          <h4>Side Menu</h4>
+          <h5>Side Menu (Menu + Sub Menu in left)</h5>
           <ul>
-               <li>Create the correct Structure</li>
-               <li>Call jQuery function: $('.nameclass').themenu({type:'side'});</li>
+               <li>Create the div "base"</li>
+               <li>Call jQuery function: $('.the-menu-side').themenu({type:'side'});</li>
           </ul> 
+          <div>
+              <a href="#" class="open-code btn">View Code</a>
+              <span class="none">
+                  <pre class="brush: js;">  
+                    <div class="the-menu-side">  
 
-          <pre class="brush: js;">
-               <nav class="the-menu">
-                  <ul>
-                      <li>
-                          <a href="#menu" class="active">Link</a>
-                      </li>
-                      <li>
-                          <a href="#menu">Link</a>
-                      </li>
-                      <li>
-                          <a href="#menu">Link</a>
-                      </li>
-                      <li>
-                          <a href="#menu">Link</a>
-                      </li>
-                  </ul>
-              </nav>
-          </pre>
+                        <div class="options">
+                            
+                        </div>
+
+                        <nav class="main">
+                        Logo 
+                                  <ul>
+                                      <li data-icon="img/menu/ico.png">
+                                          <a href="#menu">Link</a>
+
+                                          <span class="sub-side">
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#menu">Link</a></li>
+                                                    <li><a href="#menu">Link</a></li>
+
+                                                </ul>
+                                            </div>
+                                          </span>
+
+                                      </li>
+                                      <li data-icon="img/menu/ico.png">
+                                          <a href="#menu">Link</a>
+                                      </li>
+                                      <li data-icon="img/menu/ico.png">
+                                          <a href="#menu">Link</a>
+
+                                          <span class="sub-side">
+                                            <div>
+                                                <ul>
+                                                    <li><a href="#menu">Link2</a></li>
+                                                    <li><a href="#menu">Link2</a></li>
+                                                    <li><a href="#menu">Link2</a></li>
+                                                    <li><a href="#menu">Link2</a></li>
+                                                </ul>
+                                            </div>
+                                          </span>
 
 
+                                      </li>
+                                      <li data-icon="img/menu/ico.png">
+                                          <a href="#menu">Link</a>
+                                      </li>
+                                  </ul>
+                        </nav>
+                    </div> 
 
-        </div>    
+                  </pre>
+              </span>
+          </div>
+   
     </section>
 
 
