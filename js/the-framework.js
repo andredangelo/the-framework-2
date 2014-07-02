@@ -1554,6 +1554,7 @@ function menuLeft() {
                 responsiveMenu();
             });
 
+
         }
 
         /* !Side Menu */
@@ -1561,6 +1562,19 @@ function menuLeft() {
 
             createSideMenu();
 
+        }else{
+            if(settings.cleanSpaces){
+              cleanSpaces();  
+            }
+            
+
+            function cleanSpaces(){
+                This.find("a").each(function(){
+                    $(this).html($(this).text().replace(/\s/g, '&nbsp;'));
+                })
+            }
+
+            
         }
 
         function createSideMenu(){
@@ -1591,7 +1605,7 @@ function menuLeft() {
                    $(this).find("> a").css("background-image", "url(" + icon +  ")");
                 }
 
-                $(this).find(">a").attr("data-eq", index)
+                $(this).find("> a").attr("data-eq", index)
 
             });
 
@@ -1792,15 +1806,7 @@ function menuLeft() {
             /** end: Sub Menu **************/
 
 
-            if(settings.cleanSpaces){
-              cleanSpaces();  
-            }
-            
-            function cleanSpaces(){
-                This.find("a").each(function(){
-                    $(this).html($(this).text().replace(/\s/g, '&nbsp;'));
-                })
-            }
+
                 
 
 

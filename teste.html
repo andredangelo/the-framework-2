@@ -122,7 +122,12 @@
     </div>
 
     <nav class="main">
-    Logo 
+        
+        <a href="#">
+            <img src="http://eat.mst.edu/assets_c/2010/08/starbucks-logo-thumb-956x972-14441.gif" height="40"/>
+        </a>
+
+
               <ul>
                   <li data-icon="img/menu/ico.png">
                       <a href="#menu">Link</a>
@@ -236,14 +241,11 @@
     
     <script>
         $(document).ready(function(e) {
-            $(document).theload();
-            $('.the-menu-side').themenu({type:'side'});
+            //$(document).theload();
+            $('.the-menu-side').themenu({type:'side', responsive:'false'});
             
 
 
-            if (Browser.Version() < 9) {
-                $(":input[placeholder]").placeholder();
-            }       
             
             
         });
