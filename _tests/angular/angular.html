@@ -1,0 +1,115 @@
+﻿
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>Default Menu</title>
+
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="../../css/styles.css" media="screen"/>
+<link rel="stylesheet" href="../../css/mobile.css" media="screen">
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body ng-app>
+   
+ 
+
+
+<div id="base">
+    
+
+    
+    
+    
+    
+    <!-- Section -->
+    <section id="content">
+       
+       <h1>Ng-model</h1> 
+        <label>Name:</label>
+          <input type="text" ng-model="yourName" placeholder="Enter a name here">
+          
+          <h1>Hello {{yourName}}!</h1>
+        
+    </section>
+
+    <hr>
+
+    
+    
+    
+    <!-- Section -->
+    <section id="content">
+       
+       <h1>Navegação Simples</h1> 
+
+<!--    O menu de navegação vai pegar o valor da variável "ativa" como uma classe. 
+                O $event.preventDefault() previne que a página pule quando um link é clicado -->
+
+        <nav class="{{ ativo }}" ng-click="$event.preventDefault()">
+            
+            <!-- Quando um link no menu é clicado, nós definimos a variável ativa -->
+            <a href="#" class="home" ng-click="ativo='home'">Home</a>
+            <a href="#" class="projects" ng-click="ativo='projects'">Projetos</a>
+            <a href="#" class="services" ng-click="ativo='services'">Serviços</a>
+            <a href="#" class="contact" ng-click="ativo='contact'">Contato</a>
+
+        </nav>
+
+        <!-- ng-show vai mostrar um elemento se o valor das aspas for verdadeiro, enquanto o ng-hide faz o contrário. Por causa da variável ativa não ser definida inicialmente, fará com que o primeiro parágrafo seka visível -->
+
+        <p ng-hide="ativo">Por favor, click em um item do menu</p>
+        <p ng-show="ativo">Sua Escolha <b>{{ ativo }}</b></p>
+
+        <!-- Incluindo o AngularJS do Google CDN -->
+        
+    </section>
+
+    <hr>
+
+
+    
+    <!-- Section -->
+    <section id="content">
+       
+       <h1>Ng-model</h1> 
+        <label>Name:</label>
+          <input type="text" ng-model="yourName" placeholder="Enter a name here">
+          
+          <h1>Hello {{yourName}}!</h1>
+        
+    </section>
+
+    <hr>
+
+    
+    
+    
+</div>
+
+
+
+
+
+
+<!-- Scripts ------------------------------------------------------------------------------>
+
+
+    
+    
+<!-- /Scripts ------------------------------------------------------------------------------>
+
+
+</body>
+</html>
