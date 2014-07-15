@@ -1510,7 +1510,11 @@ function menuLeft() {
         labelButtonMenu: "",
         htmlMiniBar: "",
         totalLevel: 3,
-        cleanSpaces:true
+        cleanSpaces:true,
+
+        /* Settings.type */
+        animateBase:false
+
     };
 
     $.fn.themenu = function (options) {
@@ -1661,7 +1665,11 @@ function menuLeft() {
 
             function adicionar(t){
                 This.stop().animate({left:0}, settings.time);
-                $(settings.base).stop().animate({paddingLeft:This.outerWidth()}, settings.time);
+                
+                if(settings.animateBase){
+                   $(settings.base).stop().animate({paddingLeft:This.outerWidth()}, settings.time); 
+                }
+                
                 
                 This.find(".options").html("");
                 This.find(".options").html($(t).parent().find(".sub-side").html());
