@@ -93,6 +93,14 @@
 
  	nav.main ul li a{
  		font-weight: normal;
+
+ 		&:hover{
+ 			.box-shadow(inset 0px, 0px, 25px, rgba(0,0,0,0.9));
+ 		}
+
+ 		&.active{
+ 			.box-shadow(inset 0px, 0px, 25px, rgba(0,0,0,0.9));
+ 		}
  	}
 
 	.options>div>ul a{
@@ -204,6 +212,10 @@
 				color:#666;
 				a{
 					color:#777;
+					
+					&:hover{
+						color:#efefef;
+					}
 				}
 			}
 
@@ -289,7 +301,9 @@
 
 
 
-
+.the-menu-side nav.main{
+	border-right: 1px solid rgba(250,250,250,0.1);
+}
 
 
 

@@ -15,8 +15,7 @@ Developer: André dos Santos D´Angelo
 /* Init */
 
 $(document).ready(function (e) {
-    /** Component: Table Ordenada **/
-    $(".table-ordenada").tablesorter();
+  
 
 
     /** Component: Tabs **/
@@ -1960,6 +1959,10 @@ function masksForms() {
     $('.cep').mask("99999-999");
     $('.cpf').mask("999.999.999-99");
     $('.cnpj').mask("99.999.999/9999-99");
+
+    $('.maskCep').mask("99999-999");
+    $('.maskCpf').mask("999.999.999-99");
+    $('.MaskCnpj').mask("99.999.999/9999-99");
     $(".maskDate").mask("99/99/9999");
 
     $.mask.definitions['H'] = "[0-2]";
@@ -2110,7 +2113,8 @@ function scrollFixed(id) {
 (function ($) {
 
     var defaults = {
-        minWidth: 700
+        minWidth: 700,
+        ordered: true
     };
 
     $.fn.thetable = function (options) {
@@ -2128,6 +2132,8 @@ function scrollFixed(id) {
             var currentElement = $(this);
 
         });
+
+
 
 
 
@@ -2174,6 +2180,10 @@ function scrollFixed(id) {
                         }
 
                     }
+                }else{
+                     if(settings.ordered){
+                        $(This).tablesorter();
+                    }
                 }
 
 
@@ -2187,12 +2197,13 @@ function scrollFixed(id) {
 
 
         $(window).resize(function () {
-
             responsive();
         });
 
 
-
+        if(settings.ordered){
+            $(This).tablesorter();
+        }
 
         return this;
     };

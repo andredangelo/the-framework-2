@@ -423,7 +423,6 @@
 			width:100%;
 
 			label.error{
-					border: 1px solid #C30 !important;
 					color:#C30;
 					font-size:11px;
 					margin-top:-27px;
@@ -508,6 +507,10 @@
 			}
 			
 
+			tr:hover td{
+				background: #f2edd1;
+			}
+
 			
 			/*Padding Padrão */
 			 td,  th{
@@ -532,6 +535,12 @@
 				background: #555;
  				font-weight: normal;
 
+			}
+
+			.thetable-th{
+				color:#fff;
+				background: #555 !important;
+ 				font-weight: normal;
 			}
 			
 			thead th:first-child{
@@ -567,40 +576,7 @@
 				
 			}
 
-				.table-ordenada thead tr .header {
-					background-image:url(../img/framework/bg.gif);
-					background-repeat: no-repeat;
-					background-position: center right;
-					cursor: pointer;
-				}
-				
-				.table-ordenada {
-					
-				}
-				.table-ordenada thead tr .header {
-					background-image: url(../img/framework/bg.gif);
-					background-repeat: no-repeat;
-					background-position: center right;
-					cursor: pointer;
-				}
-				.table-ordenada tbody td {
-					color: #3D3D3D;
-					padding: 8px;
-					vertical-align: top;
-				}
-				.table-ordenada tbody tr.odd td {
-					
-				}
-				.table-ordenada thead tr .headerSortUp {
-					background-image: url(../img/framework/asc.gif);
-				}
-				.table-ordenada thead tr .headerSortDown {
-					background-image: url(../img/framework/desc.gif);
-				}
-				.table-ordenada thead tr .headerSortDown, .table.table-ordenada thead tr .headerSortUp {
-					background-color: #fff;
-					color:#000;
-				}
+
 		}
 
 		.table-container{
@@ -608,18 +584,60 @@
 			overflow-y: auto;
 			_overflow: auto;
 			margin: 0 0 1em;
+		
+			&::-webkit-scrollbar{
+				-webkit-appearance: none;
+				width: 14px;
+				height: 14px;
+			}
+			&::-webkit-scrollbar-thumb{
+				border-radius: 8px;
+				border: 3px solid #fff;
+				background-color: rgba(0, 0, 0, .3);
+			}
 		}
-		.table-container::-webkit-scrollbar{
-			-webkit-appearance: none;
-			width: 14px;
-			height: 14px;
-		}
-		.table-container::-webkit-scrollbar-thumb{
-			border-radius: 8px;
-			border: 3px solid #fff;
-			background-color: rgba(0, 0, 0, .3);
-		}
+ 
 
+		.table-ordered{
+
+			thead tr .header {
+				background-image:url(../img/framework/bg.gif);
+				background-repeat: no-repeat;
+				background-position: center right;
+				cursor: pointer;
+			}
+		
+			thead tr .header {
+				background-image: url(../img/framework/bg.gif);
+				background-repeat: no-repeat;
+				background-position: center right;
+				cursor: pointer;
+			}
+
+
+
+			tbody td {
+				color: #3D3D3D;
+				padding: 8px;
+				vertical-align: top;
+			}
+			
+			tbody tr.odd td {
+				
+			}
+			
+			thead tr .headerSortUp {
+				background-image: url(../img/framework/asc.gif);
+			}
+			
+			thead tr .headerSortDown {
+				background-image: url(../img/framework/desc.gif);
+			}
+			thead tr .headerSortDown, thead tr .headerSortUp {
+				background-color: #666;
+				color:#fff;
+			}
+		}
 
 	/* !Menu */
 
@@ -874,7 +892,7 @@
 		.menu-tab{
 			ul{
 				border-bottom:1px solid #ccc;
-				min-height:36px;
+				height:39px;
 			}
 			
 			ul > li{
@@ -893,9 +911,9 @@
 				border: 1px solid #ddd;
 				cursor:pointer;
 				
-				-webkit-box-shadow: inset 0px -1px 8px rgba(50, 50, 50, 0.20);
-				-moz-box-shadow:    inset 0px -1px 8px rgba(50, 50, 50, 0.20);
-				box-shadow:         inset 0px -1px 8px rgba(50, 50, 50, 0.20);		
+				-webkit-box-shadow: inset 0px -4px 4px rgba(50, 50, 50, 0.1);
+				-moz-box-shadow:    inset 0px -4px 4px rgba(50, 50, 50, 0.1);
+				box-shadow:         inset 0px -4px 4px rgba(50, 50, 50, 0.1);		
 				
 				-webkit-border-top-left-radius: 4px;
 				-webkit-border-top-right-radius: 4px;
@@ -985,7 +1003,6 @@
 
 		}
 
-
 			.the-banner-controls{
 				position:absolute;
 				bottom:10px;
@@ -1023,8 +1040,6 @@
 				}
 
 			}
-
-
 
 			.the-banner-arrow{
 				width:30px;
@@ -1229,16 +1244,12 @@
 				transition: all .3s linear;
 			}
 
-
-			
-
-
 		}
 			
 
 			
 		/* !The Accordion */
-		.the-accordion{
+		.theaccordion{
 
 			border-bottom:1px solid #ccc;
 
@@ -1261,8 +1272,6 @@
 				}
 
 			}
-
-
 
 		}
 		
@@ -1291,8 +1300,7 @@
 		background-color:#FFF;
 		text-align:center;
 		font-size:16px;
-		/*box-shadow:rgb(162, 162, 162) 0px 2px 3px;
-	*/
+
 		behavior: url(css/PIE.htc);
 
 		img{
