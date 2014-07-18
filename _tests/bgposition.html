@@ -100,7 +100,7 @@
     <script src="../js/jquery-ui-1.10.3.custom.min.js"></script>
     <link href="../js/../css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 
-    <script src='js/jquery.zoom.js'></script>
+    
 
 
 
@@ -109,6 +109,9 @@
 
 
   <style>
+
+  body, html{width: 100%;}
+
     /* styles unrelated to zoom */
     * { border:0; margin:0; padding:0; }
     p { position:absolute; top:3px; right:28px; color:#555; font:bold 13px/1 sans-serif;}
@@ -117,6 +120,7 @@
     .zoom {
       display:inline-block;
       position: relative;
+      
     }
     
     /* magnifying glass icon */
@@ -143,6 +147,7 @@
 
     .the-banner>li{
       background-size: cover;
+      height: auto !important;
     }
 
     .the-banner>li .zoom{
@@ -167,7 +172,7 @@
 
 
     
-  <div id="the-banner-content">
+  <div id="the-banner-content" >
        <ul>
            <li style="background-image:url('http://magnigenie.com/wp-content/uploads/2014/02/1366x768-abstract-inspire-colorful-hd-wallpaper.jpg');">
            </li>
@@ -200,7 +205,8 @@
     <script type="text/javascript" src="../js/the-framework.js"></script>
     <script type="text/javascript" src="../js/jquery.ui.touch-punch.min.js"></script>
     <script src="../js/jquery.placeholder.min.js" type="text/javascript"></script>
-    
+    <script src='js/jquery.zoom.js'></script>
+
     <script>
        
         $(window).resize(function(){
@@ -210,9 +216,13 @@
         $(document).ready(function(e) {
  
           efeito();
-          $('#the-banner-content').thebanner({effect:"fade", autoAnimate:false})
-
+          $('#the-banner-content').thebanner({autoAnimate:false, bannerWidth:$(window).width()})
+          customizacao();
           
+          $('.zoom').zoom({ on:'click' }); 
+          $('.zoom').css("height", $(window).height());
+          
+
 
         });
 
@@ -221,20 +231,27 @@
         function efeito(){
            
           var alturaTela = $(window).height();
+          var larguraTela = $(window).width();
 
+          $('#the-banner-content').css("width", larguraTela);
           $('#the-banner-content').css("height", alturaTela);
+          
+          $('.zoom').css("height", $(window).height());
+          $('.zoom').css("width", $(window).width());
 
         }
 
 
-        function addEffect(){
-          var bg = $(".the-banner>li:first-of-type").css("background-image").replace('url(','').replace(')','');
-          var str = "<span class='zoom'><img src='"+bg+"' width='555' height='320' alt='' style='display:none;'' /></span>";
-          $(".the-banner>li:first-of-type").html(str);
-          $('.zoom').css("height", $(window).height());
+        function customizacao(){
 
-          $('.zoom').trigger('zoom.destroy');
-          $('.zoom').zoom({ on:'click' }); 
+          $(".the-banner>li").each(function(){
+
+            var bg = $(this).css("background-image").replace('url(','').replace(')','');
+            var str = "<span class='zoom'><img src="+bg+" width='555' height='320' alt='' style='display:none;' /></span>";
+
+            $(this).html(str);
+
+          });
         }
 
 

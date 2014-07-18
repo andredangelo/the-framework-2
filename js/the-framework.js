@@ -1512,6 +1512,7 @@ function menuLeft() {
         cleanSpaces:true,
 
         /* Settings.type */
+        type:"",
         animateBase:false
 
     };
@@ -1554,6 +1555,7 @@ function menuLeft() {
         if (settings.responsive) {
             
             createMenu();
+
             responsiveMenu();
             $(window).resize(function () {
                 responsiveMenu();
@@ -1562,25 +1564,28 @@ function menuLeft() {
 
         }
 
+
+
+
         /* !Side Menu */
         if (settings.type == "side") {
-
             createSideMenu();
 
         }else{
-            if(settings.cleanSpaces){
-              cleanSpaces();  
-            }
-            
+                
 
-            function cleanSpaces(){
+
+            if(settings.cleanSpaces){
                 This.find("a").each(function(){
                     $(this).html($(this).text().replace(/\s/g, '&nbsp;'));
-                })
+                }) 
+
             }
+            
 
             
         }
+
 
         function createSideMenu(){
 
@@ -1620,12 +1625,14 @@ function menuLeft() {
             /* Click */
             This.find(".main > ul > li > a").click(function(){
 
+
                 This.find(".main > ul > li > a").removeClass("active");
                 $(this).addClass("active");
 
-                if($(this).parent("li").find(".sub-side").length){
 
-                    event.preventDefault();
+                if($(this).parent("li").find(".sub-side").length){
+                    
+                    
 
                     if(itemAtual == $(this).attr("data-eq")){
                         
@@ -1634,6 +1641,7 @@ function menuLeft() {
                     }else{
 
                         adicionar($(this));
+
 
                     }
 
@@ -1663,6 +1671,9 @@ function menuLeft() {
             }
 
             function adicionar(t){
+
+
+
                 This.stop().animate({left:0}, settings.time);
                 
                 if(settings.animateBase){
@@ -1744,8 +1755,6 @@ function menuLeft() {
         } 
             
 
-                      
-    
 
         function responsiveMenu() {
 

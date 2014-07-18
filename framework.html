@@ -73,8 +73,9 @@
             $('#the-banner-content').thebanner();
             $('#the-banner-content2').thebanner({slides:true, slideMargin:40, autoAnimate:false});
             $('#the-banner-content3').thebanner({thumb:true, autoAnimate:false, clickAndStop:false}); 
-
+            
             $('.the-menu').themenu();
+            $('.the-menu-side').themenu({type:'side'});
 
             $('.thebox').thebox({mini:true});
             $('.thebox-inline').thebox({type:'inline'});
@@ -84,9 +85,7 @@
 
             $(".table-ordered").thetable({minWidth:700});
 
-            $('.the-menu-side').themenu({type:'side'});
-
-
+            
 
             $('#nomeForm').validate({
                 rules:{
@@ -192,7 +191,7 @@
     <nav class="main">
               <ul>
                   <li data-icon="img/framework/icoComponents.png">
-                      <a href="#menu" class="components">Components</a>
+                      <a href="#" class="components">Components</a>
  
                       <span class="sub-side">
                         <div class="components">
@@ -215,7 +214,7 @@
                   </li>
 
                   <li data-icon="img/framework/icoHtml.png">
-                      <a href="#menu" class="html">HTML/CSS</a>
+                      <a href="#" class="html">HTML/CSS</a>
  
                       <span class="sub-side">
                         <div class="html">
@@ -243,13 +242,13 @@
                   </li>
 
                   <li data-icon="img/framework/icoLayout.png">
-                      <a href="#menu" class="layout">Layout</a>
+                      <a href="#" class="layout">Layout</a>
  
                       <span class="sub-side">
                         <div class="layout">
                             <ul>
                               <li>
-                                  <a href="#menu" class="anchorLink">Grid System (Coming soon)</a>
+                                  <a href="#" class="anchorLink">Grid System (Coming soon)</a>
                               </li>
                             </ul>
                         </div>
@@ -257,7 +256,7 @@
                   </li>
 
                   <li data-icon="img/framework/icoGenerators.png">
-                      <a href="#menu" class="generators">Generators</a>
+                      <a href="#" class="generators">Generators</a>
  
                       <span class="sub-side">
                         <div class="generators">
@@ -727,7 +726,7 @@
                     <td>afterClose</td>
                     <td>Function</td>
                     <td>""</td>
-                    <td>Set a function after close the box. ex: {afterClose(functionname()};</td>
+                    <td>Set a function after close the box. ex: {afterClose:functionname}</td>
                   </tr>
         
                   
