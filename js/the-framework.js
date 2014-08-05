@@ -1623,7 +1623,7 @@ function menuLeft() {
 
             var itemAtual = -1;
             /* Click */
-            This.find(".main > ul > li > a").click(function(){
+            This.find(".main > ul > li > a").click(function(e){
 
 
                 This.find(".main > ul > li > a").removeClass("active");
@@ -1632,6 +1632,7 @@ function menuLeft() {
 
                 if($(this).parent("li").find(".sub-side").length){
                     
+                    event.preventDefault();
                     
 
                     if(itemAtual == $(this).attr("data-eq")){
