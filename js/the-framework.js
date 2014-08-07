@@ -769,6 +769,7 @@ function browser() {
         speed: 500,
         mini: false,
         animate: false,
+        margin: 200,
         base: "body",
 
         /*** Call Backs ***/
@@ -1136,12 +1137,12 @@ function browser() {
                             $(".thebox-content img").css("width", "");
                             $(".thebox-content img").css("height", "");
 
-	                        if ($(".thebox-content img").width() >= $(window).width() - 200) {
-	                            $(".thebox-content img").css("width", $(window).width() - 200);
+	                        if ($(".thebox-content img").width() >= $(window).width() - settings.margin) {
+	                            $(".thebox-content img").css("width", $(window).width() - settings.margin);
 	                            $(".thebox-content img").css("height", "auto");
 	                        }
-	                        if($(".thebox-content img").height() >= $(window).height() - 200){
-		                       	$(".thebox-content img").css("height", $(window).height() - 200);
+	                        if($(".thebox-content img").height() >= $(window).height() - settings.margin){
+		                       	$(".thebox-content img").css("height", $(window).height() - settings.margin);
 	                            $(".thebox-content img").css("width", "auto"); 
 	                        }
 
@@ -1179,9 +1180,9 @@ function browser() {
                                 $(".thebox-content img").css("width", "");
                                 $(".thebox-content img").css("height", "");
 
-                                if ($(".thebox-content img").width() >= $(window).outerWidth() - 200) {
+                                if ($(".thebox-content img").width() >= $(window).outerWidth() - settings.margin) {
 
-                                    $(".thebox-content img").css("width", $(window).outerWidth() - 200);
+                                    $(".thebox-content img").css("width", $(window).outerWidth() - settings.margin);
                                     $(".thebox-content img").css("height", "auto");
                                 }
                             }
@@ -1213,14 +1214,14 @@ function browser() {
 							
 							/* RESIZE */
 	
-	                        if ($(".thebox-content img").width() >= $(window).width() - 200) {
+	                        if ($(".thebox-content img").width() >= $(window).width() - settings.margin) {
 	                        
-	                            $(".thebox-content img").css("width", $(window).width() - 200);
+	                            $(".thebox-content img").css("width", $(window).width() - settings.margin);
 	                            $(".thebox-content img").css("height", "auto");
 	                            
 	                        }
-	                        if($(".thebox-content img").height() >= $(window).height() - 200){
-		                       	$(".thebox-content img").css("height", $(window).height() - 200);
+	                        if($(".thebox-content img").height() >= $(window).height() - settings.margin){
+		                       	$(".thebox-content img").css("height", $(window).height() - settings.margin);
 	                            $(".thebox-content img").css("width", "auto"); 
 	                        }
 	                        
