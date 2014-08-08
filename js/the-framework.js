@@ -1532,7 +1532,6 @@ function menuLeft() {
 
 
 
-
         if (settings.isAnchor) {
 
             var arrMenu = new Array();
