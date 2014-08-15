@@ -131,7 +131,6 @@ function browser() {
         /* Initial Settings  ***************************/
         function initialSettings() {
 
-
             /* Set width and height to Banner and ul and li 100%*/
             thebanner.css("width", settings.bannerWidth);
 
@@ -281,6 +280,13 @@ function browser() {
         montaSlides();
 
         function montaSlides() {
+           
+
+            if (settings.effect == "fade") {
+                thebanner.find(".thebanner-mask > ul > li").css("display", "none");
+                thebanner.find(".thebanner-mask > ul > li").eq(0).css("display", "block");
+            }
+
             if (settings.slides) {
                 thebanner.find(".the-banner-controls ul").html("");
                 thebanner.find(".the-banner-controls ul").append("<li><a data-index=0></a></li>");
@@ -309,7 +315,6 @@ function browser() {
                 if (thebanner.width() < thebanner.find(".thebanner-mask > ul > li").width() * 2) {
                     thebanner.css("width", thebanner.find(".thebanner-mask > ul > li").width() + settings.slideMargin * 2);
                 }
-
             }
 
         }
@@ -447,6 +452,7 @@ function browser() {
         }
 
         function clickArrow(event) {
+
             window.clearInterval(intervalListener);
             if (settings.clickAndStop) { } else {
                 intervalListener = self.setInterval(function () { bannerTimer() }, settings.timer);
@@ -475,9 +481,9 @@ function browser() {
                     }
                 }
             }
-
-            controlClick(strLink, false);
             thebanner.find(".the-banner-arrow").unbind("click");
+            controlClick(strLink, false);
+            
         }
 
         /* end: Arrows */
@@ -491,6 +497,7 @@ function browser() {
                  $(thebanner).find(".the-banner-controls").css("display", "none");
                  $(thebanner).find("#the-banner-right").css("display", "none");
                  $(thebanner).find("#the-banner-left").css("display", "none");
+                 window.clearInterval(intervalListener);
             }        
         }
 
@@ -563,36 +570,29 @@ function browser() {
 
                     case "fade":
 
-                        if (bannerAtual == index) {
+                            console.log(bannerAtual + "  " + index);
 
-                        } else {
-                            thebanner.find("> .the-banner-controls ul li a").off("click");
+                            thebanner.find("> .the-banner-controls ul li a").unbind("click");
+
+                            var bannerAtual2 = bannerAtual;
 
                             thebanner.find(".the-banner").stop().animate({ marginLeft: 0 }, 0);
-                            thebanner.find(".the-banner").html("");
-                            thebanner.find(".the-banner").append(arrList[bannerAtual]);
-                            thebanner.find(".the-banner").append(arrList[n]);
-                            thebanner.find(".thebanner-mask > ul > li:nth-child(1)").css("position", "relative");
-                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").css("position", "absolute");
+                            thebanner.find(".thebanner-mask > ul > li").eq(bannerAtual).css("position", "");
 
-                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").addClass("fadeBanner");
-                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").stop().animate({ opacity: 0 }, 0);
-                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").animate({ opacity: 1 }, settings.speed, function () {
-                                thebanner.find(".thebanner-mask > ul > li:nth-child(2)").css("position", "relative");
-                                thebanner.find(".thebanner-mask > ul > li:nth-child(1)").remove();
+                            thebanner.find(".thebanner-mask > ul > li").eq(index).stop().animate({ opacity: 0 }, 0);
+                            thebanner.find(".thebanner-mask > ul > li").eq(index).css("display", "block");
+                            thebanner.find(".thebanner-mask > ul > li").eq(index).css("position", "absolute");
+                            thebanner.find(".thebanner-mask > ul > li").eq(index).stop().animate({ opacity: 1 }, settings.speed, function(){
+                                thebanner.find(".thebanner-mask > ul > li").eq(bannerAtual2).css("display", "none");
                                 callClick();
                                 thebanner.find(".the-banner-arrow").unbind("click");
                                 thebanner.find(".the-banner-arrow").click(clickArrow);
+                                thebanner.find(".thebanner-mask > ul > li").eq(index).css("position", "")
                             });
-                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").html("");
-                            thebanner.find(".thebanner-mask > ul > li:nth-child(2)").append(arrListHtml[n]);
 
-                            //thebanner.find(" .thebanner-mask > ul > li:nth-child(2)").append($(arrList[n]).html());
-                            //thebanner.find(" .thebanner-mask > ul > li:nth-child(2)").append("<h3>"+ thebanner.find(" .thebanner-mask > ul > li:nth-child(2)").attr("data-title") +"</h3>");
-
-                            thebanner.find(".thebanner-mask > ul > li").css("width", widthBanner);
-                            thebanner.find(".thebanner-mask > ul > li").click(linkBanner);
-                        }
+                            //Return Click
+                            //thebanner.find(".thebanner-mask > ul > li").click(linkBanner);
+                            
 
                         break
 
@@ -1623,7 +1623,7 @@ function menuLeft() {
 
             var itemAtual = -1;
             /* Click */
-            This.find(".main > ul > li > a").click(function(e){
+            This.find(".main > ul > li > a").click(function(event){
 
 
                 This.find(".main > ul > li > a").removeClass("active");
