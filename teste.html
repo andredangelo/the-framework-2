@@ -107,7 +107,12 @@
 
 
 
+<style>
+    
+.the-banner > li{height: auto !important;}
+}
 
+</style>
 
 
 
@@ -183,7 +188,14 @@
     <!-- end: Header -->
    
     
-
+ 
+ <div id="the-banner-content2">
+     <ul>
+         <li data-link="#1">
+            <img src="http://portalweb-cevn.bigsolutionsidc.com.br/Conteudo/Templates/img/Institucional/01.jpg" alt="">
+         </li>
+     </ul>
+</div>
       
     
     
@@ -245,7 +257,7 @@
             $('.the-menu-side').themenu({type:'side', responsive:'false'});
             
 
-
+            $('#the-banner-content2').thebanner({effect:"fade", autoAnimate: true});
             
             
         });
