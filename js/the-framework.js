@@ -570,7 +570,7 @@ function browser() {
 
                     case "fade":
 
-                            console.log(bannerAtual + "  " + index);
+                            //console.log(bannerAtual + "  " + index);
 
                             thebanner.find("> .the-banner-controls ul li a").unbind("click");
 
