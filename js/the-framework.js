@@ -42,19 +42,39 @@ $(document).ready(function (e) {
 
 /** Component: Browser **/
 function browser() {
-    if ($.browser.msie) {
-        if (parseInt($.browser.version) == 8) {
-            $("body").addClass("ie8");
-        } else if (parseInt($.browser.version) == 7) {
-            $("body").addClass("ie7");
-        } else if (parseInt($.browser.version) == 6) {
-            $("body").addClass("ie6");
-        } else if (parseInt($.browser.version) == 9) {
-            $("body").addClass("ie9");
-        } else if (parseInt($.browser.version) == 10) {
-            $("body").addClass("ie10");
-        }
-    }
+    $(document).ready(function() {
+   
+       // Internet Explorer  
+       if(($.browser.mozilla == true)&&($.browser.version == 11.0)){  
+              $('body').addClass('ie11');
+              
+        }else if(($.browser.msie == true)&&($.browser.version == 10.0)){  
+              $('body').addClass('ie10');
+              
+        }else if(($.browser.msie == true)&&($.browser.version == 9.0)){  
+              $('body').addClass('ie9');
+              
+        }else if(($.browser.msie == true)&&($.browser.version == 8.0)){  
+              $('body').addClass('ie8');
+        
+        }else if(($.browser.msie == true)&&($.browser.version == 7.0)){  
+              $('body').addClass('ie7');
+         
+        // Firefox          
+        }else if ($.browser.mozilla == true) {
+            $('body').addClass('firefox');
+        
+            
+        // Google Chrome / Safari     
+        } else if($.browser.webkit == true) {  
+              $('body').addClass('chrome');  
+        
+        // Opera      
+        } else if($.browser.opera == true) {  
+              $('body').addClass('opera');
+            
+         } else {}
+    });
 }
 /** end: Component: Browser **/
 
@@ -108,6 +128,7 @@ function browser() {
         var isDrag = false;
         var isResizing = false;
         var speedOriginal = settings.speed;
+        var arrowDisable = false;
 
         this.each(function () {
             var currentElement = $(this);
@@ -116,6 +137,7 @@ function browser() {
 
         /* Call Functions **/
         initialSettings();
+
 
         if (settings.autoAnimate) {
             var intervalListener = self.setInterval(function () { bannerTimer() }, settings.timer);
@@ -368,12 +390,6 @@ function browser() {
 
 
 
-
-
-
-
-
-
         function linkBanner() {
             if (isDrag) {
 
@@ -410,6 +426,7 @@ function browser() {
         controlAtual.addClass("active");
 
 
+
         thebanner.css("visibility", "visible");
 
         callClick();
@@ -431,6 +448,37 @@ function browser() {
 
 
 
+
+
+
+
+        //settings.arrowDisable
+        function fArrowDisable(){
+            
+            var controlAtualIndex = Number($(controlAtual).attr("data-index"));
+
+            if(controlAtualIndex <= 0){
+                thebanner.find("#the-banner-left").hide();
+            }else{
+                thebanner.find("#the-banner-left").show();
+            }
+            
+            if(controlAtualIndex >= totalNumbersBanners-1 ){
+                thebanner.find("#the-banner-right").hide();
+            }else{
+                thebanner.find("#the-banner-right").show();
+            }
+            
+        }
+
+
+
+
+
+
+
+
+
         /* Arrows    */
 
         if (settings.arrow) {
@@ -449,9 +497,16 @@ function browser() {
                 $(this).stop().animate({ opacity: 0.5 }, 200);
             })
             thebanner.find(".the-banner-arrow").click(clickArrow);
+
+            if(settings.arrowDisable){
+                fArrowDisable();
+            }
+
         }
 
         function clickArrow(event) {
+
+
 
             window.clearInterval(intervalListener);
             if (settings.clickAndStop) { } else {
@@ -481,8 +536,10 @@ function browser() {
                     }
                 }
             }
+
             thebanner.find(".the-banner-arrow").unbind("click");
             controlClick(strLink, false);
+
             
         }
 
@@ -512,6 +569,8 @@ function browser() {
         function controlClick(index, timer) {
 
             //alert(bannerAtual + "___novo:" + index);
+
+            
 
             var n = index;
 
@@ -619,6 +678,9 @@ function browser() {
                 thebanner.find(".thebanner-title").html("<h3>" + arrList[bannerAtual].attr("data-title") + "</h3>");
             }
 
+            if(settings.arrowDisable){
+                fArrowDisable(); 
+            }
             isResizing = 0;
             settings.speed = speedOriginal;
 
