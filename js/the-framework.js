@@ -105,7 +105,8 @@ function browser() {
         arrow: true,
         slides: false,
         slideMargin: 0,
-        thumb: false
+        thumb: false,
+        afterClickSeta: function () { }
     };
     /* end: Default Options *******/
 
@@ -540,7 +541,9 @@ function browser() {
             thebanner.find(".the-banner-arrow").unbind("click");
             controlClick(strLink, false);
 
-            
+            settings.afterClickSeta();
+
+
         }
 
         /* end: Arrows */
