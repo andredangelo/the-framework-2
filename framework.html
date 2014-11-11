@@ -86,8 +86,6 @@
 
             $(".table-ordered").thetable({minWidth:700});
 
-            
-
             $('#nomeForm').validate({
                 rules:{
                     nome:{
@@ -803,7 +801,7 @@
                      <img src="img/fallback/ie.png" width="128" height="127">
                     </a>
                     
-                    <div id="inlineContent" style="display:none; width:900px; height:auto;">
+                    <div id="inlineContent" style="display:none; height:auto;">
                       <h1>Title</h1>
                         <div>
                             <p>asdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasdasdasdasd asdasd asasd asasdasdasd asasd</p>
@@ -1555,24 +1553,42 @@
                      
                     <legend>Nome do formulário</legend>
                      
-                    <input name="nome" id="nome" type="text" placeholder="Nome">
-                                                     
-                    <input name="email" id="email" type="text" placeholder="E-mail">
-                     
+                    <span>
+                      <input name="nome" id="nome" type="text" placeholder="Nome">
+                    </span> 
+
+                    <span>                               
+                      <input name="email" id="email" type="text" placeholder="E-mail">
+                    </span>
+
+                    <span>  
                     <input name="date" id="date" class="maskDate hasDatepicker" type="text"  placeholder="Data">
-                 
+                    </span>
+
+                     <span>  
                     <input class="maskTel" name="Nome" type="text"  placeholder="Telefone">
-                                                   
+                    </span>
+
+                    <span>                                 
                     <input class="cpf" name="Nome" type="text"  placeholder="CPF">
-                                                   
+                    </span>
+
+                    <span>                                 
                     <input class="cnpj" name="Nome" type="text"  placeholder="CNPJ">
-                                                       
+                    </span>
+
+                    <span>                                    
                     <input id="senha" name="senha" type="password"  placeholder="Senha">           
-                         
+                    </span>
+
+                    <span>      
                     <input id="senha2" name="senha2" type="password"  placeholder="Confirmar Senha">           
-                          
-                    <input class="cep" name="CEP" id="CEP"  placeholder="CEP">                
-                                 
+                    </span>
+
+                    <span>       
+                    <input class="cep" type="text" name="CEP" id="CEP"  placeholder="CEP">                
+                    </span>
+
                     <label>Radio</label>
                      <span class="radio">     
                           <label>
@@ -1629,8 +1645,9 @@
                       
                      
                     <label>Textarea:</label>
+                    <span>
                     <textarea name="" cols="" rows=""  placeholder="Descrição"></textarea>
-                   
+                    </span>
                     <label></label>
                  
                     <button class="btn" type="submit">Enviar</button>       

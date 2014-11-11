@@ -26,12 +26,9 @@ $(document).ready(function (e) {
     masksForms();
 
 
-    /** Component: scrollFixed **/
-    //scrollFixed();
-
-
     /** Browser **/
     browser();
+
 
 });
 
@@ -807,7 +804,6 @@ function browser() {
         return this;
     };
     $.fn.thebanner.defaults = defaults;
-
 })(jQuery);
 /** end Component: The Banner **/
 
@@ -1400,7 +1396,6 @@ function browser() {
         return this;
     };
     $.fn.thebox.defaults = defaults;
-
 })(jQuery);
 /** end Component: The Box **/
 
@@ -1493,7 +1488,6 @@ function browser() {
         return this;
     };
     $.fn.theaccordion.defaults = defaults;
-
 })(jQuery);
 /** end: Component: Accordion **/
 
@@ -1503,53 +1497,6 @@ function browser() {
 
 
 
-
-
-
-
-
-
-
-/** Component: Menu-left **/
-var toogleMenuLeft = false;
-
-function menuLeft() {
-
-    var menuWidth = $("#menu-left").width();
-
-    $("#menu-left").css("height", $(document).height());
-
-    $(window).resize(function () {
-        $("#menu-left").css("height", $(document).height());
-    });
-
-
-    if (!toogleMenuLeft) {
-        $('#menu-left').stop().animate({ left: '0' }, 1000, function () {
-            // Animation complete.
-        });
-        $('#base').stop().animate({ marginLeft: menuWidth }, 1000, function () {
-            // Animation complete.
-            $(this).trigger('resized');
-        });
-        toogleMenuLeft = true;
-    } else {
-        $('#menu-left').stop().animate({ left: -menuWidth }, 1000, function () {
-            // Animation complete.
-        });
-        $('#base').stop().animate({ marginLeft: '0' }, 1000, function () {
-            // Animation complete.
-
-            $(this).trigger('resized');
-
-        });
-
-        toogleMenuLeft = false;
-
-    }
-
-}
-/** end Component: Menu-left **/
 
 
 
@@ -1912,7 +1859,6 @@ function menuLeft() {
         return this;
     };
     $.fn.themenu.defaults = defaults;
-
 })(jQuery);
 /*Component: Menu Responsive **/
 
@@ -1992,6 +1938,39 @@ function masksForms() {
     // jQuery Masked Input
     //$('textarea').html('');
 
+
+    /** Placeholder Helper **/
+    $("form").find("span > input").focus(function(){
+
+        if($(this).attr("placeholder")){
+            var placeHolder = String($(this).attr("placeholder")).replace(" ","&nbsp;");
+            $(this).parent().css("position", "relative");
+            $(this).parent().prepend("<span class='placeholder-helper'>"+placeHolder+"</span>")
+        }
+
+    });
+
+    $("form").find("span > input").blur(function(){
+        $(".placeholder-helper").remove();
+        $(this).parent().css("position", "");
+    });
+
+    $("form").find("span > textarea").focus(function(){
+
+        if($(this).attr("placeholder")){
+            var placeHolder = String($(this).attr("placeholder")).replace(" ","&nbsp;");
+            $(this).parent().css("position", "relative");
+            $(this).parent().prepend("<span class='placeholder-helper'>"+placeHolder+"</span>")
+        }
+
+    });
+
+    $("form").find("span > textarea").blur(function(){
+        $(".placeholder-helper").remove();
+        $(this).parent().css("position", "");
+    });
+
+
     
 
     $('.maskTel').mask("(99) 9999-9999?9").ready(function (event) {
@@ -2012,7 +1991,6 @@ function masksForms() {
             }
     });
 
-
     $('.maskTel').focusout(function () {
         var phone, element;
         element = $(this);
@@ -2024,14 +2002,6 @@ function masksForms() {
             element.mask("(99) 9999-9999?9");
         }
     }).trigger('focusout');
-
-
-
-
-
-
-
-
 
     $('.cep').mask("99999-999");
     $('.cpf').mask("999.999.999-99");
@@ -2049,8 +2019,6 @@ function masksForms() {
     $('.maskPlaca').mask("hhh-9999");
 
     $('.maskHora').mask("H9:M9");
-
-    //$('.maskNumero').attr("type", "number");
     
     $('.maskNumero').on('keypress', function(ev) {
     var keyCode = window.event ? ev.keyCode : ev.which;
@@ -2062,7 +2030,6 @@ function masksForms() {
             }
         }
     });
-
 
     $('.maskValor').maskMoney({symbol:'R$ ', thousands:'.', decimal:',', symbolStay: true});
 
@@ -2085,26 +2052,6 @@ function masksForms() {
 
 
 
-
-
-
-
-
-
-/** Component: Scroll Fixed **/
-function scrollFixed(id) {
-
-    //alert($("#menu-inside").scroll());
-    $(window).scroll(function (index) {
-
-        var scrollAtual = $(window).scrollTop();
-
-        $(id).stop().css("top", scrollAtual);
-
-
-    });
-}
-/** end: Component: Scroll Fixed **/
 
 
 
@@ -2170,7 +2117,6 @@ function scrollFixed(id) {
         return this;
     };
     $.fn.theload.defaults = defaults;
-
 })(jQuery);
 /** end Component: The Load **/
 
@@ -2285,7 +2231,6 @@ function scrollFixed(id) {
         return this;
     };
     $.fn.thetable.defaults = defaults;
-
 })(jQuery);
 /** end: Responsive Table **/
 
