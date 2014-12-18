@@ -44,8 +44,6 @@
     <script type="text/javascript" src="js/modernizr.js"></script>  
     <script type="text/javascript" src="js/jquery.anchor.js"></script>
     <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>  
-    <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.js"></script> 
     <script type="text/javascript" src="js/the-framework.js"></script>
     <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
@@ -53,7 +51,7 @@
     <script type="text/javascript" src="js/jquery.maskMoney.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>    
     <script type="text/javascript" src="js/angular.min.js"></script>
-
+    <script type="text/javascript" src="js/util.validate.js"></script>
 
 
     <script>
@@ -96,6 +94,10 @@
                         required: true,
                         email: true
                     },
+                    cpf: {
+                      required: true,
+                      cpf: 'both'
+                    },
                     date: {
                         required: true
                     },
@@ -116,6 +118,11 @@
                     email: {
                         required: "O campo email é obrigatorio.",
                         email: "O campo email deve conter um email válido."
+                    },
+                    cpf:{
+                      required : "O CPF é obrigatório.",
+                        // Atribui uma mensagem padrão para a função CPF do campo CPF
+                      cpf: "O CPF digitado é invalido"
                     },
                     senha: {
                         required: "O campo senha é obrigatorio."
@@ -844,7 +851,7 @@
            <h4>Iframe content</h4>   
             <h5>Example:</h5>
             <div class="example">
-                  <a href="inlineContentIframe" data-title="Title 1"  data-iframe="http://www.uol.com.br"  class="thebox-iframe">
+                  <a href="inlineContentIframe" data-height="1000" data-title="Title 1"  data-iframe="http://www.uol.com.br"  class="thebox-iframe">
                    <img src="img/fallback/ie.png" width="128" height="127">
                   </a>
                   
@@ -858,7 +865,7 @@
                       <pre class="brush: js;">  
                     $('.thebox-iframe').thebox({type:'inline'});
 
-                     <a href="inlineContentIframe" data-title="Title 1" data-width="200" data-iframe="http://www.uol.com.br"  class="thebox-iframe">
+                     <a href="inlineContentIframe"  data-title="Title 1" data-width="200" data-iframe="http://www.uol.com.br"  class="thebox-iframe">
                      <img src="img/fallback/ie.png" width="128" height="127">
                     </a>
                     
@@ -1570,7 +1577,7 @@
                     </span>
 
                     <span>                                 
-                    <input class="cpf" name="Nome" type="text"  placeholder="CPF">
+                    <input class="cpf" name="cpf" type="text"  placeholder="CPF">
                     </span>
 
                     <span>                                 
