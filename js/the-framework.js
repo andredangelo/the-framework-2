@@ -1955,8 +1955,7 @@ function masksForms() {
     });
 
     $("form").find("span > textarea").focus(function(){
-
-        if($(this).attr("placeholder")){
+        if($(this).attr("placeholder") && $(this).val()){
             var placeHolder = String($(this).attr("placeholder")).replace(" ","&nbsp;");
             $(this).parent().css("position", "relative");
             $(this).parent().prepend("<span class='placeholder-helper'>"+placeHolder+"</span>")
