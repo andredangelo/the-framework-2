@@ -102,6 +102,7 @@ function browser() {
         arrow: true,
         slides: false,
         slideMargin: 0,
+        drag:true,
         thumb: false,
         afterClickSeta: function () { }
     };
@@ -556,7 +557,9 @@ function browser() {
                  $(thebanner).find("#the-banner-left").css("display", "none");
                  window.clearInterval(intervalListener);
             }else{
-                drag();
+                if(settings.drag){
+                    drag();
+                }
             }        
         }
 
@@ -710,7 +713,6 @@ function browser() {
                     axis: "x",
                     drag: function () {
 
-
                     },
                     start: function () {
                         window.clearInterval(intervalListener);
@@ -719,10 +721,6 @@ function browser() {
                         thebanner.find(" .thebanner-mask > ul > li").unbind('click');
                         thebanner.find(" .thebanner-mask > ul > li").addClass("dragging");
                         //thebanner.find(" .thebanner-mask > ul > li").css("cursor", "url(../img/framework/grabbing.png)");
-
-
-
-
                     },
                     stop: function () {
                         thebanner.find(" .thebanner-mask > ul > li").removeClass("dragging");
@@ -752,7 +750,6 @@ function browser() {
 
                         thebanner.find(".the-banner").draggable("destroy");
                         isDrag = false;
-
                     }
                 });
             }
