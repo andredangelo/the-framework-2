@@ -953,7 +953,7 @@ function browser() {
                         if (div.attr("data-height")) {
                             $('.thebox-content').css('height', div.attr("data-height"));
                         } else {
-                            $('.thebox-content').css('height', '100%');
+                            $('.thebox-content').css('height', 'auto');
                         }
                         
                         
